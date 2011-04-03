@@ -434,13 +434,35 @@ void BiletMain::setFilename( const QString name ) {
 
 
 
+*/
+
+BiletRecord BiletMain::biletToRecord(QString numeBilet)
+{
+    BiletRecord record;
+    record.biletID = numeBilet;
+    record.codA = bl->codA;
+    record.codB = bl->codB;
+    record.codC = bl->codC;
+
+    for(int i=0; i < bl->nrA.count(); i++){
+        if(bl->nrA.at(i)->text().toInt())
+            record.nrA << bl->nrA.at(i)->text().toInt();
+    }
+    for(int i=0; i < bl->nrB.count(); i++){
+        if(bl->nrB.at(i)->text().toInt())
+            record.nrB << bl->nrB.at(i)->text().toInt();
+    }
+    for(int i=0; i < bl->nrC.count(); i++){
+        if(bl->nrC.at(i)->text().toInt())
+            record.nrC << bl->nrC.at(i)->text().toInt();
+    }
+
+    return record;
+}
 
 
 
-
-
-
-**
+/**
  * Creates a dialog and sets its content with aboutWidget::setupUi, the it modally shows it
  */
 void BiletMain::aboutClicked() {
@@ -505,6 +527,24 @@ void BiletMain::fileSaveClicked()
     //BiletRecord br;
     svb = new SaveBilet();
     svb->exec();
+
+    QVector<BiletRecord> nodes = db.getAll();
+    QVectorIterator<BiletRecord> i(nodes);
+    while (i.hasNext()) {
+            BiletRecord nr = i.next();
+            //if(nr.biletID.contains(svb->nameB)) {
+            if(nr.biletID == svb->nameB){
+                QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("bilet existent. Alege alt nume") );
+                svb->exec();
+            }
+            //de verificare
+            textBrows->append(nr.biletID);
+    }
+
+    textBrows->append(svb->nameB);
+    if(!svb->nameB.isEmpty())
+        db.AddBilet(biletToRecord(svb->nameB));
+
     delete svb;
 }
 
@@ -535,6 +575,8 @@ void BiletMain::fileOpenClicked()
     //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     delete opb;
 }
+
+
 
 void BiletMain::writeVariante()
 {

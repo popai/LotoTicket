@@ -181,6 +181,7 @@ class BiletMain : public QMainWindow {
                 //QString filename();
                 //void setFilename( const QString name );
 		void open();
+                BiletRecord biletToRecord(QString numeBilet);
                 //void setPath(QString);
                 //void setPath(int);
 		void showProgress( bool, int max = 100 );

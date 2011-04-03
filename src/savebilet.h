@@ -12,6 +12,13 @@ public:
     explicit SaveBilet(QWidget *parent = 0);
     ~SaveBilet();
 
+    QString nameB;
+
+public slots:
+    //void NameB();
+    virtual void accept();
+
+
 //private:
 };
 

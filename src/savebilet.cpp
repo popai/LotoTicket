@@ -10,3 +10,10 @@ SaveBilet::~SaveBilet()
 {
     //delete ui;
 }
+
+void SaveBilet::accept()
+{
+    nameB = saveName->text();
+    close();
+}
+

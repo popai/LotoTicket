@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'savebilet.ui'
 **
-** Created: Tue Apr 26 19:18:17 2011
+** Created: Wed Apr 27 21:20:40 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -22,27 +22,27 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_SaveBilet
+class Ui_USaveBilet
 {
 public:
     QDialogButtonBox *buttonBox;
     QLineEdit *saveName;
     QTableWidget *tableWidget;
 
-    void setupUi(QDialog *SaveBilet)
+    void setupUi(QDialog *USaveBilet)
     {
-        if (SaveBilet->objectName().isEmpty())
-            SaveBilet->setObjectName(QString::fromUtf8("SaveBilet"));
-        SaveBilet->resize(391, 298);
-        buttonBox = new QDialogButtonBox(SaveBilet);
+        if (USaveBilet->objectName().isEmpty())
+            USaveBilet->setObjectName(QString::fromUtf8("USaveBilet"));
+        USaveBilet->resize(391, 298);
+        buttonBox = new QDialogButtonBox(USaveBilet);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(30, 250, 341, 32));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
-        saveName = new QLineEdit(SaveBilet);
+        saveName = new QLineEdit(USaveBilet);
         saveName->setObjectName(QString::fromUtf8("saveName"));
         saveName->setGeometry(QRect(10, 220, 371, 21));
-        tableWidget = new QTableWidget(SaveBilet);
+        tableWidget = new QTableWidget(USaveBilet);
         if (tableWidget->columnCount() < 2)
             tableWidget->setColumnCount(2);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -52,26 +52,26 @@ public:
         tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
         tableWidget->setGeometry(QRect(10, 10, 371, 191));
 
-        retranslateUi(SaveBilet);
-        QObject::connect(buttonBox, SIGNAL(accepted()), SaveBilet, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), SaveBilet, SLOT(reject()));
+        retranslateUi(USaveBilet);
+        QObject::connect(buttonBox, SIGNAL(accepted()), USaveBilet, SLOT(accept()));
+        QObject::connect(buttonBox, SIGNAL(rejected()), USaveBilet, SLOT(reject()));
 
-        QMetaObject::connectSlotsByName(SaveBilet);
+        QMetaObject::connectSlotsByName(USaveBilet);
     } // setupUi
 
-    void retranslateUi(QDialog *SaveBilet)
+    void retranslateUi(QDialog *USaveBilet)
     {
-        SaveBilet->setWindowTitle(QApplication::translate("SaveBilet", "Dialog", 0, QApplication::UnicodeUTF8));
+        USaveBilet->setWindowTitle(QApplication::translate("USaveBilet", "Dialog", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("SaveBilet", "BieltID", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem->setText(QApplication::translate("USaveBilet", "BieltID", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("SaveBilet", "DATA", 0, QApplication::UnicodeUTF8));
+        ___qtablewidgetitem1->setText(QApplication::translate("USaveBilet", "DATA", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class SaveBilet: public Ui_SaveBilet {};
+    class USaveBilet: public Ui_USaveBilet {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -2,12 +2,9 @@
 #define SAVEBILET_H
 
 #include <QDialog>
+#include "ui_savebilet.h"
 
-namespace Ui {
-    class SaveBilet;
-}
-
-class SaveBilet : public QDialog
+class SaveBilet : public QDialog, private Ui::USaveBilet
 {
     Q_OBJECT
 
@@ -15,8 +12,7 @@ public:
     explicit SaveBilet(QWidget *parent = 0);
     ~SaveBilet();
 
-private:
-    Ui::SaveBilet *ui;
+//private:
 };
 
 #endif // SAVEBILET_H

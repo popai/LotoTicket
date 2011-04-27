@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainloto.ui'
 **
-** Created: Tue Apr 26 21:01:37 2011
+** Created: Wed Apr 27 21:20:40 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

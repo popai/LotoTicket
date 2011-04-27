@@ -1,14 +1,12 @@
 #include "savebilet.h"
-#include "ui_savebilet.h"
 
 SaveBilet::SaveBilet(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::SaveBilet)
+    QDialog(parent)
 {
-    ui->setupUi(this);
+    setupUi(this);
 }
 
 SaveBilet::~SaveBilet()
 {
-    delete ui;
+    //delete ui;
 }

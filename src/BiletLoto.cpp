@@ -247,13 +247,18 @@ void BiletMain::setupWidgets() {
 void BiletMain::createActions() {
         newAct = new QAction(QIcon("images/new.png"), tr("&New"), this);
 	newAct->setShortcut(tr("Ctrl+N"));
-	newAct->setStatusTip(tr("New collection"));
-        //connect(newAct, SIGNAL(triggered()), this, SLOT(fileNewClicked()));
+        newAct->setStatusTip(tr("New ticket"));
+        connect(newAct, SIGNAL(triggered()), this, SLOT(fileNewClicked()));
 
         openAct = new QAction(QIcon("images/Open.png"), tr("&Open"), this);
 	openAct->setShortcut(tr("Ctrl+O"));
-	openAct->setStatusTip(tr("Open collection"));
-        //connect(openAct, SIGNAL(triggered()), this, SLOT(fileOpenClicked()));
+        openAct->setStatusTip(tr("Open ticket"));
+        connect(openAct, SIGNAL(triggered()), this, SLOT(fileOpenClicked()));
+
+        saveAct = new QAction(QIcon("images/Save.png"), tr("&Save"), this);
+        saveAct->setShortcut(tr("Ctrl+S"));
+        saveAct->setStatusTip(tr("Save ticket"));
+        connect(saveAct, SIGNAL(triggered()), this, SLOT(fileSaveClicked()));
 
         exitAct = new QAction(QIcon("images/Exit.png"), tr("&Quit"), this);
 	exitAct->setShortcut(tr("Ctrl+Q"));
@@ -299,6 +304,7 @@ void BiletMain::createMenu() {
 	fileMenu = menuBar()->addMenu(tr("&File"));
 	fileMenu->addAction( newAct );
 	fileMenu->addAction( openAct );
+        fileMenu->addAction( saveAct );
 	fileMenu->addSeparator();
 	fileMenu->addAction( exitAct );
 
@@ -329,9 +335,10 @@ void BiletMain::createToolbar() {
 	fileToolbar = addToolBar( tr("&File") );
 	fileToolbar->setObjectName("fileToolbar");
         fileToolbar->setIconSize( QSize(16,16) );
+        fileToolbar->addAction( exitAct );
 	fileToolbar->addAction( newAct );
 	fileToolbar->addAction( openAct );
-	fileToolbar->addAction( exitAct );
+        fileToolbar->addAction( saveAct );
 
 	editToolbar = addToolBar( tr("&Edit") );
 	editToolbar->setObjectName("editToolbar");
@@ -489,17 +496,41 @@ void BiletMain::fileNewClicked() {
 
 }
 
-void BiletMain::fileSaveClicked() {
-
-}
-
 void BiletMain::fileExitClicked() {
 	close();
 }
 
-void BiletMain::fileOpenClicked() {
-        //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
+void BiletMain::fileSaveClicked()
+{
+    //BiletRecord br;
+    svb = new SaveBilet();
+    svb->exec();
+    delete svb;
+}
 
+void BiletMain::fileOpenClicked()
+{
+    opb = new OpenBilet();
+
+    //OpenBilet::openList->clear();
+
+    QVector<BiletRecord> lista = db.getAll();
+    //QMessageBox::about(this,"db-ver","basdhfkjdfhkjf");// lista.at(0).biletID);
+    QVectorIterator<BiletRecord> i(lista);
+    QListWidgetItem* newBilet;
+    while (i.hasNext()) {
+            BiletRecord nr = i.next();
+            newBilet = new QListWidgetItem;
+            newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
+            newBilet->setIcon( QIcon("images/Save1.png") );
+            //newBilet->id = nr.biletID;
+            newBilet->setText( nr.biletID+"             "+nr.data);
+            opb->SetList(newBilet);
+    }
+    opb->exec();
+    //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
+    delete opb;
+    delete newBilet;
 }
 
 void BiletMain::writeVariante()
@@ -526,7 +557,7 @@ void BiletMain::writeVariante()
         textBrows->append(*rezultate);
         rezultate->clear();
     }
-
+    delete rezultate;
     //rezultate->append(bilet->tmp1);
     //textBrows->append(*rezultate);
     //showProgress( false, 0 );

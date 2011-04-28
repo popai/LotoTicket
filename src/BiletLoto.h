@@ -123,6 +123,7 @@ class BiletMain : public QMainWindow {
 		//ACTIONS
 		QAction *newAct;
 		QAction *openAct;
+                QAction *saveAct;
 		QAction *exitAct;
 
 		QAction *settingsAct;

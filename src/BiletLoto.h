@@ -23,6 +23,10 @@
 
 #include <QMainWindow>
 #include "bilet.h"
+#include "vardb.h"
+#include "savebilet.h"
+#include "openbilet.h"
+
 /*
 class Find;
 class CdSql;
@@ -153,7 +157,7 @@ class BiletMain : public QMainWindow {
 		virtual void dirListDoubleClicked(QTableWidgetItem *item);
 		virtual void stopClicked();
                 */
-                void writeVariante();
+                virtual void writeVariante();
 
 		//menu events
 		virtual void aboutClicked();
@@ -164,16 +168,11 @@ class BiletMain : public QMainWindow {
 		virtual void fileExitClicked();
 		virtual void fileOpenClicked();
 		virtual void fileNewClicked();
+                virtual void fileSaveClicked();
+
 
 	public:
-/*
-#ifdef Q_WS_X11
-		bool isMounted(QString dev);
-		int mountDev(QString dev);
-		int umountDev(QString dev);
-		QString devToMountpoint(QString dev);
-#endif
-*/
+
 		configuration conf;
                 //CdSql *sql;
 		QTranslator *translator;
@@ -187,6 +186,9 @@ class BiletMain : public QMainWindow {
 		void setProgress( int );
 
                 Bilet *bl;
+                VarDb db;
+                SaveBilet *svb;
+                OpenBilet *opb;
                 QString *rezultate;
 
 		/**

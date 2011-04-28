@@ -489,6 +489,10 @@ void BiletMain::fileNewClicked() {
 
 }
 
+void BiletMain::fileSaveClicked() {
+
+}
+
 void BiletMain::fileExitClicked() {
 	close();
 }

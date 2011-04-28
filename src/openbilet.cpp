@@ -15,3 +15,9 @@ void OpenBilet::SetList(QListWidgetItem *numeB)
 {
     openList->addItem(numeB);
 }
+
+void OpenBilet::accept()
+{
+    idBilet = openList->currentItem()->text();
+    close();
+}

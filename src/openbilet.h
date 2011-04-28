@@ -16,6 +16,11 @@ public:
     void SetList(QListWidgetItem *numeB);
     //QListWidget* GetList();
 
+    QString idBilet;
+
+private slots:
+    virtual void accept();
+
 };
 
 #endif // OPENBILET_H

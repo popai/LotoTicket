@@ -178,11 +178,11 @@ class BiletMain : public QMainWindow {
                 //CdSql *sql;
 		QTranslator *translator;
 		QVector<langinfo> languages;
-		QString filename();
-		void setFilename( const QString name );
+                //QString filename();
+                //void setFilename( const QString name );
 		void open();
-		void setPath(QString);
-		void setPath(int);
+                //void setPath(QString);
+                //void setPath(int);
 		void showProgress( bool, int max = 100 );
 		void setProgress( int );
 

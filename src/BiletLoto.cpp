@@ -534,16 +534,19 @@ void BiletMain::fileSaveClicked()
             BiletRecord nr = i.next();
             //if(nr.biletID.contains(svb->nameB)) {
             if(nr.biletID == svb->nameB){
-                QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("bilet existent. Alege alt nume") );
+                QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket exist. Try diferent name") );
                 svb->exec();
             }
             //de verificare
-            textBrows->append(nr.biletID);
+            //textBrows->append(nr.biletID);
     }
 
     textBrows->append(svb->nameB);
     if(!svb->nameB.isEmpty())
-        db.AddBilet(biletToRecord(svb->nameB));
+        if(bl->biletOK)
+            db.AddBilet(biletToRecord(svb->nameB));
+        else
+            QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket not save, try viewVar for more info") );
 
     delete svb;
 }

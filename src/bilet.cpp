@@ -11,6 +11,7 @@ Bilet::Bilet(QWidget *parent)
     connect(CodB,SIGNAL(itemSelectionChanged()),this, SLOT(codSelectB()));
     connect(CodC,SIGNAL(itemSelectionChanged()),this, SLOT(codSelectC()));
 
+    biletOK = false;
     codA = -1;
     codB = -1;
     codC = -1;
@@ -417,7 +418,7 @@ QVector<short int*>Bilet::GenVarBilet()
                 msgBox->exec();
                 return tmpvar;
                 }
-
+    biletOK = true;
     return tmpvar;
 }
 

@@ -55,6 +55,7 @@ public:
     short int codC;
     //BiletRecord bRec;
     QString tmp1;
+    bool biletOK;
 
 public slots:
     void nrSelectA();

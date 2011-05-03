@@ -541,7 +541,7 @@ void BiletMain::fileSaveClicked()
             //textBrows->append(nr.biletID);
     }
 
-    textBrows->append(svb->nameB);
+    //textBrows->append(svb->nameB);
     if(!svb->nameB.isEmpty())
         if(bl->biletOK)
             db.AddBilet(biletToRecord(svb->nameB));

@@ -528,8 +528,10 @@ void BiletMain::fileOpenClicked()
             opb->SetList(newBilet);
     }
     opb->exec();
-    aFilename = opb->idBilet;
-    //textBrows->append(opb->idBilet);
+    aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
+    textBrows->append(aFilename);
+    BiletRecord opBilet;
+    opBilet = db.getBilet(aFilename);
     //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     delete opb;
 }
@@ -561,6 +563,6 @@ void BiletMain::writeVariante()
     delete rezultate;
     //rezultate->append(bilet->tmp1);
     //textBrows->append(*rezultate);
-    //showProgress( false, 0 );
+    showProgress( false, 0 );
 }
 

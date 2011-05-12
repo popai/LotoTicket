@@ -229,7 +229,7 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
         BiletRecord nr;
         if(!a.isEmpty()){
         //if(!a.isNull(a.value(1).toString())) {
-            nr.data = a.value(18).toString();
+            nr.data = a.value(19).toString();
             nr.biletID = a.value(0).toString();
             nr.codA = a.value(17).toInt();
             for(int i=1; i<=a.count(); i++){

@@ -529,10 +529,10 @@ void BiletMain::editDeleteClicked()
             newBilet->setText( nr.biletID+"             "+nr.data);
             del->SetList(newBilet);
     }
-    int butonPres = del->exec();
-    aFilename = del->idBilet.remove(QRegExp(" (.*)"));
+    del->exec();
 
-    if(butonPres == QDialog::Accepted){
+    if(!del->idBilet.isEmpty()){
+        aFilename = del->idBilet.remove(QRegExp(" (.*)"));
         QMessageBox msgBox;
         msgBox.setText("Do you want delete ticket?");
         msgBox.setInformativeText("Pres delete to procide, Abord to cancel");
@@ -566,7 +566,6 @@ void BiletMain::fileSaveClicked()
 {
     //BiletRecord br;
     svb = new SaveBilet();
-    //svb->exec();
 
     QVector<BiletRecord> nodes = db.getAll();
     QVectorIterator<BiletRecord> i(nodes);
@@ -574,18 +573,19 @@ void BiletMain::fileSaveClicked()
     while (i.hasNext()) {
             BiletRecord nr = i.next();
             newBilet = new QListWidgetItem;
-            newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
+            newBilet->setFlags(Qt::ItemIsEnabled );
             newBilet->setIcon( QIcon("images/Save1.png") );
-            //newBilet->id = nr.biletID;
             newBilet->setText( nr.biletID+"             "+nr.data);
             svb->SetList(newBilet);
     }
     svb->exec();
-    while (i.hasPrevious()) {
-        BiletRecord nr = i.previous();
+    QVectorIterator<BiletRecord> j(nodes);
+    while (j.hasNext()) {
+        BiletRecord nr = j.next();
         if(nr.biletID == svb->nameB){
             QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket exist. Try diferent name") );
             svb->exec();
+            //svb->nameB = "";
         }
         //de verificare
         //textBrows->append(nr.biletID);
@@ -616,12 +616,11 @@ void BiletMain::fileOpenClicked()
             newBilet = new QListWidgetItem;
             newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
             newBilet->setIcon( QIcon("images/Save1.png") );
-            //newBilet->id = nr.biletID;
             newBilet->setText( nr.biletID+"             "+nr.data);
             opb->SetList(newBilet);
     }
     opb->exec();
-    if(!opb->idBilet.isNull()){
+    if(!opb->idBilet.isEmpty()){
         aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
         BiletRecord opBilet;
         opBilet = db.getBilet(aFilename);

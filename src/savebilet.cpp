@@ -17,3 +17,9 @@ void SaveBilet::accept()
     close();
 }
 
+void SaveBilet::SetList(QListWidgetItem *numeB)
+{
+    saveList->addItem(numeB);
+}
+
+

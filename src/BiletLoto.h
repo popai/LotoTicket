@@ -26,6 +26,7 @@
 #include "vardb.h"
 #include "savebilet.h"
 #include "openbilet.h"
+#include "delete.h"
 
 /*
 class Find;
@@ -191,6 +192,7 @@ class BiletMain : public QMainWindow {
                 VarDb db;
                 SaveBilet *svb;
                 OpenBilet *opb;
+                Delete *del;
                 QString *rezultate;
 
 		/**

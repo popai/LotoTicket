@@ -272,7 +272,7 @@ void BiletMain::createActions() {
         deleteAct = new QAction(QIcon("images/delete.png"), tr("&Delete"), this);
 	deleteAct->setShortcut(tr("Del"));
 	deleteAct->setStatusTip(tr("Delete"));
-        //connect(deleteAct, SIGNAL(triggered()), this, SLOT(editDeleteClicked()));
+        connect(deleteAct, SIGNAL(triggered()), this, SLOT(editDeleteClicked()));
 
         findAct = new QAction(QIcon("images/!.png"), tr("&Find"), this);
 	findAct->setShortcut(tr("Ctrl+F"));
@@ -510,7 +510,47 @@ void BiletMain::setProgress( int pos ) {
 	progress->setValue( pos );
 }
 
-void BiletMain::editDeleteClicked() {
+void BiletMain::editDeleteClicked()
+{
+    del = new Delete();
+
+    //OpenBilet::openList->clear();
+
+    QVector<BiletRecord> lista = db.getAll();
+    //QMessageBox::about(this,"db-ver","basdhfkjdfhkjf");// lista.at(0).biletID);
+    QVectorIterator<BiletRecord> i(lista);
+    QListWidgetItem* newBilet;
+    while (i.hasNext()) {
+            BiletRecord nr = i.next();
+            newBilet = new QListWidgetItem;
+            newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
+            newBilet->setIcon( QIcon("images/Save1.png") );
+            //newBilet->id = nr.biletID;
+            newBilet->setText( nr.biletID+"             "+nr.data);
+            del->SetList(newBilet);
+    }
+    int butonPres = del->exec();
+    aFilename = del->idBilet.remove(QRegExp(" (.*)"));
+
+    if(butonPres == QDialog::Accepted){
+        QMessageBox msgBox;
+        msgBox.setText("Do you want delete ticket?");
+        msgBox.setInformativeText("Pres delete to procide, Abord to cancel");
+        QPushButton *delButton = msgBox.addButton(tr("Delete"), QMessageBox::ActionRole);
+        QPushButton *abortButton = msgBox.addButton(QMessageBox::Abort);
+
+        msgBox.exec();
+
+         if (msgBox.clickedButton() == delButton) {
+             //db.delBilet(aFilename); de implementat delBilet in db.
+         } else if (msgBox.clickedButton() == abortButton) {
+             // abort
+         }
+    }
+    textBrows->append(aFilename);
+    //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
+    //db.delBilet(aFilename); de implementat delBilet in db.
+    delete del;
 
 }
 
@@ -526,19 +566,29 @@ void BiletMain::fileSaveClicked()
 {
     //BiletRecord br;
     svb = new SaveBilet();
-    svb->exec();
+    //svb->exec();
 
     QVector<BiletRecord> nodes = db.getAll();
     QVectorIterator<BiletRecord> i(nodes);
+    QListWidgetItem* newBilet;
     while (i.hasNext()) {
             BiletRecord nr = i.next();
-            //if(nr.biletID.contains(svb->nameB)) {
-            if(nr.biletID == svb->nameB){
-                QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket exist. Try diferent name") );
-                svb->exec();
-            }
-            //de verificare
-            //textBrows->append(nr.biletID);
+            newBilet = new QListWidgetItem;
+            newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
+            newBilet->setIcon( QIcon("images/Save1.png") );
+            //newBilet->id = nr.biletID;
+            newBilet->setText( nr.biletID+"             "+nr.data);
+            svb->SetList(newBilet);
+    }
+    svb->exec();
+    while (i.hasPrevious()) {
+        BiletRecord nr = i.previous();
+        if(nr.biletID == svb->nameB){
+            QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket exist. Try diferent name") );
+            svb->exec();
+        }
+        //de verificare
+        //textBrows->append(nr.biletID);
     }
 
     //textBrows->append(svb->nameB);
@@ -571,10 +621,13 @@ void BiletMain::fileOpenClicked()
             opb->SetList(newBilet);
     }
     opb->exec();
-    aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
+    if(!opb->idBilet.isNull()){
+        aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
+        BiletRecord opBilet;
+        opBilet = db.getBilet(aFilename);
+    }
     textBrows->append(aFilename);
-    BiletRecord opBilet;
-    opBilet = db.getBilet(aFilename);
+
     //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     delete opb;
 }

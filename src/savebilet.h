@@ -12,6 +12,8 @@ public:
     explicit SaveBilet(QWidget *parent = 0);
     ~SaveBilet();
 
+    void SetList(QListWidgetItem *numeB);
+
     QString nameB;
 
 public slots:

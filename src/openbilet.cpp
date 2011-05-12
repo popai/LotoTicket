@@ -4,6 +4,7 @@ OpenBilet::OpenBilet(QWidget *parent) :
     QDialog(parent)
 {
     setupUi(this);
+    idBilet = "";
 }
 
 OpenBilet::~OpenBilet()
@@ -18,6 +19,7 @@ void OpenBilet::SetList(QListWidgetItem *numeB)
 
 void OpenBilet::accept()
 {
-    idBilet = openList->currentItem()->text();
+    if(openList->currentItem())
+        idBilet = openList->currentItem()->text();
     close();
 }

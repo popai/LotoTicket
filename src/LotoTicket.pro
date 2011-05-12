@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     variante.cpp \
     vardb.cpp \
     savebilet.cpp \
-    openbilet.cpp
+    openbilet.cpp \
+    delete.cpp
 
 HEADERS  += mainloto.h \
     bilet.h \
@@ -29,11 +30,13 @@ HEADERS  += mainloto.h \
     vardb.h \
     savebilet.h \
     openbilet.h \
-    variante.h
+    variante.h \
+    delete.h
 
 FORMS    += mainloto.ui \
     bilet.ui \
     settingwidget.ui \
     aboutwidget.ui \
     savebilet.ui \
-    openbilet.ui
+    openbilet.ui \
+    delete.ui

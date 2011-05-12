@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'savebilet.ui'
 **
-** Created: Wed Apr 27 21:20:40 2011
+** Created: Thu May 12 13:32:13 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -18,7 +18,7 @@
 #include <QtGui/QDialogButtonBox>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLineEdit>
-#include <QtGui/QTableWidget>
+#include <QtGui/QListWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +27,7 @@ class Ui_USaveBilet
 public:
     QDialogButtonBox *buttonBox;
     QLineEdit *saveName;
-    QTableWidget *tableWidget;
+    QListWidget *saveList;
 
     void setupUi(QDialog *USaveBilet)
     {
@@ -42,15 +42,9 @@ public:
         saveName = new QLineEdit(USaveBilet);
         saveName->setObjectName(QString::fromUtf8("saveName"));
         saveName->setGeometry(QRect(10, 220, 371, 21));
-        tableWidget = new QTableWidget(USaveBilet);
-        if (tableWidget->columnCount() < 2)
-            tableWidget->setColumnCount(2);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(10, 10, 371, 191));
+        saveList = new QListWidget(USaveBilet);
+        saveList->setObjectName(QString::fromUtf8("saveList"));
+        saveList->setGeometry(QRect(10, 10, 371, 201));
 
         retranslateUi(USaveBilet);
         QObject::connect(buttonBox, SIGNAL(accepted()), USaveBilet, SLOT(accept()));
@@ -62,10 +56,6 @@ public:
     void retranslateUi(QDialog *USaveBilet)
     {
         USaveBilet->setWindowTitle(QApplication::translate("USaveBilet", "Dialog", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("USaveBilet", "BieltID", 0, QApplication::UnicodeUTF8));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("USaveBilet", "DATA", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

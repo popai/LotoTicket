@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Wed Apr 27 21:20:40 2011
+** Created: Sat May 14 11:54:34 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,7 +14,6 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QDialog>
 #include <QtGui/QGroupBox>
@@ -56,32 +55,18 @@ public:
     QRadioButton *radStartBlank;
     QSpacerItem *spacerItem2;
     QWidget *tabLoteri;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *hboxLayout1;
     QLabel *LotoName;
     QLineEdit *txtName;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QLabel *MaxNr;
     QSpacerItem *horizontalSpacer;
     QSpinBox *spinBox;
-    QWidget *tab;
-    QVBoxLayout *vboxLayout4;
-    QCheckBox *chkThumbnails;
-    QLabel *lblMaxSize;
     QHBoxLayout *hboxLayout2;
-    QSpacerItem *spacerItem3;
-    QSpinBox *spinSize;
-    QSpacerItem *spacerItem4;
-    QLabel *lblNumThumbs;
-    QHBoxLayout *hboxLayout3;
-    QSpacerItem *spacerItem5;
-    QSpinBox *spinNumThumbs;
-    QSpacerItem *spacerItem6;
-    QSpacerItem *spacerItem7;
-    QHBoxLayout *hboxLayout4;
     QPushButton *buttonHelp;
-    QSpacerItem *spacerItem8;
+    QSpacerItem *spacerItem3;
     QPushButton *buttonOk;
     QPushButton *buttonCancel;
 
@@ -184,31 +169,31 @@ public:
         tabWidget->addTab(tabStart, QString());
         tabLoteri = new QWidget();
         tabLoteri->setObjectName(QString::fromUtf8("tabLoteri"));
-        widget = new QWidget(tabLoteri);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 10, 361, 22));
-        hboxLayout1 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(tabLoteri);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 361, 22));
+        hboxLayout1 = new QHBoxLayout(layoutWidget);
         hboxLayout1->setSpacing(1);
         hboxLayout1->setContentsMargins(0, 0, 0, 0);
         hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
         hboxLayout1->setContentsMargins(0, 0, 0, 0);
-        LotoName = new QLabel(widget);
+        LotoName = new QLabel(layoutWidget);
         LotoName->setObjectName(QString::fromUtf8("LotoName"));
 
         hboxLayout1->addWidget(LotoName);
 
-        txtName = new QLineEdit(widget);
+        txtName = new QLineEdit(layoutWidget);
         txtName->setObjectName(QString::fromUtf8("txtName"));
 
         hboxLayout1->addWidget(txtName);
 
-        widget1 = new QWidget(tabLoteri);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(11, 40, 361, 22));
-        horizontalLayout = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(tabLoteri);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(11, 40, 361, 22));
+        horizontalLayout = new QHBoxLayout(layoutWidget1);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        MaxNr = new QLabel(widget1);
+        MaxNr = new QLabel(layoutWidget1);
         MaxNr->setObjectName(QString::fromUtf8("MaxNr"));
 
         horizontalLayout->addWidget(MaxNr);
@@ -217,30 +202,14 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        spinBox = new QSpinBox(widget1);
+        spinBox = new QSpinBox(layoutWidget1);
         spinBox->setObjectName(QString::fromUtf8("spinBox"));
 
         horizontalLayout->addWidget(spinBox);
 
         tabWidget->addTab(tabLoteri, QString());
-        tab = new QWidget();
-        tab->setObjectName(QString::fromUtf8("tab"));
-        vboxLayout4 = new QVBoxLayout(tab);
-#ifndef Q_OS_MAC
-        vboxLayout4->setSpacing(6);
-#endif
-        vboxLayout4->setContentsMargins(8, 8, 8, 8);
-        vboxLayout4->setObjectName(QString::fromUtf8("vboxLayout4"));
-        chkThumbnails = new QCheckBox(tab);
-        chkThumbnails->setObjectName(QString::fromUtf8("chkThumbnails"));
-        chkThumbnails->setChecked(true);
 
-        vboxLayout4->addWidget(chkThumbnails);
-
-        lblMaxSize = new QLabel(tab);
-        lblMaxSize->setObjectName(QString::fromUtf8("lblMaxSize"));
-
-        vboxLayout4->addWidget(lblMaxSize);
+        vboxLayout->addWidget(tabWidget);
 
         hboxLayout2 = new QHBoxLayout();
 #ifndef Q_OS_MAC
@@ -248,93 +217,31 @@ public:
 #endif
         hboxLayout2->setContentsMargins(0, 0, 0, 0);
         hboxLayout2->setObjectName(QString::fromUtf8("hboxLayout2"));
-        spacerItem3 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        hboxLayout2->addItem(spacerItem3);
-
-        spinSize = new QSpinBox(tab);
-        spinSize->setObjectName(QString::fromUtf8("spinSize"));
-        spinSize->setMinimum(50);
-        spinSize->setMaximum(320);
-        spinSize->setSingleStep(10);
-        spinSize->setValue(120);
-
-        hboxLayout2->addWidget(spinSize);
-
-        spacerItem4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        hboxLayout2->addItem(spacerItem4);
-
-
-        vboxLayout4->addLayout(hboxLayout2);
-
-        lblNumThumbs = new QLabel(tab);
-        lblNumThumbs->setObjectName(QString::fromUtf8("lblNumThumbs"));
-
-        vboxLayout4->addWidget(lblNumThumbs);
-
-        hboxLayout3 = new QHBoxLayout();
-#ifndef Q_OS_MAC
-        hboxLayout3->setSpacing(6);
-#endif
-        hboxLayout3->setContentsMargins(0, 0, 0, 0);
-        hboxLayout3->setObjectName(QString::fromUtf8("hboxLayout3"));
-        spacerItem5 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        hboxLayout3->addItem(spacerItem5);
-
-        spinNumThumbs = new QSpinBox(tab);
-        spinNumThumbs->setObjectName(QString::fromUtf8("spinNumThumbs"));
-        spinNumThumbs->setValue(3);
-
-        hboxLayout3->addWidget(spinNumThumbs);
-
-        spacerItem6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        hboxLayout3->addItem(spacerItem6);
-
-
-        vboxLayout4->addLayout(hboxLayout3);
-
-        spacerItem7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        vboxLayout4->addItem(spacerItem7);
-
-        tabWidget->addTab(tab, QString());
-
-        vboxLayout->addWidget(tabWidget);
-
-        hboxLayout4 = new QHBoxLayout();
-#ifndef Q_OS_MAC
-        hboxLayout4->setSpacing(6);
-#endif
-        hboxLayout4->setContentsMargins(0, 0, 0, 0);
-        hboxLayout4->setObjectName(QString::fromUtf8("hboxLayout4"));
         buttonHelp = new QPushButton(settingWidget);
         buttonHelp->setObjectName(QString::fromUtf8("buttonHelp"));
         buttonHelp->setAutoDefault(true);
 
-        hboxLayout4->addWidget(buttonHelp);
+        hboxLayout2->addWidget(buttonHelp);
 
-        spacerItem8 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        spacerItem3 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        hboxLayout4->addItem(spacerItem8);
+        hboxLayout2->addItem(spacerItem3);
 
         buttonOk = new QPushButton(settingWidget);
         buttonOk->setObjectName(QString::fromUtf8("buttonOk"));
         buttonOk->setAutoDefault(true);
         buttonOk->setDefault(true);
 
-        hboxLayout4->addWidget(buttonOk);
+        hboxLayout2->addWidget(buttonOk);
 
         buttonCancel = new QPushButton(settingWidget);
         buttonCancel->setObjectName(QString::fromUtf8("buttonCancel"));
         buttonCancel->setAutoDefault(true);
 
-        hboxLayout4->addWidget(buttonCancel);
+        hboxLayout2->addWidget(buttonCancel);
 
 
-        vboxLayout->addLayout(hboxLayout4);
+        vboxLayout->addLayout(hboxLayout2);
 
         QWidget::setTabOrder(tabWidget, radStartLast);
         QWidget::setTabOrder(radStartLast, radStartSpecified);
@@ -369,11 +276,6 @@ public:
         LotoName->setText(QApplication::translate("settingWidget", "Loteri Name", 0, QApplication::UnicodeUTF8));
         MaxNr->setText(QApplication::translate("settingWidget", "Extract Numbers", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tabLoteri), QApplication::translate("settingWidget", "Loteri", 0, QApplication::UnicodeUTF8));
-        chkThumbnails->setText(QApplication::translate("settingWidget", "Enable thumbnails generation", 0, QApplication::UnicodeUTF8));
-        lblMaxSize->setText(QApplication::translate("settingWidget", "Maximum size for thumbnails <i>(Keep this low!)</i>", 0, QApplication::UnicodeUTF8));
-        spinSize->setSuffix(QApplication::translate("settingWidget", "px", 0, QApplication::UnicodeUTF8));
-        lblNumThumbs->setText(QApplication::translate("settingWidget", "Number of thumbnails for folder <i>(0 for no limit)</i>", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("settingWidget", "Thumbnails", 0, QApplication::UnicodeUTF8));
         buttonHelp->setText(QApplication::translate("settingWidget", "&Help", 0, QApplication::UnicodeUTF8));
         buttonHelp->setShortcut(QApplication::translate("settingWidget", "F1", 0, QApplication::UnicodeUTF8));
         buttonOk->setText(QApplication::translate("settingWidget", "&OK", 0, QApplication::UnicodeUTF8));

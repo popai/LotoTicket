@@ -4104,5 +4104,54 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>CodA</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>CampA</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CodB</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>CampB</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>352</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CodC</sender>
+   <signal>itemSelectionChanged()</signal>
+   <receiver>CampC</receiver>
+   <slot>clearSelection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>275</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

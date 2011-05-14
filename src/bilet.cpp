@@ -21,8 +21,13 @@ void Bilet::clearSelection()
 {
 
     CampA->clearSelection();
+    CodA->clearSelection();
+
     CampB->clearSelection();
+    CodB->clearSelection();
+
     CampC->clearSelection();
+    CodC->clearSelection();
 }
 
 dateV Bilet::setStop(int cod)

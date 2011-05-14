@@ -52,10 +52,6 @@ Settings::Settings(QWidget *parent)
         txtName->setText( conf->mountpoint );
 	txtStart->setText( conf->startkat );
 
-	//Thumbnails Tab
-	chkThumbnails->setChecked( conf->thenabled );
-	spinSize->setValue( conf->thsize );
-	spinNumThumbs->setValue( conf->thperdir );
 
 	//Locale
         languages = &((BiletMain*)parent)->languages;

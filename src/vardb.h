@@ -70,6 +70,7 @@ public:
         QVector<BiletRecord> getAll();
         BiletRecord getBilet(const QString node);
         void AddBilet( BiletRecord bilet );
+        void DelBilet(QString biletID);
         //QVector<BiletRecord> getNodes(const int parent, QString where = "");
 
 

@@ -542,12 +542,12 @@ void BiletMain::editDeleteClicked()
         msgBox.exec();
 
          if (msgBox.clickedButton() == delButton) {
-             //db.delBilet(aFilename); de implementat delBilet in db.
+             db.DelBilet(aFilename);
          } else if (msgBox.clickedButton() == abortButton) {
              // abort
          }
     }
-    textBrows->append(aFilename);
+    //textBrows->append(aFilename);
     //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     //db.delBilet(aFilename); de implementat delBilet in db.
     delete del;

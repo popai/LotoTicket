@@ -148,6 +148,21 @@ void VarDb::AddBilet( BiletRecord bilet )
 
 }
 
+void VarDb::DelBilet(QString biletID)
+{
+    QString biletTable ("DELETE  FROM Bilet WHERE biletID = \""+biletID+"\"");
+    if(checkQuery(biletTable)) db.exec(biletTable);
+
+    QString campATable ("DELETE  FROM nrCampA WHERE biletID = \""+biletID+"\"");
+    if(checkQuery(campATable)) db.exec(campATable);
+
+    QString campBTable ("DELETE  FROM nrCampB WHERE biletID = \""+biletID+"\"");
+    if(checkQuery(campBTable)) db.exec(campBTable);
+
+    QString campCTable ("DELETE  FROM nrCampC WHERE biletID = \""+biletID+"\"");
+    if(checkQuery(campCTable)) db.exec(campCTable);
+}
+
 
 BiletRecord VarDb::getBilet( const QString bilet )
 {

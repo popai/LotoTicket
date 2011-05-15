@@ -117,9 +117,11 @@ class BiletMain : public QMainWindow {
                 QWidget *widget;
 
 
-                //THUMB
-                //QLabel *pixThumbnail;
-                //QDockWidget *thumbDock;
+                //tab2 widgets
+                QTextBrowser *text2Brows;
+                QGroupBox *grup2Box;
+                QHBoxLayout *layout2H;
+                QVBoxLayout *layout2V;
 
 		//ACTIONS
 		QAction *newAct;
@@ -181,7 +183,7 @@ class BiletMain : public QMainWindow {
 		QVector<langinfo> languages;
                 //QString filename();
                 //void setFilename( const QString name );
-		void open();
+                //void open();
                 BiletRecord biletToRecord(QString numeBilet);
                 //void setPath(QString);
                 //void setPath(int);

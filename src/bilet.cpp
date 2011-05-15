@@ -308,6 +308,7 @@ QVector<short int*>Bilet::GenVarBilet()
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild A");
         msgBox->exec();
+        delete msgBox;
         return tmpvar;
     }
 
@@ -316,6 +317,7 @@ QVector<short int*>Bilet::GenVarBilet()
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild B");
         msgBox->exec();
+        delete msgBox;
         return tmpvar;
     }
 
@@ -324,6 +326,7 @@ QVector<short int*>Bilet::GenVarBilet()
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild C");
         msgBox->exec();
+        delete msgBox;
         return tmpvar;
     }
 
@@ -339,6 +342,7 @@ QVector<short int*>Bilet::GenVarBilet()
             msgBox = new QMessageBox;
             msgBox->setText("Campul C este completat gresit");
             msgBox->exec();
+            delete msgBox;
             return tmpvar;
             }
         }
@@ -359,6 +363,7 @@ QVector<short int*>Bilet::GenVarBilet()
                 msgBox = new QMessageBox;
                 msgBox->setText("Numerele din campurile B si C trebui sa fie diferite");
                 msgBox->exec();
+                delete msgBox;
                 return tmpvar;
                 }
 
@@ -366,6 +371,7 @@ QVector<short int*>Bilet::GenVarBilet()
                 msgBox = new QMessageBox;
                 msgBox->setText("Campul B este completat gresit");
                 msgBox->exec();
+                delete msgBox;
                 return tmpvar;
                 }
 
@@ -385,6 +391,7 @@ QVector<short int*>Bilet::GenVarBilet()
             msgBox = new QMessageBox;
             msgBox->setText("Numerele din campurile A si B trebui sa fie diferite");
             msgBox->exec();
+            delete msgBox;
             return tmpvar;
         }
 
@@ -393,6 +400,7 @@ QVector<short int*>Bilet::GenVarBilet()
             msgBox = new QMessageBox;
             msgBox->setText("Campul C este completat gresit");
             msgBox->exec();
+            delete msgBox;
             return tmpvar;
         }
     }
@@ -414,6 +422,7 @@ QVector<short int*>Bilet::GenVarBilet()
                  msgBox = new QMessageBox;
                  msgBox->setText("Numerele din campurile A, B si C trebui sa fie diferite");
                  msgBox->exec();
+                 delete msgBox;
                  return tmpvar;
                  }
 
@@ -421,6 +430,7 @@ QVector<short int*>Bilet::GenVarBilet()
                 msgBox = new QMessageBox;
                 msgBox->setText("Campul A este completat gresit");
                 msgBox->exec();
+                delete msgBox;
                 return tmpvar;
                 }
     biletOK = true;

@@ -219,6 +219,14 @@ void BiletMain::setupWidgets() {
 
 //............Tab2..............................
         tab2 = new QWidget();
+        grup2Box = new QGroupBox(tab2);
+        grup2Box->setFixedWidth(191);
+        //grupBox->setGeometry(QRect(10, 10, 191, 311));
+        text2Brows = new QTextBrowser(tab2);
+        layout2H = new QHBoxLayout;
+        layout2H->addWidget(grup2Box);
+        layout2H->addWidget(text2Brows);
+        tab2->setLayout(layout2H);
         /*......
          *widget of tab2
         */
@@ -326,109 +334,21 @@ void BiletMain::createMenu() {
  * Creates the toolbars and inserts the default actions.
  */
 void BiletMain::createToolbar() {
-	fileToolbar = addToolBar( tr("&File") );
+        fileToolbar = addToolBar( tr("&Ticket") );
 	fileToolbar->setObjectName("fileToolbar");
         fileToolbar->setIconSize( QSize(16,16) );
         fileToolbar->addAction( exitAct );
 	fileToolbar->addAction( newAct );
 	fileToolbar->addAction( openAct );
         fileToolbar->addAction( saveAct );
+        fileToolbar->addAction( deleteAct );
 
-	editToolbar = addToolBar( tr("&Edit") );
+        editToolbar = addToolBar( tr("&WinChacke") );
 	editToolbar->setObjectName("editToolbar");
         editToolbar->setIconSize( QSize(16,16) );
 	editToolbar->addAction( findAct );
-	editToolbar->addAction( deleteAct );
-	editToolbar->addAction( addCDAct );
-
-        /*LOCATION BAR
-	locationToolbar = addToolBar( tr("&Location") );
-	locationToolbar->setObjectName("locationToolbar");
-        locationToolbar->setIconSize( QSize(16,16) );
-	locationToolbar->addAction( eraseLocationAct );
-
-	lblPath = new QLabel( tr("Location"), locationToolbar );
-	locationToolbar->addWidget( lblPath );
-
-	txtPath = new QLineEdit(locationToolbar);
-	txtPath->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-	locationToolbar->addWidget( txtPath );
-	connect(txtPath, SIGNAL(returnPressed()), this, SLOT(cmdPathClick()));
-
-	locationToolbar->addAction( setPathAct );
-        */
 }
 
-/**
- * Attempts to open the collection specified by the filename property. If the collection is opened conf.lastkat is updated to remeber this as the last collection opened.
-
-void BiletMain::open() {
-	if (!filename().isEmpty()) {
-
-		if ( !sql->setName(filename()) ) {
-			cdlist->clear();
-			clearDirList();
-			txtPath->setText("");
-			setFilename("");
-			sql->db.close();
-			QMessageBox::critical(this, QCoreApplication::applicationName(), tr("Error during file opening")+"\n"+sql->db.lastError().text());
-		} else {
-			//lastPathNode helps prevent useless dirList refresh
-			lastPathNode = -1;
-			createCdlist();
-			setPath("/");
-			conf.lastkat = filename();
-
-			QSettings settings;
-			settings.setValue("application/lastkat",conf.lastkat);
-			settings.deleteLater();
-		}
-	}
-}
-
-
-**
- * Generates the cd list
- *
-void BiletMain::createCdlist() {
-	cdlist->clear();
-
-	QVector<NodeRecord> nodes = sql->getNodes(-1);
-	QVectorIterator<NodeRecord> i(nodes);
-	while (i.hasNext()) {
-		NodeRecord nr = i.next();
-		QSqlListItem* newCD = new QSqlListItem(cdlist);
-		newCD->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled );
-                newCD->setIcon( QIcon("/images/cdrom_unmount.png") );
-		newCD->id = nr.id;
-		newCD->setText( nr.name );
-	}
-}
-
-**
- * Filename getter
- * @return current filename
- *
-QString BiletMain::filename() {
-	return this->aFilename;
-}
-
-**
- * Filename setter, this sets also the Window Title to include filename
- * @param name the name to set
- *
-void BiletMain::setFilename( const QString name ) {
-	this->aFilename = name;
-	this->setWindowTitle( QCoreApplication::applicationName() );
-	if (!name.isEmpty())
-		this->setWindowTitle( this->windowTitle() + " - \"" + name + "\"" );
-}
-
-
-
-
-
-*/
 
 BiletRecord BiletMain::biletToRecord(QString numeBilet)
 {

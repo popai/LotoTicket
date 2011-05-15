@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Sat May 14 11:54:34 2011
+** Created: Sun May 15 20:51:37 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -58,12 +58,17 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *hboxLayout1;
     QLabel *LotoName;
-    QLineEdit *txtName;
+    QLineEdit *lotoName;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout;
     QLabel *MaxNr;
     QSpacerItem *horizontalSpacer;
-    QSpinBox *spinBox;
+    QSpinBox *extractNr;
+    QWidget *layoutWidget2;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
+    QSpacerItem *horizontalSpacer_2;
+    QSpinBox *maxNr;
     QHBoxLayout *hboxLayout2;
     QPushButton *buttonHelp;
     QSpacerItem *spacerItem3;
@@ -182,10 +187,10 @@ public:
 
         hboxLayout1->addWidget(LotoName);
 
-        txtName = new QLineEdit(layoutWidget);
-        txtName->setObjectName(QString::fromUtf8("txtName"));
+        lotoName = new QLineEdit(layoutWidget);
+        lotoName->setObjectName(QString::fromUtf8("lotoName"));
 
-        hboxLayout1->addWidget(txtName);
+        hboxLayout1->addWidget(lotoName);
 
         layoutWidget1 = new QWidget(tabLoteri);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
@@ -202,10 +207,30 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        spinBox = new QSpinBox(layoutWidget1);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        extractNr = new QSpinBox(layoutWidget1);
+        extractNr->setObjectName(QString::fromUtf8("extractNr"));
 
-        horizontalLayout->addWidget(spinBox);
+        horizontalLayout->addWidget(extractNr);
+
+        layoutWidget2 = new QWidget(tabLoteri);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(10, 80, 361, 22));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(layoutWidget2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        horizontalLayout_2->addWidget(label_2);
+
+        horizontalSpacer_2 = new QSpacerItem(218, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        maxNr = new QSpinBox(layoutWidget2);
+        maxNr->setObjectName(QString::fromUtf8("maxNr"));
+
+        horizontalLayout_2->addWidget(maxNr);
 
         tabWidget->addTab(tabLoteri, QString());
 
@@ -247,8 +272,8 @@ public:
         QWidget::setTabOrder(radStartLast, radStartSpecified);
         QWidget::setTabOrder(radStartSpecified, txtStart);
         QWidget::setTabOrder(txtStart, radStartBlank);
-        QWidget::setTabOrder(radStartBlank, txtName);
-        QWidget::setTabOrder(txtName, buttonHelp);
+        QWidget::setTabOrder(radStartBlank, lotoName);
+        QWidget::setTabOrder(lotoName, buttonHelp);
         QWidget::setTabOrder(buttonHelp, buttonOk);
         QWidget::setTabOrder(buttonOk, buttonCancel);
 
@@ -256,7 +281,7 @@ public:
         QObject::connect(buttonCancel, SIGNAL(clicked()), settingWidget, SLOT(reject()));
         QObject::connect(radStartSpecified, SIGNAL(clicked()), txtStart, SLOT(setFocus()));
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(settingWidget);
@@ -275,6 +300,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tabStart), QApplication::translate("settingWidget", "Start/Close", 0, QApplication::UnicodeUTF8));
         LotoName->setText(QApplication::translate("settingWidget", "Loteri Name", 0, QApplication::UnicodeUTF8));
         MaxNr->setText(QApplication::translate("settingWidget", "Extract Numbers", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("settingWidget", "Max Number", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tabLoteri), QApplication::translate("settingWidget", "Loteri", 0, QApplication::UnicodeUTF8));
         buttonHelp->setText(QApplication::translate("settingWidget", "&Help", 0, QApplication::UnicodeUTF8));
         buttonHelp->setShortcut(QApplication::translate("settingWidget", "F1", 0, QApplication::UnicodeUTF8));

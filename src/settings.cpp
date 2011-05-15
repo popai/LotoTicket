@@ -24,15 +24,9 @@
 #include "BiletLoto.h"
 
 Settings::Settings(QWidget *parent)
-		: QDialog(parent) {
+                : QDialog(parent)
+{
 	setupUi(this);
-
-#ifdef Q_WS_X11
-	lblMount->setText(tr("CD device node (Example: /dec/hdc)"));
-	btnMount->hide();
-#else
-        //connect( btnMount, SIGNAL(clicked()), this, SLOT(browseMount()) );
-#endif
 
         //connect( btnBrowseKat, SIGNAL(clicked()), this, SLOT(browseKat()) );
 	connect( buttonOk, SIGNAL(clicked()), this, SLOT(apply()) );
@@ -49,9 +43,6 @@ Settings::Settings(QWidget *parent)
 			radStartBlank->setChecked(true);
 	}
 
-        txtName->setText( conf->mountpoint );
-	txtStart->setText( conf->startkat );
-
 
 	//Locale
         languages = &((BiletMain*)parent)->languages;
@@ -61,39 +52,23 @@ Settings::Settings(QWidget *parent)
 			cmbLocale->setCurrentIndex(x);
 	}
 }
-/*
-void Settings::browseKat() {
-        QString kat = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), txtStart->text(), "BiletMain collections (*.cdf)" );
-	if (!kat.isEmpty())
-		txtStart->setText( kat );
-}
 
-void Settings::browseMount() {
-	QFileDialog *fd = new QFileDialog(this);
-	fd->setFileMode(QFileDialog::DirectoryOnly);
-	fd->setAcceptMode(QFileDialog::AcceptOpen);
-	fd->setDirectory( txtMount->text() );
-	if (fd->exec())
-		txtMount->setText( fd->selectedFiles()[0] );
-}
-*/
 void Settings::apply() {
-        conf->mountpoint = txtName->text();
+        conf->lotoname = lotoName->text();
+        conf->nrextrase = extractNr->value();
+        conf->nrmax = maxNr->value();
+
+
 	if (radStartLast->isChecked())
 		conf->startup = 0;
 	if (radStartSpecified->isChecked())
 		conf->startup = 1;
 	if (radStartBlank->isChecked())
 		conf->startup = 2;
-	conf->startkat = txtStart->text();
+        //conf->startkat = txtStart->text();
 
 	//Locale
 	conf->locale = languages->at(cmbLocale->currentIndex()).langcode;
-
-	//Thumbnails Tab
-	conf->thenabled = chkThumbnails->isChecked();
-	conf->thperdir = spinNumThumbs->value();
-	conf->thsize = spinSize->value();
 
 	accept();
 }

@@ -23,7 +23,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="title">
@@ -193,7 +193,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="txtName"/>
+         <widget class="QLineEdit" name="lotoName"/>
         </item>
        </layout>
       </widget>
@@ -228,7 +228,42 @@
          </spacer>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="extractNr"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>361</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Max Number</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>218</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="maxNr"/>
         </item>
        </layout>
       </widget>
@@ -311,7 +346,7 @@
   <tabstop>radStartSpecified</tabstop>
   <tabstop>txtStart</tabstop>
   <tabstop>radStartBlank</tabstop>
-  <tabstop>txtName</tabstop>
+  <tabstop>lotoName</tabstop>
   <tabstop>buttonHelp</tabstop>
   <tabstop>buttonOk</tabstop>
   <tabstop>buttonCancel</tabstop>

@@ -41,20 +41,14 @@ BiletMain::BiletMain(QWidget *parent) : QMainWindow( parent ) {
 	QSettings settings;
 
 	settings.beginGroup("application");
-	conf.mountpoint = settings.value("mountpoint","").toString();
 	conf.startup = settings.value("startup",0).toInt();
-	conf.startkat = settings.value("startkat","").toString();
-	conf.lastkat = settings.value("lastkat","").toString();
+        conf.lotoname = settings.value("lotoname","Romania").toString();
 	conf.locale = settings.value("locale",QLocale::system().name()).toString();
 	settings.endGroup();
 
-	settings.beginGroup("thumbnails");
-	conf.thperdir = settings.value("perdir",3).toInt();
-	conf.thenabled = settings.value("enabled",true).toBool();
-	conf.thsize = settings.value("size",120).toInt();
-	settings.endGroup();
 
-	{ langinfo l = {"en_EN","English"};
+
+        { langinfo l = {"en_EN","English"};
 		languages << l; }
 	{ langinfo l = {"fr_FR",QString::fromUtf8("Français")};
 		languages << l; }
@@ -478,16 +472,11 @@ void BiletMain::editSettingsClicked() {
 		QSettings settings;
 
 		settings.beginGroup("application");
-		settings.setValue("mountpoint",conf.mountpoint);
 		settings.setValue("startup",conf.startup);
-		settings.setValue("startkat",conf.startkat);
+                settings.setValue("lotoname",conf.lotoname);
+                settings.setValue("nrextrase",conf.nrextrase);
+                settings.setValue("nrmax",conf.nrmax);
 		settings.setValue("locale",conf.locale);
-		settings.endGroup();
-
-		settings.beginGroup("thumbnails");
-		settings.setValue("perdir",conf.thperdir);
-		settings.setValue("enabled",conf.thenabled);
-		settings.setValue("size",conf.thsize);
 		settings.endGroup();
 
 		settings.deleteLater();

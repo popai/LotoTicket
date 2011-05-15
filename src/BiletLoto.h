@@ -51,9 +51,9 @@ class QTranslator;
 class QDockWidget;
 
 struct configuration {
-	bool thenabled;
-	int startup, thsize, thperdir;
-	QString mountpoint, startkat, lastkat, locale;
+
+        int nrextrase, nrmax, startup;
+        QString lotoname, locale;
 };
 
 struct langinfo {

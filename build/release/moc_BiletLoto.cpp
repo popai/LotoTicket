@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'BiletLoto.h'
 **
-** Created: Sat May 14 11:35:01 2011
+** Created: Sun May 15 20:53:04 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

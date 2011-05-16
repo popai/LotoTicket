@@ -4,6 +4,9 @@
 #include "ui_bilet.h"
 #include <QtGui>
 #include"variante.h"
+#include"vardb.h"
+
+//struct BiletRecord;
 /*
 struct BiletRecord {
         short int codA;
@@ -34,7 +37,8 @@ class Bilet :public QWidget, private Ui::UBilet
 public:
     Bilet(QWidget *parent = 0);
 
-    bool VerificBilet(){return 0;}
+    //bool VerificBilet(){return 0;}
+    void RecToBl(BiletRecord brec);
     QVector<short int*> GenVarBilet();
     bool Diff(QList<QTableWidgetItem *> a, QList<QTableWidgetItem *> b );
     bool Diff(QList<QTableWidgetItem *> a, QList<QTableWidgetItem *> b, QList<QTableWidgetItem *> c );
@@ -56,6 +60,7 @@ public:
     //BiletRecord bRec;
     QString tmp1;
     bool biletOK;
+    //int row,column;
 
 public slots:
     void nrSelectA();

@@ -462,5 +462,71 @@ bool Bilet::Diff(QList<QTableWidgetItem *> a, QList<QTableWidgetItem *> b, QList
     return true;
 }
 
+void Bilet::RecToBl(BiletRecord brec)
+{
+    clearSelection();
+    int x = 0;
+    int y = 0;
+    if(brec.codA > 0){
+        if(brec.codA > 5){
+            //modf(((double)brec.codA/10), &x);
+            x = brec.codA/10;
+            y = brec.codA - x*10;
+            CodA->item(x-1,0)->setSelected(true);
+            if(y == 0) CodA->item(4,1)->setSelected(true);
+            else CodA->item(y-6,1)->setSelected(true);
+        }
+        else CodA->item(brec.codA-1,0)->setSelected(true);
+    }
+    if(brec.codB > 0){
+        if(brec.codB > 5){
+            //modf(((double)brec.codB/10), &x);
+            x = brec.codB/10;
+            y = brec.codB - x*10;
+            CodB->item(x-1,0)->setSelected(true);
+            if(y == 0) CodB->item(4,1)->setSelected(true);
+            else CodB->item(y-6,1)->setSelected(true);
+        }
+        else CodB->item(brec.codB-1,0)->setSelected(true);
+    }
+    if(brec.codC > 0){
+        if(brec.codC > 5){
+            //modf(((double)brec.codC/10), &x);
+            x = brec.codC/10;
+            y = brec.codC - x*10;
+            CodC->item(x-1,0)->setSelected(true);
+            if(y == 0) CodC->item(4,1)->setSelected(true);
+            else CodC->item(y-6,1)->setSelected(true);
+        }
+        else CodC->item(brec.codC-1,0)->setSelected(true);
+    }
+
+
+    int row;
+    int column;
+    if(brec.nrA.count() > 0){
+        for(int i=0; i<brec.nrA.count(); i++){
+            row = (brec.nrA[i]-1)/10;
+            column = (brec.nrA[i]-1) - row*10;
+            CampA->item(row, column)->setSelected(true);
+        }
+    }
+    if(brec.nrB.count() > 0){
+        for(double i=0; i<brec.nrB.count(); i++){
+            row = (brec.nrB[i]-1)/10;
+            column = (brec.nrB[i]-1) - row*10;
+            CampB->item(row, column)->setSelected(true);
+        }
+    }
+    if(brec.nrC.count() > 0){
+        for(double i=0; i<brec.nrC.count(); i++){
+            row = (brec.nrC[i]-1)/10;
+            column = (brec.nrC[i]-1) - row*10;
+            CampC->item(row, column)->setSelected(true);
+        }
+    }
+}
+
+
 
 

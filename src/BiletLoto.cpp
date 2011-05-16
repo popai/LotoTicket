@@ -383,9 +383,9 @@ void BiletMain::setupWidgets() {
  * Creates all actions used by both menubars and toolbars.
  */
 void BiletMain::createActions() {
-        newAct = new QAction(QIcon("images/new.png"), tr("&New"), this);
+        newAct = new QAction(QIcon("images/new.png"), tr("&New Loteri"), this);
 	newAct->setShortcut(tr("Ctrl+N"));
-        newAct->setStatusTip(tr("New ticket"));
+        newAct->setStatusTip(tr("New Loteri"));
         connect(newAct, SIGNAL(triggered()), this, SLOT(fileNewClicked()));
 
         openAct = new QAction(QIcon("images/Open.png"), tr("&Open"), this);
@@ -417,11 +417,6 @@ void BiletMain::createActions() {
 	findAct->setStatusTip(tr("Search in the collection"));
         //connect(findAct, SIGNAL(triggered()), this, SLOT(editFindClicked()));
 
-        addCDAct = new QAction(QIcon("images/cdrom_unmount.png"), tr("&Add CD"), this);
-	addCDAct->setShortcut(tr("Ctrl+Ins"));
-	addCDAct->setStatusTip(tr("Add a CD"));
-        //connect(addCDAct, SIGNAL(triggered()), this, SLOT(katalogAddClicked()));
-
         aboutAct = new QAction(QIcon("images/BiletMain.png"), tr("&About BiletMain"), this);
 	aboutAct->setStatusTip(tr("Show program info"));
         connect(aboutAct, SIGNAL(triggered()), this, SLOT(aboutClicked()));
@@ -450,7 +445,6 @@ void BiletMain::createMenu() {
 	editMenu->addAction( findAct );
 	editMenu->addAction( deleteAct );
 	editMenu->addSeparator();
-	editMenu->addAction( addCDAct );
 	editMenu->addSeparator();
 	editMenu->addAction( settingsAct );
 
@@ -569,7 +563,7 @@ void BiletMain::editDeleteClicked()
             BiletRecord nr = i.next();
             newBilet = new QListWidgetItem;
             newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
-            newBilet->setIcon( QIcon("images/Save1.png") );
+            newBilet->setIcon( QIcon("images/about.png") );
             //newBilet->id = nr.biletID;
             newBilet->setText( nr.biletID+"             "+nr.data);
             del->SetList(newBilet);
@@ -619,7 +613,7 @@ void BiletMain::fileSaveClicked()
             BiletRecord nr = i.next();
             newBilet = new QListWidgetItem;
             newBilet->setFlags(Qt::ItemIsEnabled );
-            newBilet->setIcon( QIcon("images/Save1.png") );
+            newBilet->setIcon( QIcon("images/about.png") );
             newBilet->setText( nr.biletID+"             "+nr.data);
             svb->SetList(newBilet);
     }
@@ -637,11 +631,12 @@ void BiletMain::fileSaveClicked()
     }
 
     //textBrows->append(svb->nameB);
-    if(!svb->nameB.isEmpty())
+    if(!svb->nameB.isEmpty()){
         if(bl->biletOK)
             db.AddBilet(biletToRecord(svb->nameB));
         else
             QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("Ticket not save, try viewVar for more info") );
+    }
 
     delete svb;
 }
@@ -660,18 +655,21 @@ void BiletMain::fileOpenClicked()
             BiletRecord nr = i.next();
             newBilet = new QListWidgetItem;
             newBilet->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled );
-            newBilet->setIcon( QIcon("images/Save1.png") );
+            newBilet->setIcon( QIcon("images/about.png") );
             newBilet->setText( nr.biletID+"             "+nr.data);
+            //newBilet->setStatusTip(nr.data);
             opb->SetList(newBilet);
     }
     opb->exec();
+    BiletRecord opBilet;
     if(!opb->idBilet.isEmpty()){
         aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
-        BiletRecord opBilet;
         opBilet = db.getBilet(aFilename);
     }
-    textBrows->append(aFilename);
-
+    //SetOpenBilet(opBilet);
+    bl->RecToBl(opBilet);
+    //aFilename.sprintf("%d, %d",bl->row, bl->column);
+    //textBrows->append(aFilename);
     //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     delete opb;
 }
@@ -707,4 +705,5 @@ void BiletMain::writeVariante()
     //textBrows->append(*rezultate);
     showProgress( false, 0 );
 }
+
 

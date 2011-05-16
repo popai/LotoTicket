@@ -21,6 +21,7 @@
 #ifndef _BILETLOTO_H_
 #define _BILETLOTO_H_
 
+#include <cmath>
 #include <QMainWindow>
 #include "bilet.h"
 #include "vardb.h"
@@ -194,6 +195,7 @@ class BiletMain : public QMainWindow {
                 //void setFilename( const QString name );
                 //void open();
                 BiletRecord biletToRecord(QString numeBilet);
+                void SetOpenBilet(BiletRecord brecord);
                 //void setPath(QString);
                 //void setPath(int);
 		void showProgress( bool, int max = 100 );

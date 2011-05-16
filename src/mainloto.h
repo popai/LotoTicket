@@ -19,7 +19,7 @@ public:
     Bilet *bl;
 
 private:
-    Ui::LotoM *ui;
+    //Ui::LotoM *ui;
 };
 
 #endif // MAINLOTO_H

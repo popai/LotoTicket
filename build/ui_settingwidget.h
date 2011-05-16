@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Sun May 15 20:51:37 2011
+** Created: Mon May 16 12:01:50 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -281,7 +281,7 @@ public:
         QObject::connect(buttonCancel, SIGNAL(clicked()), settingWidget, SLOT(reject()));
         QObject::connect(radStartSpecified, SIGNAL(clicked()), txtStart, SLOT(setFocus()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(settingWidget);

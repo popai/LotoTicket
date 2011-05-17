@@ -250,7 +250,6 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
                 if(a.value(i).toInt())
                     nr.nrA << a.value(i).toInt();
             }
-            //qSort(nr.nrA.begin(), nr.nrA.end());
         }
         if(!b.isEmpty()){
             nr.data = b.value(19).toString();
@@ -260,7 +259,6 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
                 if(b.value(i).toInt())
                     nr.nrB << b.value(i).toInt();
             }
-            //qSort(nr.nrB.begin(), nr.nrB.end());
         }
         if(!c.isEmpty()){
             nr.biletID = c.value(0).toString();
@@ -270,7 +268,6 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
                 if(c.value(i).toInt())
                     nr.nrC << c.value(i).toInt();
             }
-            //qSort(nr.nrC.begin(), nr.nrC.end());
         }
     return nr;
 }

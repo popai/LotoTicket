@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'BiletLoto.h'
 **
-** Created: Tue May 17 18:26:50 2011
+** Created: Mon May 16 23:58:55 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_BiletMain[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -33,24 +33,23 @@ static const uint qt_meta_data_BiletMain[] = {
  // slots: signature, parameters, type, tag, flags
       11,   10,   10,   10, 0x0a,
       27,   10,   10,   10, 0x0a,
-      38,   10,   10,   10, 0x0a,
-      53,   10,   10,   10, 0x0a,
-      75,   10,   10,   10, 0x0a,
-      93,   10,   10,   10, 0x0a,
-     113,   10,   10,   10, 0x0a,
-     131,   10,   10,   10, 0x0a,
-     149,   10,   10,   10, 0x0a,
-     166,   10,   10,   10, 0x0a,
+      42,   10,   10,   10, 0x0a,
+      64,   10,   10,   10, 0x0a,
+      82,   10,   10,   10, 0x0a,
+     102,   10,   10,   10, 0x0a,
+     120,   10,   10,   10, 0x0a,
+     138,   10,   10,   10, 0x0a,
+     155,   10,   10,   10, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_BiletMain[] = {
-    "BiletMain\0\0writeVariante()\0ChackWin()\0"
-    "aboutClicked()\0editSettingsClicked()\0"
-    "editFindClicked()\0editDeleteClicked()\0"
-    "fileExitClicked()\0fileOpenClicked()\0"
-    "fileNewClicked()\0fileSaveClicked()\0"
+    "BiletMain\0\0writeVariante()\0aboutClicked()\0"
+    "editSettingsClicked()\0editFindClicked()\0"
+    "editDeleteClicked()\0fileExitClicked()\0"
+    "fileOpenClicked()\0fileNewClicked()\0"
+    "fileSaveClicked()\0"
 };
 
 const QMetaObject BiletMain::staticMetaObject = {
@@ -83,18 +82,17 @@ int BiletMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: writeVariante(); break;
-        case 1: ChackWin(); break;
-        case 2: aboutClicked(); break;
-        case 3: editSettingsClicked(); break;
-        case 4: editFindClicked(); break;
-        case 5: editDeleteClicked(); break;
-        case 6: fileExitClicked(); break;
-        case 7: fileOpenClicked(); break;
-        case 8: fileNewClicked(); break;
-        case 9: fileSaveClicked(); break;
+        case 1: aboutClicked(); break;
+        case 2: editSettingsClicked(); break;
+        case 3: editFindClicked(); break;
+        case 4: editDeleteClicked(); break;
+        case 5: fileExitClicked(); break;
+        case 6: fileOpenClicked(); break;
+        case 7: fileNewClicked(); break;
+        case 8: fileSaveClicked(); break;
         default: ;
         }
-        _id -= 10;
+        _id -= 9;
     }
     return _id;
 }

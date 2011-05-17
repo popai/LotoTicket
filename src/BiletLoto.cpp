@@ -264,12 +264,6 @@ void BiletMain::setupWidgets() {
         spinBox_5->setMaximum(49);
         horizontalLayout_2->addWidget(spinBox_5);
 
-        spinBox_6 = new QSpinBox(layoutWidget2);
-        spinBox_6->setAlignment(Qt::AlignCenter);
-        spinBox_6->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_6->setMaximum(49);
-        horizontalLayout_2->addWidget(spinBox_6);
-
         line = new QFrame(grup2Box);
         line->setGeometry(QRect(10, 70, 171, 16));
         line->setFrameShape(QFrame::HLine);
@@ -365,7 +359,6 @@ void BiletMain::setupWidgets() {
         chackButton = new QPushButton(grup2Box);
         chackButton->setText(tr("ChackWin"));
         chackButton->setGeometry(QRect(10, 220, 75, 23));
-        connect(chackButton,SIGNAL(clicked()),this, SLOT(ChackWin()));
 
         text2Brows = new QTextBrowser(tab2);
         layout2H = new QHBoxLayout;
@@ -499,17 +492,15 @@ BiletRecord BiletMain::biletToRecord(QString numeBilet)
         if(bl->nrA.at(i)->text().toInt())
             record.nrA << bl->nrA.at(i)->text().toInt();
     }
-    //qSort(record.nrA.begin(), record.nrA.end());
     for(int i=0; i < bl->nrB.count(); i++){
         if(bl->nrB.at(i)->text().toInt())
             record.nrB << bl->nrB.at(i)->text().toInt();
     }
-    //qSort(record.nrB.begin(), record.nrB.end());
     for(int i=0; i < bl->nrC.count(); i++){
         if(bl->nrC.at(i)->text().toInt())
             record.nrC << bl->nrC.at(i)->text().toInt();
     }
-    //qSort(record.nrC.begin(), record.nrC.end());
+
     return record;
 }
 
@@ -675,8 +666,11 @@ void BiletMain::fileOpenClicked()
         aFilename = opb->idBilet.remove(QRegExp(" (.*)"));
         opBilet = db.getBilet(aFilename);
     }
-    //Open the bilet
+    //SetOpenBilet(opBilet);
     bl->RecToBl(opBilet);
+    //aFilename.sprintf("%d, %d",bl->row, bl->column);
+    //textBrows->append(aFilename);
+    //QString cdf = QFileDialog::getOpenFileName( this, tr("Choose a BiletMain collection"), "", "BiletMain collections (*.cdf)" );
     delete opb;
 }
 
@@ -699,6 +693,7 @@ void BiletMain::writeVariante()
         test<<i+1<<".   ";
         setProgress( i );
         for(int j=0; j<6; j++){
+            //varEdit->setTextColor("blue");
             test<<bl->varbilet.at(i)[j]<<"  ";
         }
         //test<<"\n";
@@ -711,60 +706,4 @@ void BiletMain::writeVariante()
     showProgress( false, 0 );
 }
 
-void BiletMain::ChackWin()
-{
-    QVector<int> nrextrase;
-    nrextrase<<spinBox->value();
-    nrextrase<<spinBox_2->value();
-    nrextrase<<spinBox_3->value();
-    nrextrase<<spinBox_4->value();
-    nrextrase<<spinBox_5->value();
-    nrextrase<<spinBox_6->value();
-    qSort(nrextrase.begin(), nrextrase.end());
 
-    if(bl->varbilet.isEmpty())
-        bl->varbilet = bl->GenVarBilet();
-
-    //text2Brows->setSource(tr("test.html"));
-    text2Brows->clear();
-    bool print = false;
-    bool scris = false;
-    int categorie = 0;
-    int cat1, cat2, cat3, cat4;
-    rezultate = new QString;
-    QTextStream test(rezultate);
-    text2Brows->append(tr("<b><font color=blue>Extract number on activ ticket ar in read</font></b>"));
-    test<<"\n";
-    for(int i=0; i<bl->varbilet.count(); i++){
-        for(int j=0; j<6; j++){
-            for(int k=0; k<6; k++){
-                if(bl->varbilet.at(i)[j] == nrextrase[k]){
-                    print = true;
-                    scris = true;
-                    categorie++;
-                    test<<"<b><font color=red>"<<nrextrase[k]<<"   "<<"</font></b>";
-                }
-            }
-            if(!scris) test<<bl->varbilet.at(i)[j]<<"   ";
-            scris = false;
-        }
-        if(print){
-            text2Brows->append(*rezultate);
-            print = false;
-        }
-        rezultate->clear();
-        switch(categorie){
-            case 6: cat1++;
-                break;
-            case 5: cat2++;
-                break;
-            case 4: cat3++;
-                break;
-            case 3: cat4++;
-                break;
-        default:;
-        }
-        categorie = 0;
-    }
-    delete rezultate;
-}

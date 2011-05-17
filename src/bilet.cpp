@@ -270,7 +270,6 @@ void Bilet::nrSelectA()
     //selectare nr Camp A
     //************************************
     //short int nrstopA = setStop(codA).n;
-    varbilet.clear();
     if(CampA->selectedItems().count() > setStop(codA).n)
         for(int i = setStop(codA).n;  i <= CampA->selectedItems().count();i++)
             CampA->selectedItems().at(i)->setSelected(false);
@@ -281,7 +280,6 @@ void Bilet::nrSelectA()
 void Bilet::nrSelectB()
 {
     //short int nrstopB = setStop(codB).n;
-    varbilet.clear();
     if(CampB->selectedItems().count() > setStop(codB).n)
         for(int i = setStop(codB).n;  i <= CampB->selectedItems().count();i++)
             CampB->selectedItems().at(i)->setSelected(false);
@@ -291,7 +289,6 @@ void Bilet::nrSelectB()
 void Bilet::nrSelectC()
 {
     //short int nrstopC = setStop(codC).n;
-    varbilet.clear();
     if(CampC->selectedItems().count() > setStop(codC).n)
         for(int i = setStop(codC).n;  i <= CampC->selectedItems().count();i++)
             CampC->selectedItems().at(i)->setSelected(false);

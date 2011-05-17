@@ -49,6 +49,7 @@ class QMenu;
 class QAction;
 class QToolBar;
 class QTranslator;
+class QDockWidget;
 
 struct configuration {
 
@@ -68,7 +69,7 @@ struct langinfo {
 class BiletMain : public QMainWindow {
 		Q_OBJECT
 	protected:
-                void closeEvent(QCloseEvent *);
+		void closeEvent(QCloseEvent *);
 
 	private:
 		QString aFilename;
@@ -123,7 +124,7 @@ class BiletMain : public QMainWindow {
                 QHBoxLayout *layout2H;
                 QVBoxLayout *layout2V;
                 QLabel *label_2, *label_3, *label_4, *label_5, *label_6, *label_7, *label_8;
-                QSpinBox *spinBox, *spinBox_1, *spinBox_2, *spinBox_3, *spinBox_4, *spinBox_5, *spinBox_6;
+                QSpinBox *spinBox, *spinBox_1, *spinBox_2, *spinBox_3, *spinBox_4, *spinBox_5;
                 QSpinBox *spinBox_7, *spinBox_8, *spinBox_9, *spinBox_10;
                 QWidget *layoutWidget2, *layoutWidget3;
                 QHBoxLayout *horizontalLayout_2;
@@ -160,12 +161,21 @@ class BiletMain : public QMainWindow {
 		void setupWidgets();
 
 	public slots:
-
+                /*
+                virtual void cdlistClicked(QListWidgetItem *item);
+                virtual void cdItemChanged( QListWidgetItem * );
+                virtual void dirItemChanged( QTableWidgetItem * );
+		virtual void cmdPathClick();
+		virtual void cmdEraseLocationClick();
+		virtual void dirListSelectionChanged();
+		virtual void dirListDoubleClicked(QTableWidgetItem *item);
+		virtual void stopClicked();
+                */
                 virtual void writeVariante();
-                virtual void ChackWin();
 
 		//menu events
 		virtual void aboutClicked();
+                //virtual void katalogAddClicked();
 		virtual void editSettingsClicked();
 		virtual void editFindClicked();
 		virtual void editDeleteClicked();
@@ -174,15 +184,20 @@ class BiletMain : public QMainWindow {
 		virtual void fileNewClicked();
                 virtual void fileSaveClicked();
 
+
 	public:
 
 		configuration conf;
-
+                //CdSql *sql;
 		QTranslator *translator;
 		QVector<langinfo> languages;
-
+                //QString filename();
+                //void setFilename( const QString name );
+                //void open();
                 BiletRecord biletToRecord(QString numeBilet);
-
+                void SetOpenBilet(BiletRecord brecord);
+                //void setPath(QString);
+                //void setPath(int);
 		void showProgress( bool, int max = 100 );
 		void setProgress( int );
 

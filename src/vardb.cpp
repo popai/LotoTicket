@@ -243,29 +243,28 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
 {
         BiletRecord nr;
         if(!a.isEmpty()){
-        //if(!a.isNull(a.value(1).toString())) {
             nr.data = a.value(19).toString();
             nr.biletID = a.value(0).toString();
             nr.codA = a.value(17).toInt();
-            for(int i=1; i<=a.count(); i++){
+            for(int i=1; i<17; i++){
                 if(a.value(i).toInt())
                     nr.nrA << a.value(i).toInt();
             }
         }
-        if(!b.isEmpty()){//if(!b.isNull(b.value(1).toString())){
+        if(!b.isEmpty()){
             nr.data = b.value(19).toString();
             nr.biletID = b.value(0).toString();
             nr.codB = b.value(17).toInt();
-            for(int i=1; i<=b.count(); i++){
+            for(int i=1; i<17; i++){
                 if(b.value(i).toInt())
                     nr.nrB << b.value(i).toInt();
             }
         }
-        if(!c.isEmpty()){//if(!c.isNull(c.value(1).toString())){
+        if(!c.isEmpty()){
             nr.biletID = c.value(0).toString();
             nr.data = c.value(19).toString();
             nr.codC = c.value(17).toInt();
-            for(int i=1; i<=c.count(); i++){
+            for(int i=1; i<17; i++){
                 if(c.value(i).toInt())
                     nr.nrC << c.value(i).toInt();
             }

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'openbilet.h'
 **
-** Created: Thu Apr 28 12:29:28 2011
+** Created: Wed May 18 12:03:50 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!

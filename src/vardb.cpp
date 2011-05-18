@@ -1,14 +1,9 @@
-//
-// C++ Implementation: VarDb
-//
-// Description:
-//
-//
-// Author: Popa Ionel <popai@b.astral.ro>, (C) 2011
-//
-// Copyright: See LICENSE file that comes with this distribution
-//
-//
+/****************************************************************************
+ *   Copyright (C) 2005 by Popa Ionel                                       *
+ *   popai@b.astral.ro                                                      *
+ *
+ ****************************************************************************/
+
 #include "vardb.h"
 #include <QtGui/QApplication>
 #include <QtSql>

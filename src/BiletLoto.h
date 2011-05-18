@@ -1,6 +1,6 @@
 /***************************************************************************
- *   Copyright (C) 2005 by Massimiliano Torromeo                           *
- *   massimiliano.torromeo AT gmail DOT com                                *
+ *   Copyright (C) 2005 by Popa Ionel                                      *
+ *   popai@b.astral.ro                                                     *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *

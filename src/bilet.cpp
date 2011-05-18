@@ -1,3 +1,9 @@
+/****************************************************************************
+ *   Copyright (C) 2005 by Popa Ionel                                       *
+ *   popai@b.astral.ro                                                      *
+ *
+ ****************************************************************************/
+
 #include "bilet.h"
 
 Bilet::Bilet(QWidget *parent)
@@ -302,32 +308,56 @@ QVector<short int*>Bilet::GenVarBilet()
 {
     QVector<short int*> tmpvar(0);
     short int *tmp = 0;
+    QString charnr;
     Variante varA = Variante(nrA,setStop(codA));
     Variante varB = Variante(nrB,setStop(codB));
     Variante varC = Variante(nrC,setStop(codC));
 
-    if((nrA.count() < setStop(codA).k) && nrA.count() > 0)
-    {
+    if((nrA.count() < setStop(codA).k) && nrA.count() > 0){
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild A");
         msgBox->exec();
         delete msgBox;
         return tmpvar;
     }
+    if(setStop(codA).cod != "complet" && nrA.count() < setStop(codA).n){
+        msgBox = new QMessageBox;
+        charnr.sprintf("%d",setStop(codA).n);
+        msgBox->setText("Fild A mast have "+charnr+" numbers");
+        msgBox->exec();
+        delete msgBox;
+        return tmpvar;
+    }
 
-    if(nrB.count() < setStop(codB).k && nrB.count() > 0)
-    {
+    if(nrB.count() < setStop(codB).k && nrB.count() > 0){
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild B");
         msgBox->exec();
         delete msgBox;
         return tmpvar;
     }
+    if(setStop(codB).cod != "complet" && nrB.count() < setStop(codB).n){
+        msgBox = new QMessageBox;
+        charnr.sprintf("%d",setStop(codB).n);
+        msgBox->setText("Fild B mast have "+charnr+" numbers");
+        msgBox->exec();
+        delete msgBox;
+        return tmpvar;
+    }
+
 
     if(nrC.count() < setStop(codC).k && nrC.count() > 0)
     {
         msgBox = new QMessageBox;
         msgBox->setText("Pleas select more number on fild C");
+        msgBox->exec();
+        delete msgBox;
+        return tmpvar;
+    }
+    if(setStop(codC).cod != "complet" && nrC.count() < setStop(codC).n){
+        msgBox = new QMessageBox;
+        charnr.sprintf("%d",setStop(codC).n);
+        msgBox->setText("Fild C mast have "+charnr+" numbers");
         msgBox->exec();
         delete msgBox;
         return tmpvar;

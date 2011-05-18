@@ -1,14 +1,8 @@
-//
-// C++ Interface: vardb
-//
-// Description:
-//
-//
-// Author: Massimiliano Torromeo <massimiliano.torromeo AT gmail DOT com>, (C) 2005
-//
-// Copyright: See COPYING file that comes with this distribution
-//
-//
+/****************************************************************************
+ *   Copyright (C) 2005 by Popa Ionel                                       *
+ *   popai@b.astral.ro                                                      *
+ *
+ ****************************************************************************/
 #ifndef VARDB_H
 #define VARDB_H
 

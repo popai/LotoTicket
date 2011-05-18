@@ -421,8 +421,8 @@ void BiletMain::createActions() {
 
         findAct = new QAction(QIcon("images/!.png"), tr("&Find"), this);
 	findAct->setShortcut(tr("Ctrl+F"));
-	findAct->setStatusTip(tr("Search in the collection"));
-        //connect(findAct, SIGNAL(triggered()), this, SLOT(editFindClicked()));
+        findAct->setStatusTip(tr("Check the Wining"));
+        connect(findAct, SIGNAL(triggered()), this, SLOT(ChackWin()));
 
         aboutAct = new QAction(QIcon("images/BiletMain.png"), tr("&About BiletMain"), this);
 	aboutAct->setStatusTip(tr("Show program info"));
@@ -689,9 +689,7 @@ void BiletMain::writeVariante()
     textBrows->append(tr("<b>Variantele obtinute sunt</b>"));
     rezultate = new QString;
     QTextStream test(rezultate);
-    //qSort(bl->nrA.begin(), bl->nrA.end());
-    //bl->nrA
-    //test.AlignRight;
+
     test<<"\n";
     bl->varbilet = bl->GenVarBilet();
     showProgress( true, bl->varbilet.count()-1 );
@@ -728,26 +726,21 @@ void BiletMain::ChackWin()
     //text2Brows->setSource(tr("test.html"));
     text2Brows->clear();
     bool print = false;
-    bool scris = false;
     int categorie = 0;
-    int cat1, cat2, cat3, cat4;
+    int cat1 = 0, cat2 = 0, cat3 = 0, cat4 = 0;
     rezultate = new QString;
     QTextStream test(rezultate);
-    text2Brows->append(tr("<b><font color=blue>Extract number on activ ticket ar in read</font></b>"));
-    test<<"\n";
+    text2Brows->append(tr("<b><font color=#0000ff>Extract number on activ ticket ar</font></b>"));
+    //test<<"\n";
     for(int i=0; i<bl->varbilet.count(); i++){
         for(int j=0; j<6; j++){
-            for(int k=0; k<6; k++){
-                if(bl->varbilet.at(i)[j] == nrextrase[k]){
+            if(nrextrase.contains(bl->varbilet.at(i)[j])){
                     print = true;
-                    scris = true;
                     categorie++;
-                    test<<"<b><font color=red>"<<nrextrase[k]<<"   "<<"</font></b>";
+                    test<<"<b><font color=red>"<<bl->varbilet.at(i)[j]<<"   "<<"</font></b>";
                 }
-            }
-            if(!scris) test<<bl->varbilet.at(i)[j]<<"   ";
-            scris = false;
-        }
+            else test<<bl->varbilet.at(i)[j]<<"   ";
+          }
         if(print){
             text2Brows->append(*rezultate);
             print = false;
@@ -766,5 +759,16 @@ void BiletMain::ChackWin()
         }
         categorie = 0;
     }
+    test<<"<font color=green> Win on Categori   I: </font><b><font color=#ff9955>"<<cat1<<"</font></b><font color=green> variants </font>";
+    text2Brows->append(*rezultate);
+    rezultate->clear();
+    test<<"<font color=green> Win on Categori  II: </font><b><font color=#ff9955>"<<cat2<<"</font></b><font color=green> variants </font>";
+    text2Brows->append(*rezultate);
+    rezultate->clear();
+    test<<"<font color=green> Win on Categori III: </font><b><font color=#ff9955>"<<cat3<<"</font></b><font color=green> variants </font>";
+    text2Brows->append(*rezultate);
+    rezultate->clear();
+    test<<"<font color=green> Win on Categori  IV: </font><b><font color=#ff9955>"<<cat4<<"</font></b><font color=green> variants </font>";
+    text2Brows->append(*rezultate);
     delete rezultate;
 }

@@ -5,6 +5,7 @@
  ****************************************************************************/
 
 #include "bilet.h"
+#include <ctime>
 
 Bilet::Bilet(QWidget *parent)
     : QWidget(parent)
@@ -16,7 +17,7 @@ Bilet::Bilet(QWidget *parent)
     connect(CodA,SIGNAL(itemSelectionChanged()),this, SLOT(codSelectA()));
     connect(CodB,SIGNAL(itemSelectionChanged()),this, SLOT(codSelectB()));
     connect(CodC,SIGNAL(itemSelectionChanged()),this, SLOT(codSelectC()));
-
+    srand((unsigned)time(0));
     biletOK = false;
     codA = -1;
     codB = -1;
@@ -565,6 +566,46 @@ void Bilet::RecToBl(BiletRecord brec)
     }
 //sfarsit camp C
 }
+
+void Bilet::RandNr(int a)
+{
+
+    //int range_row = 4, row[16];
+    //int range_column = 10, column[16];
+    //int lowest=0, highest=49;
+    //int range=(highest-lowest)+1;
+    int rand_nr[49], row = 0, column = 0;
+    QTableWidget *camp = CampA;
+    if(a==1) camp = CampA;
+    if(a==2) camp = CampB;
+    if(a==3) camp = CampC;
+    for(int i=0; i<6; i++){
+        iar:
+        rand_nr[i] = 1 + int(48*rand()/(RAND_MAX + 1.0));
+        for(int j=0; j<i; j++){
+            if(rand_nr[i]==rand_nr[j])
+                goto iar;//rand_nr[i]=1+int(48*rand()/(RAND_MAX + 1.0));
+        }
+        row = (rand_nr[i]-1)/10;
+        column = (rand_nr[i]-1) - row*10;
+        camp->item(row, column)->setSelected(true);
+    }
+    /*
+    for(int index=0; index<6; index++){
+        row[index] = 0+int(range_row*rand()/(RAND_MAX + 1.0));
+        column[index] = 0+int(range_column*rand()/(RAND_MAX + 1.0));
+        if(index>0 && (row[index]==row[index-1]&& column[index]==column[index-1])){
+            row[index] = 0+int(range_row*rand()/(RAND_MAX + 1.0));
+            column[index] = 0+int(range_column*rand()/(RAND_MAX + 1.0));
+        }
+        if(row[index]==3 && column[index]==9){
+            row[index] = 0+int(range_row*rand()/(RAND_MAX + 1.0));
+            column[index] = 0+int(range_column*rand()/(RAND_MAX + 1.0));
+        }
+        else camp->item(row[index], column[index])->setSelected(true);
+    }*/
+}
+
 
 
 

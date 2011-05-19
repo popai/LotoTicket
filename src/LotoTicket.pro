@@ -40,3 +40,12 @@ FORMS    += mainloto.ui \
     savebilet.ui \
     openbilet.ui \
     delete.ui
+
+TRANSLATIONS += \
+    LottoTicket_ro_RO.ts
+
+RC_FILE = app.rc
+
+RESOURCES += \
+    ../build/images/resurce.qrc
+

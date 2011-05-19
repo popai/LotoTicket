@@ -44,6 +44,7 @@ public:
 
     //bool VerificBilet(){return 0;}
     void RecToBl(BiletRecord brec);
+    void RandNr(int a=0); //random nr generate
     QVector<short int*> GenVarBilet();
     bool Diff(QList<QTableWidgetItem *> a, QList<QTableWidgetItem *> b );
     bool Diff(QList<QTableWidgetItem *> a, QList<QTableWidgetItem *> b, QList<QTableWidgetItem *> c );

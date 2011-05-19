@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>About CdFly</string>
+   <string>About LottoTicket</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../build/images/resurce.qrc">
+    <normaloff>:/icons/about.png</normaloff>:/icons/about.png</iconset>
   </property>
   <layout class="QVBoxLayout">
    <property name="spacing">
@@ -58,7 +62,10 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>:/icons/cdfly.png</pixmap>
+        <pixmap resource="../build/images/resurce.qrc">:/icons/Lotto649.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -69,8 +76,8 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:28pt; font-weight:600;&quot;&gt;Bilet Loto&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;by Popai&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:28pt; font-weight:600;&quot;&gt;Lottery Ticket&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Sans Serif'; font-size:12pt; font-weight:600;&quot;&gt;by Popa Ionel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
       </widget>
      </item>
@@ -133,7 +140,9 @@ p, li { white-space: pre-wrap; }
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../build/images/resurce.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>okButton</sender>

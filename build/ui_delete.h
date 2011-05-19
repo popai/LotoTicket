@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'delete.ui'
 **
-** Created: Thu May 12 19:25:47 2011
+** Created: Thu May 19 14:12:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -32,6 +32,9 @@ public:
         if (Delete->objectName().isEmpty())
             Delete->setObjectName(QString::fromUtf8("Delete"));
         Delete->resize(400, 300);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Delete->setWindowIcon(icon);
         buttonBox = new QDialogButtonBox(Delete);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(30, 240, 341, 32));
@@ -51,7 +54,7 @@ public:
 
     void retranslateUi(QDialog *Delete)
     {
-        Delete->setWindowTitle(QApplication::translate("Delete", "Dialog", 0, QApplication::UnicodeUTF8));
+        Delete->setWindowTitle(QApplication::translate("Delete", "Delete", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

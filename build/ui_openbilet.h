@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'openbilet.ui'
 **
-** Created: Wed Apr 27 21:20:40 2011
+** Created: Thu May 19 14:12:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -32,6 +32,9 @@ public:
         if (UOpenBilet->objectName().isEmpty())
             UOpenBilet->setObjectName(QString::fromUtf8("UOpenBilet"));
         UOpenBilet->resize(400, 300);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/Open.png"), QSize(), QIcon::Normal, QIcon::Off);
+        UOpenBilet->setWindowIcon(icon);
         OpenBox = new QDialogButtonBox(UOpenBilet);
         OpenBox->setObjectName(QString::fromUtf8("OpenBox"));
         OpenBox->setGeometry(QRect(30, 250, 341, 32));
@@ -51,7 +54,7 @@ public:
 
     void retranslateUi(QDialog *UOpenBilet)
     {
-        UOpenBilet->setWindowTitle(QApplication::translate("UOpenBilet", "Dialog", 0, QApplication::UnicodeUTF8));
+        UOpenBilet->setWindowTitle(QApplication::translate("UOpenBilet", "Open", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

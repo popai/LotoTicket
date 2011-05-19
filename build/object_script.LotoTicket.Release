@@ -16,4 +16,5 @@ INPUT(
 ./release\moc_savebilet.o
 ./release\moc_openbilet.o
 ./release\moc_delete.o
+./release\qrc_resurce.o
 );

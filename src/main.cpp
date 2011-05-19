@@ -10,10 +10,14 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
+    QCoreApplication::setOrganizationName("Popai Software");
+    QCoreApplication::setOrganizationDomain("popai.soerce");
+    QCoreApplication::setApplicationName("LottoTicket");
+    //QApplication a(argc, argv);
     //MainLoto w;
     BiletMain w;
     w.show();
 
-    return a.exec();
+    return app.exec();
 }

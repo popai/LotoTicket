@@ -50,6 +50,9 @@ BiletMain::BiletMain(QWidget *parent) : QMainWindow( parent ) {
 
         { langinfo l = {"en_EN","English"};
 		languages << l; }
+        { langinfo l = {"ro_RO",QString::fromUtf8("Romanian")};
+                languages << l; }
+        /*
 	{ langinfo l = {"fr_FR",QString::fromUtf8("Français")};
 		languages << l; }
 	{ langinfo l = {"he_IL",QString::fromUtf8("עברית")};
@@ -62,19 +65,19 @@ BiletMain::BiletMain(QWidget *parent) : QMainWindow( parent ) {
 		languages << l; }
 	{ langinfo l = {"tr_TR",QString::fromUtf8("Türkçe")};
 		languages << l; }
-
+        */
 	//Localisations
 	translator = new QTranslator();
-        QString translatorFile = QApplication::applicationDirPath() + "/BiletMain_"+conf.locale;
+        QString translatorFile = QApplication::applicationDirPath() + "/translate/LottoTicket_"+conf.locale;
 	if (QFile::exists(translatorFile+".qm"))
 		translator->load( translatorFile );
 #ifndef Q_WS_WIN
 	else
-                translator->load( "/usr/share/BiletMain/BiletMain_"+conf.locale );
+                translator->load( "/usr/share/LottoTicket/LottoTicket_"+conf.locale );
 #endif
 	QApplication::installTranslator(translator);
 
-	setupWidgets();
+        setupWidgets();
 
         resize( settings.value("window/size", QSize(650, 450)).toSize() );
 	restoreState( settings.value("window/state").toByteArray() );
@@ -125,10 +128,10 @@ BiletMain::~BiletMain() {
 void BiletMain::closeEvent(QCloseEvent *) {
         //if (formFind!=NULL)
         //	formFind->stopSearch();
-        //sql->db.close();
+        //db.db.close();
 
 	QSettings settings;
-	settings.setValue("window/size",size());
+        settings.setValue("window/size",size());
         //settings.setValue("tableview/name", dirList->horizontalHeader()->sectionSize(0));
 	settings.setValue("window/state", saveState());
 	settings.deleteLater();
@@ -144,7 +147,7 @@ void BiletMain::setupWidgets() {
 
 	btnStop = new QToolButton( statusBar() );
 	btnStop->setVisible( false );
-        btnStop->setIcon( QIcon("images/Clear.png") );
+        btnStop->setIcon( QIcon("images/Save1.png") );
 	statusBar()->addPermanentWidget( btnStop );
         //connect( btnStop, SIGNAL( clicked() ), this, SLOT( stopClicked() ) );
 
@@ -164,9 +167,10 @@ void BiletMain::setupWidgets() {
         viewVar = new QPushButton(grupBox);
         viewVar->setText(tr("ViewVar"));
         viewVar->setGeometry(QRect(10, 55, 75, 23));
+        connect(viewVar, SIGNAL(clicked()), this, SLOT(writeVariante()));
 
         QicPicBox = new QGroupBox(grupBox);
-        QicPicBox->setTitle(tr("QickPick"));
+        QicPicBox->setTitle(tr("QuickPick"));
         QicPicBox->setGeometry(QRect(10, 85, 91, 131));
         widget = new QWidget(QicPicBox);
         widget->setGeometry(QRect(11, 21, 77, 94));
@@ -191,6 +195,7 @@ void BiletMain::setupWidgets() {
         pickButon->setText(tr("Pick"));
         pickButon->setMaximumSize(50, 20);
         layoutV->addWidget(pickButon);
+        connect(pickButon,SIGNAL(clicked()),this, SLOT(QuickPick()));
 
 
         label = new QLabel(grupBox);
@@ -204,8 +209,6 @@ void BiletMain::setupWidgets() {
         spacerH = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
         textBrows = new QTextBrowser(tab1);
         textBrows->setFixedWidth(200);
-        //connect(viewVar,SIGNAL(clicked()),textBrows, SLOT(append(QString)));
-        connect(viewVar, SIGNAL(clicked()), this, SLOT(writeVariante()));
         connect(clearTiket, SIGNAL(clicked()), textBrows, SLOT(clear()));
         layoutH = new QHBoxLayout;
         layoutH->addWidget(grupBox);
@@ -214,7 +217,7 @@ void BiletMain::setupWidgets() {
         layoutH->addWidget(textBrows);
         tab1->setLayout(layoutH);
 
-        tabWidget->addTab(tab1, tr("Tiket"));
+        tabWidget->addTab(tab1, tr("Ticket"));
 //............End Tab1 ........................
 
 //............Tab2..............................
@@ -382,7 +385,7 @@ void BiletMain::setupWidgets() {
 	createMenu();
 
         setWindowTitle(tr("LottoTickets"));
-        setWindowIcon(QIcon("images/about.png"));
+        setWindowIcon(QIcon("images/app.ico"));
 }
 
 
@@ -405,61 +408,70 @@ void BiletMain::createActions() {
         saveAct->setStatusTip(tr("Save ticket"));
         connect(saveAct, SIGNAL(triggered()), this, SLOT(fileSaveClicked()));
 
-        exitAct = new QAction(QIcon("images/Exit.png"), tr("&Quit"), this);
+        exitAct = new QAction(QIcon("images/Exit1.png"), tr("&Quit"), this);
 	exitAct->setShortcut(tr("Ctrl+Q"));
 	exitAct->setStatusTip(tr("Close application"));
 	connect(exitAct, SIGNAL(triggered()), this, SLOT(fileExitClicked()));
 
-        settingsAct = new QAction(QIcon("images/configure.png"), tr("&Settings"), this);
+        settingsAct = new QAction(QIcon("images/settings.png"), tr("&Settings"), this);
 	settingsAct->setStatusTip(tr("Edit settings"));
         connect(settingsAct, SIGNAL(triggered()), this, SLOT(editSettingsClicked()));
 
         deleteAct = new QAction(QIcon("images/delete.png"), tr("&Delete"), this);
-	deleteAct->setShortcut(tr("Del"));
+        deleteAct->setShortcut(tr("Ctrl+D"));
 	deleteAct->setStatusTip(tr("Delete"));
         connect(deleteAct, SIGNAL(triggered()), this, SLOT(editDeleteClicked()));
 
-        findAct = new QAction(QIcon("images/!.png"), tr("&Find"), this);
-	findAct->setShortcut(tr("Ctrl+F"));
+        clearAct = new QAction(QIcon("images/Clear.png"), tr("&Clear"), this);
+        clearAct->setShortcut(tr("Ctrl+C"));
+        clearAct->setStatusTip(tr("Clear selected numbers on ticket"));
+        connect(clearAct, SIGNAL(triggered()), bl, SLOT(clearSelection()));
+        connect(clearAct, SIGNAL(triggered()), textBrows, SLOT(clear()));
+
+        viewAct = new QAction(QIcon("images/view.png"), tr("&View Variants"), this);
+        viewAct->setShortcut(tr("Ctrl+V"));
+        viewAct->setStatusTip(tr("write the variants for selectet numbers"));
+        connect(viewAct, SIGNAL(triggered()), this, SLOT(writeVariante()));
+
+
+        findAct = new QAction(QIcon("images/!.png"), tr("&ChackWin"), this);
+        findAct->setShortcut(tr("Ctrl+W"));
         findAct->setStatusTip(tr("Check the Wining"));
         connect(findAct, SIGNAL(triggered()), this, SLOT(ChackWin()));
 
-        aboutAct = new QAction(QIcon("images/BiletMain.png"), tr("&About BiletMain"), this);
+        aboutAct = new QAction(QIcon("images/info.png"), tr("&About LottoTicket"), this);
 	aboutAct->setStatusTip(tr("Show program info"));
         connect(aboutAct, SIGNAL(triggered()), this, SLOT(aboutClicked()));
-
-        //eraseLocationAct = new QAction(QIcon("/images/locationbar_erase.png"), tr("&Erase Location"), this);
-        //eraseLocationAct->setStatusTip(tr("Erase location"));
-        //connect(eraseLocationAct, SIGNAL(triggered()), this, SLOT(cmdEraseLocationClick()));
-
-        setPathAct = new QAction(QIcon("/images/key_enter.png"), tr("&Go To"), this);
-	setPathAct->setStatusTip(tr("Go to specified location"));
-        //connect(setPathAct, SIGNAL(triggered()), this, SLOT(cmdPathClick()));
 }
 
 /**
  * Creates the menuBar for the application.
  */
 void BiletMain::createMenu() {
-	fileMenu = menuBar()->addMenu(tr("&File"));
-	fileMenu->addAction( newAct );
+        fileMenu = menuBar()->addMenu(tr("&Ticket"));
+        //fileMenu->addAction( newAct );
 	fileMenu->addAction( openAct );
         fileMenu->addAction( saveAct );
+        fileMenu->addSeparator();
+        fileMenu->addAction( deleteAct );
 	fileMenu->addSeparator();
 	fileMenu->addAction( exitAct );
 
-	editMenu = menuBar()->addMenu(tr("&Edit"));
-	editMenu->addAction( findAct );
-	editMenu->addAction( deleteAct );
-	editMenu->addSeparator();
-	editMenu->addSeparator();
-	editMenu->addAction( settingsAct );
+        viewMenu = menuBar()->addMenu(tr("&Variants"));
+        viewMenu->addAction( clearAct );
+        viewMenu->addAction( viewAct );
+        viewMenu->addSeparator();
+        viewMenu->addAction( findAct );
+        //viewMenu->addSeparator();
 
-	viewMenu = menuBar()->addMenu(tr("&View"));
+
+        viewMenu = menuBar()->addMenu(tr("&Option"));
 	viewMenu->addAction( fileToolbar->toggleViewAction() );
 	viewMenu->addAction( editToolbar->toggleViewAction() );
-        //viewMenu->addAction( locationToolbar->toggleViewAction() );
+
 	viewMenu->addSeparator();
+        viewMenu->addAction( settingsAct );
+        //viewMenu->addAction( locationToolbar->toggleViewAction() );
         //viewMenu->addAction( cdDock->toggleViewAction() );
         //viewMenu->addAction( thumbDock->toggleViewAction() );
 
@@ -475,7 +487,7 @@ void BiletMain::createToolbar() {
 	fileToolbar->setObjectName("fileToolbar");
         fileToolbar->setIconSize( QSize(16,16) );
         fileToolbar->addAction( exitAct );
-	fileToolbar->addAction( newAct );
+        //fileToolbar->addAction( newAct );
 	fileToolbar->addAction( openAct );
         fileToolbar->addAction( saveAct );
         fileToolbar->addAction( deleteAct );
@@ -483,6 +495,8 @@ void BiletMain::createToolbar() {
         editToolbar = addToolBar( tr("&WinChacke") );
 	editToolbar->setObjectName("editToolbar");
         editToolbar->setIconSize( QSize(16,16) );
+        editToolbar->addAction( clearAct );
+        editToolbar->addAction( viewAct );
 	editToolbar->addAction( findAct );
 }
 
@@ -684,9 +698,10 @@ void BiletMain::fileOpenClicked()
 
 void BiletMain::writeVariante()
 {
-    textBrows->clear();
+    tabWidget->setCurrentWidget(tab1);
 
-    textBrows->append(tr("<b>Variantele obtinute sunt</b>"));
+    textBrows->clear();
+    textBrows->append(tr("<b>Obtained variants are</b>"));
     rezultate = new QString;
     QTextStream test(rezultate);
 
@@ -719,7 +734,7 @@ void BiletMain::ChackWin()
     nrextrase<<spinBox_5->value();
     nrextrase<<spinBox_6->value();
     qSort(nrextrase.begin(), nrextrase.end());
-
+    tabWidget->setCurrentWidget(tab2);
     if(bl->varbilet.isEmpty())
         bl->varbilet = bl->GenVarBilet();
 
@@ -771,4 +786,17 @@ void BiletMain::ChackWin()
     test<<"<font color=green> Win on Categori  IV: </font><b><font color=#ff9955>"<<cat4<<"</font></b><font color=green> variants </font>";
     text2Brows->append(*rezultate);
     delete rezultate;
+}
+
+void BiletMain::QuickPick()
+{
+    if(checkBoxA->isChecked()){
+        bl->RandNr(1);
+    }
+    if(checkBoxB->isChecked()){
+        bl->RandNr(2);
+    }
+    if(checkBoxC->isChecked()){
+        bl->RandNr(3);
+    }
 }

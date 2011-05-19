@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Delete</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../build/images/resurce.qrc">
+    <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
@@ -40,7 +44,9 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../build/images/resurce.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

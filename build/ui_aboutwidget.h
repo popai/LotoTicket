@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutwidget.ui'
 **
-** Created: Wed Apr 27 21:20:40 2011
+** Created: Thu May 19 14:12:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -44,6 +44,9 @@ public:
         aboutWidget->resize(360, 330);
         aboutWidget->setMinimumSize(QSize(360, 330));
         aboutWidget->setMaximumSize(QSize(360, 330));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/about.png"), QSize(), QIcon::Normal, QIcon::Off);
+        aboutWidget->setWindowIcon(icon);
         vboxLayout = new QVBoxLayout(aboutWidget);
 #ifndef Q_OS_MAC
         vboxLayout->setSpacing(6);
@@ -62,7 +65,8 @@ public:
         pixIcon->setObjectName(QString::fromUtf8("pixIcon"));
         pixIcon->setMinimumSize(QSize(70, 70));
         pixIcon->setMaximumSize(QSize(70, 70));
-        pixIcon->setPixmap(QPixmap(QString::fromUtf8(":/icons/cdfly.png")));
+        pixIcon->setPixmap(QPixmap(QString::fromUtf8(":/icons/Lotto649.png")));
+        pixIcon->setScaledContents(true);
 
         hboxLayout->addWidget(pixIcon);
 
@@ -116,14 +120,14 @@ public:
 
     void retranslateUi(QDialog *aboutWidget)
     {
-        aboutWidget->setWindowTitle(QApplication::translate("aboutWidget", "About CdFly", 0, QApplication::UnicodeUTF8));
+        aboutWidget->setWindowTitle(QApplication::translate("aboutWidget", "About LottoTicket", 0, QApplication::UnicodeUTF8));
         pixIcon->setText(QString());
         lblTitle->setText(QApplication::translate("aboutWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:28pt; font-weight:600;\">Bilet Loto</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:12pt; font-weight:600;\">by Popai</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:28pt; font-weight:600;\">Lottery Ticket</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:12pt; font-weight:600;\">by Popa Ionel</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         textEdit->setHtml(QApplication::translate("aboutWidget", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

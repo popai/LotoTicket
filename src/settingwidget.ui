@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Settings</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
+  </property>
   <layout class="QVBoxLayout">
    <property name="spacing">
     <number>6</number>
@@ -22,12 +26,19 @@
    </property>
    <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
+      <attribute name="icon">
+       <iconset>
+        <normaloff>:/icons/flag.png</normaloff>:/icons/flag.png</iconset>
+      </attribute>
       <attribute name="title">
-       <string>General</string>
+       <string>Language</string>
       </attribute>
       <layout class="QVBoxLayout">
        <property name="spacing">
@@ -62,6 +73,9 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tabStart">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <attribute name="title">
        <string>Start/Close</string>
       </attribute>
@@ -166,8 +180,11 @@
       </layout>
      </widget>
      <widget class="QWidget" name="tabLoteri">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <attribute name="title">
-       <string>Loteri</string>
+       <string>Lottery</string>
       </attribute>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">

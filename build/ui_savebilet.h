@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'savebilet.ui'
 **
-** Created: Thu May 12 13:32:13 2011
+** Created: Thu May 19 14:12:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -34,6 +34,9 @@ public:
         if (USaveBilet->objectName().isEmpty())
             USaveBilet->setObjectName(QString::fromUtf8("USaveBilet"));
         USaveBilet->resize(391, 298);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/add_48.png"), QSize(), QIcon::Normal, QIcon::Off);
+        USaveBilet->setWindowIcon(icon);
         buttonBox = new QDialogButtonBox(USaveBilet);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setGeometry(QRect(30, 250, 341, 32));
@@ -55,7 +58,7 @@ public:
 
     void retranslateUi(QDialog *USaveBilet)
     {
-        USaveBilet->setWindowTitle(QApplication::translate("USaveBilet", "Dialog", 0, QApplication::UnicodeUTF8));
+        USaveBilet->setWindowTitle(QApplication::translate("USaveBilet", "Save", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -29,15 +29,7 @@
 #include "openbilet.h"
 #include "delete.h"
 
-/*
-class Find;
-class CdSql;
-class QSqlListItem;
-class QSqlTableItem;
-class QApplication;
-class QTableWidgetItem;
-class QListWidgetItem;
-*/
+
 class QListWidget;
 class QTableWidget;
 class QTabWidget;
@@ -72,12 +64,6 @@ class BiletMain : public QMainWindow {
 
 	private:
 		QString aFilename;
-                int lastPathNode;
-                //Find *formFind;
-
-		//LOCATION BAR
-		QLineEdit *txtPath;
-		QLabel *lblPath;
 
 		//PROGRESS STATUS
 		QProgressBar *progress;
@@ -139,16 +125,15 @@ class BiletMain : public QMainWindow {
 		QAction *exitAct;
 
 		QAction *settingsAct;
-		QAction *renameAct;
 		QAction *findAct;
 		QAction *deleteAct;
-
-		QAction *addCDAct;
+                QAction *viewAct;
+                QAction *clearAct;
 
 		QAction *aboutAct;
 
-		QAction *eraseLocationAct;
-		QAction *setPathAct;
+                //QAction *eraseLocationAct;
+                //QAction *setPathAct;
 
 		void createCdlist();
 		void createActions();
@@ -163,6 +148,7 @@ class BiletMain : public QMainWindow {
 
                 virtual void writeVariante();
                 virtual void ChackWin();
+                virtual void QuickPick();
 
 		//menu events
 		virtual void aboutClicked();

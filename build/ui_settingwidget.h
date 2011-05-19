@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Mon May 16 12:01:50 2011
+** Created: Thu May 19 16:15:45 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -80,6 +80,9 @@ public:
         if (settingWidget->objectName().isEmpty())
             settingWidget->setObjectName(QString::fromUtf8("settingWidget"));
         settingWidget->resize(416, 287);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/icons/settings.png"), QSize(), QIcon::Normal, QIcon::Off);
+        settingWidget->setWindowIcon(icon);
         vboxLayout = new QVBoxLayout(settingWidget);
 #ifndef Q_OS_MAC
         vboxLayout->setSpacing(6);
@@ -88,6 +91,7 @@ public:
         vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
         tabWidget = new QTabWidget(settingWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setEnabled(true);
         tabGeneral = new QWidget();
         tabGeneral->setObjectName(QString::fromUtf8("tabGeneral"));
         vboxLayout1 = new QVBoxLayout(tabGeneral);
@@ -110,9 +114,12 @@ public:
 
         vboxLayout1->addItem(spacerItem);
 
-        tabWidget->addTab(tabGeneral, QString());
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/icons/flag.png"), QSize(), QIcon::Normal, QIcon::Off);
+        tabWidget->addTab(tabGeneral, icon1, QString());
         tabStart = new QWidget();
         tabStart->setObjectName(QString::fromUtf8("tabStart"));
+        tabStart->setEnabled(false);
         vboxLayout2 = new QVBoxLayout(tabStart);
 #ifndef Q_OS_MAC
         vboxLayout2->setSpacing(6);
@@ -174,6 +181,7 @@ public:
         tabWidget->addTab(tabStart, QString());
         tabLoteri = new QWidget();
         tabLoteri->setObjectName(QString::fromUtf8("tabLoteri"));
+        tabLoteri->setEnabled(false);
         layoutWidget = new QWidget(tabLoteri);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 10, 361, 22));
@@ -281,7 +289,7 @@ public:
         QObject::connect(buttonCancel, SIGNAL(clicked()), settingWidget, SLOT(reject()));
         QObject::connect(radStartSpecified, SIGNAL(clicked()), txtStart, SLOT(setFocus()));
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(settingWidget);
@@ -291,7 +299,7 @@ public:
     {
         settingWidget->setWindowTitle(QApplication::translate("settingWidget", "Settings", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("settingWidget", "Language <i>(requires restart to take effect)</i>", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tabGeneral), QApplication::translate("settingWidget", "General", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tabGeneral), QApplication::translate("settingWidget", "Language", 0, QApplication::UnicodeUTF8));
         grpOnStart->setTitle(QApplication::translate("settingWidget", "On startup...", 0, QApplication::UnicodeUTF8));
         radStartLast->setText(QApplication::translate("settingWidget", "Open last used tiket", 0, QApplication::UnicodeUTF8));
         radStartSpecified->setText(QApplication::translate("settingWidget", "Open this tiket:", 0, QApplication::UnicodeUTF8));
@@ -301,7 +309,7 @@ public:
         LotoName->setText(QApplication::translate("settingWidget", "Loteri Name", 0, QApplication::UnicodeUTF8));
         MaxNr->setText(QApplication::translate("settingWidget", "Extract Numbers", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("settingWidget", "Max Number", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tabLoteri), QApplication::translate("settingWidget", "Loteri", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tabLoteri), QApplication::translate("settingWidget", "Lottery", 0, QApplication::UnicodeUTF8));
         buttonHelp->setText(QApplication::translate("settingWidget", "&Help", 0, QApplication::UnicodeUTF8));
         buttonHelp->setShortcut(QApplication::translate("settingWidget", "F1", 0, QApplication::UnicodeUTF8));
         buttonOk->setText(QApplication::translate("settingWidget", "&OK", 0, QApplication::UnicodeUTF8));

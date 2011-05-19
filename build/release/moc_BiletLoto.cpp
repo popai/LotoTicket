@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'BiletLoto.h'
 **
-** Created: Wed May 18 12:03:29 2011
+** Created: Thu May 19 14:13:40 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_BiletMain[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,23 +34,25 @@ static const uint qt_meta_data_BiletMain[] = {
       11,   10,   10,   10, 0x0a,
       27,   10,   10,   10, 0x0a,
       38,   10,   10,   10, 0x0a,
-      53,   10,   10,   10, 0x0a,
-      75,   10,   10,   10, 0x0a,
-      93,   10,   10,   10, 0x0a,
-     113,   10,   10,   10, 0x0a,
-     131,   10,   10,   10, 0x0a,
-     149,   10,   10,   10, 0x0a,
-     166,   10,   10,   10, 0x0a,
+      50,   10,   10,   10, 0x0a,
+      65,   10,   10,   10, 0x0a,
+      87,   10,   10,   10, 0x0a,
+     105,   10,   10,   10, 0x0a,
+     125,   10,   10,   10, 0x0a,
+     143,   10,   10,   10, 0x0a,
+     161,   10,   10,   10, 0x0a,
+     178,   10,   10,   10, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_BiletMain[] = {
     "BiletMain\0\0writeVariante()\0ChackWin()\0"
-    "aboutClicked()\0editSettingsClicked()\0"
-    "editFindClicked()\0editDeleteClicked()\0"
-    "fileExitClicked()\0fileOpenClicked()\0"
-    "fileNewClicked()\0fileSaveClicked()\0"
+    "QuickPick()\0aboutClicked()\0"
+    "editSettingsClicked()\0editFindClicked()\0"
+    "editDeleteClicked()\0fileExitClicked()\0"
+    "fileOpenClicked()\0fileNewClicked()\0"
+    "fileSaveClicked()\0"
 };
 
 const QMetaObject BiletMain::staticMetaObject = {
@@ -84,17 +86,18 @@ int BiletMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         switch (_id) {
         case 0: writeVariante(); break;
         case 1: ChackWin(); break;
-        case 2: aboutClicked(); break;
-        case 3: editSettingsClicked(); break;
-        case 4: editFindClicked(); break;
-        case 5: editDeleteClicked(); break;
-        case 6: fileExitClicked(); break;
-        case 7: fileOpenClicked(); break;
-        case 8: fileNewClicked(); break;
-        case 9: fileSaveClicked(); break;
+        case 2: QuickPick(); break;
+        case 3: aboutClicked(); break;
+        case 4: editSettingsClicked(); break;
+        case 5: editFindClicked(); break;
+        case 6: editDeleteClicked(); break;
+        case 7: fileExitClicked(); break;
+        case 8: fileOpenClicked(); break;
+        case 9: fileNewClicked(); break;
+        case 10: fileSaveClicked(); break;
         default: ;
         }
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

@@ -164,6 +164,7 @@ void BiletMain::setupWidgets() {
         clearTiket->setText(tr("ClearTiket"));
         clearTiket->setGeometry(QRect(10, 15, 75, 23));
         connect(clearTiket,SIGNAL(clicked()),bl, SLOT(clearSelection()));
+
         viewVar = new QPushButton(grupBox);
         viewVar->setText(tr("ViewVar"));
         viewVar->setGeometry(QRect(10, 55, 75, 23));
@@ -371,6 +372,7 @@ void BiletMain::setupWidgets() {
         connect(chackButton,SIGNAL(clicked()),this, SLOT(ChackWin()));
 
         text2Brows = new QTextBrowser(tab2);
+        connect(clearTiket, SIGNAL(clicked()), text2Brows, SLOT(clear()));
         layout2H = new QHBoxLayout;
         layout2H->addWidget(grup2Box);
         layout2H->addWidget(text2Brows);
@@ -384,7 +386,7 @@ void BiletMain::setupWidgets() {
 	createToolbar();
 	createMenu();
 
-        setWindowTitle(tr("LottoTickets"));
+        setWindowTitle(tr("LottoTicket"));
         setWindowIcon(QIcon("images/app.ico"));
 }
 
@@ -427,6 +429,7 @@ void BiletMain::createActions() {
         clearAct->setStatusTip(tr("Clear selected numbers on ticket"));
         connect(clearAct, SIGNAL(triggered()), bl, SLOT(clearSelection()));
         connect(clearAct, SIGNAL(triggered()), textBrows, SLOT(clear()));
+        connect(clearAct, SIGNAL(triggered()), text2Brows, SLOT(clear()));
 
         viewAct = new QAction(QIcon("images/view.png"), tr("&View Variants"), this);
         viewAct->setShortcut(tr("Ctrl+V"));
@@ -774,16 +777,16 @@ void BiletMain::ChackWin()
         }
         categorie = 0;
     }
-    test<<"<font color=green> Win on Categori   I: </font><b><font color=#ff9955>"<<cat1<<"</font></b><font color=green> variants </font>";
+    test<<tr("<font color=green> Win on Categori   I: </font><b><font color=#ff4411>")<<cat1<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
     rezultate->clear();
-    test<<"<font color=green> Win on Categori  II: </font><b><font color=#ff9955>"<<cat2<<"</font></b><font color=green> variants </font>";
+    test<<tr("<font color=green> Win on Categori  II: </font><b><font color=#ff4411>")<<cat2<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
     rezultate->clear();
-    test<<"<font color=green> Win on Categori III: </font><b><font color=#ff9955>"<<cat3<<"</font></b><font color=green> variants </font>";
+    test<<tr("<font color=green> Win on Categori III: </font><b><font color=#ff4411>")<<cat3<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
     rezultate->clear();
-    test<<"<font color=green> Win on Categori  IV: </font><b><font color=#ff9955>"<<cat4<<"</font></b><font color=green> variants </font>";
+    test<<tr("<font color=green> Win on Categori  IV: </font><b><font color=#ff4411>")<<cat4<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
     delete rezultate;
 }

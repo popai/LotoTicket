@@ -206,15 +206,23 @@ void Bilet::codSelectA()
 {
 
     QString tmp;
+
     if(CodA->selectedItems().count() > 2)
         for(int i = 2;  i <= CodA->selectedItems().count();i++)
             CodA->selectedItems().at(i)->setSelected(false);
-
     Acod = CodA->selectedItems();
-    qSort(Acod.begin(), Acod.end());
 
+    QList<int> list;
+    list[0]=-1;
     for(int i = 0;  i < Acod.count(); i++)
-        tmp.append(Acod.at(i)->text());
+        list<<Acod.at(i)->text().toInt();
+
+    if(Acod.count()==2){
+        qSort(list.begin(), list.end());
+        if(list[0] == 0)tmp.sprintf("%d%d",list[1],list[0]);
+        else tmp.sprintf("%d%d",list[0],list[1]);
+    }
+    else tmp.sprintf("%d",list[0]);
     codA = tmp.toInt();
 
     //dor pt verificare.......
@@ -229,12 +237,19 @@ void Bilet::codSelectB()
     if(CodB->selectedItems().count() > 2)
         for(int i = 2;  i <= CodB->selectedItems().count();i++)
             CodB->selectedItems().at(i)->setSelected(false);
-
     Bcod = CodB->selectedItems();
-    qSort(Bcod.begin(), Bcod.end());
 
+    QList<int> list;
+    list[0]=-1;
     for(int i = 0;  i < Bcod.count(); i++)
-        tmp.append(Bcod.at(i)->text());
+        list<<Bcod.at(i)->text().toInt();
+
+    if(Bcod.count()==2){
+        qSort(list.begin(), list.end());
+        if(list[0] == 0)tmp.sprintf("%d%d",list[1],list[0]);
+        else tmp.sprintf("%d%d",list[0],list[1]);
+    }
+    else tmp.sprintf("%d",list[0]);
     codB = tmp.toInt();
     //dor pt verificare.......
     //tmp1 = QString::number(codB);
@@ -246,23 +261,29 @@ void Bilet::codSelectB()
 void Bilet::codSelectC()
 {
     QString tmp;
+    tmp.clear();
     if(CodC->selectedItems().count() > 2)
         for(int i = 2;  i <= CodC->selectedItems().count();i++)
             CodC->selectedItems().at(i)->setSelected(false);
-
     Ccod = CodC->selectedItems();
-    qSort(Ccod.begin(), Ccod.end());
 
+    QList<int> list;
+    list[0]=-1;
     for(int i = 0;  i < Ccod.count(); i++)
-        tmp.append(Ccod.at(i)->text());
+        list<<Ccod.at(i)->text().toInt();
+
+    if(Ccod.count()==2){
+        qSort(list.begin(), list.end());
+        if(list[0] == 0)tmp.sprintf("%d%d",list[1],list[0]);
+        else tmp.sprintf("%d%d",list[0],list[1]);
+    }
+    else tmp.sprintf("%d",list[0]);
     codC = tmp.toInt();
 
     //dor pt verificare.......
     //tmp1 = QString::number(codC);
     //tmp1 = QString::number(setStop(codC).n);
     //.........
-    tmp.clear();
-
 }
 
 

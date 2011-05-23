@@ -721,10 +721,14 @@ void BiletMain::writeVariante()
         textBrows->append(*rezultate);
         rezultate->clear();
     }
-    delete rezultate;
-    //rezultate->append(bilet->tmp1);
+    //rezultate->append(bl->tmp1);
+    //test<<"codA:"<<bl->codA<<" "<<"codB:"<<bl->codB<<" "<<"codC:"<<bl->codC<<endl;
+    //test<<"cod selectat:"<<bl->tmp1<<endl;
+    //test<<"Nr de variante:"<<bl->varbilet.count();
+
     //textBrows->append(*rezultate);
     showProgress( false, 0 );
+    delete rezultate;
 }
 
 void BiletMain::ChackWin()

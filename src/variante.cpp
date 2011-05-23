@@ -56,8 +56,12 @@ QVector<short int*>Variante::Combinari(int pas)
 
 void Variante::ReadFile(QString fileName)
 {
-    QFile ifile(fileName);
-    if(!ifile.open(QIODevice::ReadOnly | QIODevice::Text)){
+    //QFile ifile(fileName);
+    QString ifile("vred/");
+    ifile += fileName;
+    ZZIP_FILE* fp = zzip_open (ifile.toStdString().c_str(), O_RDONLY|O_BINARY);
+    if (! fp){
+    //if(!ifile.open(QIODevice::ReadOnly | QIODevice::Text)){
         //msgVBox = new QMessageBox;
         msgVBox->setText("Eroare citire fisier variante reduse");
         msgVBox->exec();
@@ -70,8 +74,9 @@ void Variante::ReadFile(QString fileName)
         //int nrv=0;
         //variante[0]=new short int[6];
 
-        while(!ifile.atEnd()){
-            ifile.getChar(c);
+        while (0 < (n = zzip_read(fp, c, 1))){
+        //while(!ifile.atEnd()){
+            //ifile.getChar(c);
             if(*c == '\t') i++;
             if(*c == '\n'){
                 i=0;
@@ -89,7 +94,8 @@ void Variante::ReadFile(QString fileName)
         }
 
     }
-    ifile.close();
+    //ifile.close();
+    zzip_close(fp);
 }
 
 void Variante::SetVar()

@@ -7,6 +7,8 @@
 QT       += core gui
 QT       +=sql
 
+win32:LIBS += D:\Dev\QT\mingw\lib\libzziplib.a
+
 
 TARGET = LotoTicket
 TEMPLATE = app

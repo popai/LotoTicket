@@ -11,6 +11,7 @@
 #include<QtAlgorithms>
 #include<QMessageBox>
 #include <QFile>
+#include <zzip/zzip.h>
 
 struct dateV
 {

@@ -44,7 +44,8 @@ class QTranslator;
 
 struct configuration {
 
-        int nrextrase, nrmax, startup;
+        int nrextrase, nrmax;
+        int price_V;
         QString lotoname, locale;
 };
 
@@ -92,8 +93,9 @@ class BiletMain : public QMainWindow {
                 QPushButton *clearTiket;
                 QPushButton *viewVar;
                 QGroupBox *QicPicBox;
-                QLabel *label;
+                QLabel *label, *label_t1;
                 QDateEdit *dateEdit;
+                QSpinBox *spinBox_t1;
                 QHBoxLayout *layoutH;
                 QVBoxLayout *layoutV;
                 QCheckBox *checkBoxA;

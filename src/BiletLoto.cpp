@@ -41,7 +41,7 @@ BiletMain::BiletMain(QWidget *parent) : QMainWindow( parent ) {
 	QSettings settings;
 
 	settings.beginGroup("application");
-	conf.startup = settings.value("startup",0).toInt();
+        conf.price_V = settings.value("priceV",0).toInt();
         conf.lotoname = settings.value("lotoname","Romania").toString();
 	conf.locale = settings.value("locale",QLocale::system().name()).toString();
 	settings.endGroup();
@@ -94,18 +94,7 @@ BiletMain::BiletMain(QWidget *parent) : QMainWindow( parent ) {
 
 
 
-	} else {
-
-		switch( conf.startup ) {
-			case 0:
-
-			break;
-			case 1:
-
-			break;
-		}
-
-	}
+        }
 }
 
 /**
@@ -206,6 +195,21 @@ void BiletMain::setupWidgets() {
         dateEdit->setCalendarPopup(true);
         dateEdit->setDate(QDate::currentDate());
         dateEdit->setGeometry(QRect(5, 240, 110, 22));
+
+        /*
+        label_t1 = new QLabel(grupBox);
+        label_t1->setText(tr("price for one variant"));
+        label_t1->setGeometry(QRect(5, 270, 111, 16));
+
+        spinBox_t1= new QSpinBox(grupBox);
+        spinBox_t1->setEnabled(true);
+        spinBox_t1->setGeometry(QRect(5, 290, 110, 22));
+        //spinBox_t1->setMinimumSize(QSize(101, 20));
+        spinBox_t1->setInputMethodHints(Qt::ImhDigitsOnly);
+        spinBox_t1->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        spinBox_t1->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        spinBox_t1->setMaximum(999999999);
+        */
 
         spacerH = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
         textBrows = new QTextBrowser(tab1);
@@ -548,7 +552,7 @@ void BiletMain::editSettingsClicked() {
 		QSettings settings;
 
 		settings.beginGroup("application");
-		settings.setValue("startup",conf.startup);
+                settings.setValue("priceV",conf.price_V);
                 settings.setValue("lotoname",conf.lotoname);
                 settings.setValue("nrextrase",conf.nrextrase);
                 settings.setValue("nrmax",conf.nrmax);
@@ -725,8 +729,9 @@ void BiletMain::writeVariante()
     //test<<"codA:"<<bl->codA<<" "<<"codB:"<<bl->codB<<" "<<"codC:"<<bl->codC<<endl;
     //test<<"cod selectat:"<<bl->tmp1<<endl;
     //test<<"Nr de variante:"<<bl->varbilet.count();
-
-    //textBrows->append(*rezultate);
+    test<<tr("<b><font color=#0000ff>Cost</font><font color=#ff0000> : ")<<conf.price_V*bl->varbilet.count()<<tr(" Euro</font><b>");
+    textBrows->append(*rezultate);
+    rezultate->clear();
     showProgress( false, 0 );
     delete rezultate;
 }

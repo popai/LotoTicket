@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Thu May 19 16:15:45 2011
+** Created: Mon May 23 19:50:43 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,17 +16,14 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QComboBox>
 #include <QtGui/QDialog>
-#include <QtGui/QGroupBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
-#include <QtGui/QRadioButton>
 #include <QtGui/QSpacerItem>
 #include <QtGui/QSpinBox>
 #include <QtGui/QTabWidget>
-#include <QtGui/QToolButton>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
 
@@ -43,20 +40,11 @@ public:
     QComboBox *cmbLocale;
     QSpacerItem *spacerItem;
     QWidget *tabStart;
-    QVBoxLayout *vboxLayout2;
-    QGroupBox *grpOnStart;
-    QVBoxLayout *vboxLayout3;
-    QRadioButton *radStartLast;
-    QRadioButton *radStartSpecified;
-    QHBoxLayout *hboxLayout;
-    QSpacerItem *spacerItem1;
-    QLineEdit *txtStart;
-    QToolButton *btnBrowseKat;
-    QRadioButton *radStartBlank;
-    QSpacerItem *spacerItem2;
+    QLabel *labelPrice;
+    QSpinBox *priceV;
     QWidget *tabLoteri;
     QWidget *layoutWidget;
-    QHBoxLayout *hboxLayout1;
+    QHBoxLayout *hboxLayout;
     QLabel *LotoName;
     QLineEdit *lotoName;
     QWidget *layoutWidget1;
@@ -69,9 +57,9 @@ public:
     QLabel *label_2;
     QSpacerItem *horizontalSpacer_2;
     QSpinBox *maxNr;
-    QHBoxLayout *hboxLayout2;
+    QHBoxLayout *hboxLayout1;
     QPushButton *buttonHelp;
-    QSpacerItem *spacerItem3;
+    QSpacerItem *spacerItem1;
     QPushButton *buttonOk;
     QPushButton *buttonCancel;
 
@@ -119,65 +107,15 @@ public:
         tabWidget->addTab(tabGeneral, icon1, QString());
         tabStart = new QWidget();
         tabStart->setObjectName(QString::fromUtf8("tabStart"));
-        tabStart->setEnabled(false);
-        vboxLayout2 = new QVBoxLayout(tabStart);
-#ifndef Q_OS_MAC
-        vboxLayout2->setSpacing(6);
-#endif
-        vboxLayout2->setContentsMargins(8, 8, 8, 8);
-        vboxLayout2->setObjectName(QString::fromUtf8("vboxLayout2"));
-        grpOnStart = new QGroupBox(tabStart);
-        grpOnStart->setObjectName(QString::fromUtf8("grpOnStart"));
-        vboxLayout3 = new QVBoxLayout(grpOnStart);
-#ifndef Q_OS_MAC
-        vboxLayout3->setSpacing(6);
-#endif
-        vboxLayout3->setContentsMargins(8, 8, 8, 8);
-        vboxLayout3->setObjectName(QString::fromUtf8("vboxLayout3"));
-        radStartLast = new QRadioButton(grpOnStart);
-        radStartLast->setObjectName(QString::fromUtf8("radStartLast"));
-
-        vboxLayout3->addWidget(radStartLast);
-
-        radStartSpecified = new QRadioButton(grpOnStart);
-        radStartSpecified->setObjectName(QString::fromUtf8("radStartSpecified"));
-
-        vboxLayout3->addWidget(radStartSpecified);
-
-        hboxLayout = new QHBoxLayout();
-        hboxLayout->setSpacing(1);
-        hboxLayout->setContentsMargins(0, 0, 0, 0);
-        hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
-        spacerItem1 = new QSpacerItem(20, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        hboxLayout->addItem(spacerItem1);
-
-        txtStart = new QLineEdit(grpOnStart);
-        txtStart->setObjectName(QString::fromUtf8("txtStart"));
-
-        hboxLayout->addWidget(txtStart);
-
-        btnBrowseKat = new QToolButton(grpOnStart);
-        btnBrowseKat->setObjectName(QString::fromUtf8("btnBrowseKat"));
-
-        hboxLayout->addWidget(btnBrowseKat);
-
-
-        vboxLayout3->addLayout(hboxLayout);
-
-        radStartBlank = new QRadioButton(grpOnStart);
-        radStartBlank->setObjectName(QString::fromUtf8("radStartBlank"));
-        radStartBlank->setChecked(true);
-
-        vboxLayout3->addWidget(radStartBlank);
-
-
-        vboxLayout2->addWidget(grpOnStart);
-
-        spacerItem2 = new QSpacerItem(21, 41, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        vboxLayout2->addItem(spacerItem2);
-
+        tabStart->setEnabled(true);
+        labelPrice = new QLabel(tabStart);
+        labelPrice->setObjectName(QString::fromUtf8("labelPrice"));
+        labelPrice->setGeometry(QRect(10, 30, 141, 16));
+        priceV = new QSpinBox(tabStart);
+        priceV->setObjectName(QString::fromUtf8("priceV"));
+        priceV->setGeometry(QRect(160, 30, 121, 22));
+        priceV->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        priceV->setMaximum(999999999);
         tabWidget->addTab(tabStart, QString());
         tabLoteri = new QWidget();
         tabLoteri->setObjectName(QString::fromUtf8("tabLoteri"));
@@ -185,20 +123,20 @@ public:
         layoutWidget = new QWidget(tabLoteri);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(10, 10, 361, 22));
-        hboxLayout1 = new QHBoxLayout(layoutWidget);
-        hboxLayout1->setSpacing(1);
-        hboxLayout1->setContentsMargins(0, 0, 0, 0);
-        hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
-        hboxLayout1->setContentsMargins(0, 0, 0, 0);
+        hboxLayout = new QHBoxLayout(layoutWidget);
+        hboxLayout->setSpacing(1);
+        hboxLayout->setContentsMargins(0, 0, 0, 0);
+        hboxLayout->setObjectName(QString::fromUtf8("hboxLayout"));
+        hboxLayout->setContentsMargins(0, 0, 0, 0);
         LotoName = new QLabel(layoutWidget);
         LotoName->setObjectName(QString::fromUtf8("LotoName"));
 
-        hboxLayout1->addWidget(LotoName);
+        hboxLayout->addWidget(LotoName);
 
         lotoName = new QLineEdit(layoutWidget);
         lotoName->setObjectName(QString::fromUtf8("lotoName"));
 
-        hboxLayout1->addWidget(lotoName);
+        hboxLayout->addWidget(lotoName);
 
         layoutWidget1 = new QWidget(tabLoteri);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
@@ -244,52 +182,47 @@ public:
 
         vboxLayout->addWidget(tabWidget);
 
-        hboxLayout2 = new QHBoxLayout();
+        hboxLayout1 = new QHBoxLayout();
 #ifndef Q_OS_MAC
-        hboxLayout2->setSpacing(6);
+        hboxLayout1->setSpacing(6);
 #endif
-        hboxLayout2->setContentsMargins(0, 0, 0, 0);
-        hboxLayout2->setObjectName(QString::fromUtf8("hboxLayout2"));
+        hboxLayout1->setContentsMargins(0, 0, 0, 0);
+        hboxLayout1->setObjectName(QString::fromUtf8("hboxLayout1"));
         buttonHelp = new QPushButton(settingWidget);
         buttonHelp->setObjectName(QString::fromUtf8("buttonHelp"));
         buttonHelp->setAutoDefault(true);
 
-        hboxLayout2->addWidget(buttonHelp);
+        hboxLayout1->addWidget(buttonHelp);
 
-        spacerItem3 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        spacerItem1 = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        hboxLayout2->addItem(spacerItem3);
+        hboxLayout1->addItem(spacerItem1);
 
         buttonOk = new QPushButton(settingWidget);
         buttonOk->setObjectName(QString::fromUtf8("buttonOk"));
         buttonOk->setAutoDefault(true);
         buttonOk->setDefault(true);
 
-        hboxLayout2->addWidget(buttonOk);
+        hboxLayout1->addWidget(buttonOk);
 
         buttonCancel = new QPushButton(settingWidget);
         buttonCancel->setObjectName(QString::fromUtf8("buttonCancel"));
         buttonCancel->setAutoDefault(true);
 
-        hboxLayout2->addWidget(buttonCancel);
+        hboxLayout1->addWidget(buttonCancel);
 
 
-        vboxLayout->addLayout(hboxLayout2);
+        vboxLayout->addLayout(hboxLayout1);
 
-        QWidget::setTabOrder(tabWidget, radStartLast);
-        QWidget::setTabOrder(radStartLast, radStartSpecified);
-        QWidget::setTabOrder(radStartSpecified, txtStart);
-        QWidget::setTabOrder(txtStart, radStartBlank);
-        QWidget::setTabOrder(radStartBlank, lotoName);
+        QWidget::setTabOrder(tabWidget, lotoName);
         QWidget::setTabOrder(lotoName, buttonHelp);
         QWidget::setTabOrder(buttonHelp, buttonOk);
         QWidget::setTabOrder(buttonOk, buttonCancel);
 
         retranslateUi(settingWidget);
         QObject::connect(buttonCancel, SIGNAL(clicked()), settingWidget, SLOT(reject()));
-        QObject::connect(radStartSpecified, SIGNAL(clicked()), txtStart, SLOT(setFocus()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(settingWidget);
@@ -300,12 +233,8 @@ public:
         settingWidget->setWindowTitle(QApplication::translate("settingWidget", "Settings", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("settingWidget", "Language <i>(requires restart to take effect)</i>", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tabGeneral), QApplication::translate("settingWidget", "Language", 0, QApplication::UnicodeUTF8));
-        grpOnStart->setTitle(QApplication::translate("settingWidget", "On startup...", 0, QApplication::UnicodeUTF8));
-        radStartLast->setText(QApplication::translate("settingWidget", "Open last used tiket", 0, QApplication::UnicodeUTF8));
-        radStartSpecified->setText(QApplication::translate("settingWidget", "Open this tiket:", 0, QApplication::UnicodeUTF8));
-        btnBrowseKat->setText(QApplication::translate("settingWidget", "...", 0, QApplication::UnicodeUTF8));
-        radStartBlank->setText(QApplication::translate("settingWidget", "Do not open a tiket", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(tabStart), QApplication::translate("settingWidget", "Start/Close", 0, QApplication::UnicodeUTF8));
+        labelPrice->setText(QApplication::translate("settingWidget", "Price for one variant", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(tabStart), QApplication::translate("settingWidget", "Price Seting", 0, QApplication::UnicodeUTF8));
         LotoName->setText(QApplication::translate("settingWidget", "Loteri Name", 0, QApplication::UnicodeUTF8));
         MaxNr->setText(QApplication::translate("settingWidget", "Extract Numbers", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("settingWidget", "Max Number", 0, QApplication::UnicodeUTF8));

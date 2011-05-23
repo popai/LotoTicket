@@ -14,7 +14,7 @@
    <string>Settings</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../build/images/resurce.qrc">
     <normaloff>:/icons/settings.png</normaloff>:/icons/settings.png</iconset>
   </property>
   <layout class="QVBoxLayout">
@@ -30,11 +30,11 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tabGeneral">
       <attribute name="icon">
-       <iconset>
+       <iconset resource="../build/images/resurce.qrc">
         <normaloff>:/icons/flag.png</normaloff>:/icons/flag.png</iconset>
       </attribute>
       <attribute name="title">
@@ -74,110 +74,40 @@
      </widget>
      <widget class="QWidget" name="tabStart">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <attribute name="title">
-       <string>Start/Close</string>
+       <string>Price Seting</string>
       </attribute>
-      <layout class="QVBoxLayout">
-       <property name="spacing">
-        <number>6</number>
+      <widget class="QLabel" name="labelPrice">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>141</width>
+         <height>16</height>
+        </rect>
        </property>
-       <property name="margin">
-        <number>8</number>
+       <property name="text">
+        <string>Price for one variant</string>
        </property>
-       <item>
-        <widget class="QGroupBox" name="grpOnStart">
-         <property name="title">
-          <string>On startup...</string>
-         </property>
-         <layout class="QVBoxLayout">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <property name="margin">
-           <number>8</number>
-          </property>
-          <item>
-           <widget class="QRadioButton" name="radStartLast">
-            <property name="text">
-             <string>Open last used tiket</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radStartSpecified">
-            <property name="text">
-             <string>Open this tiket:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QHBoxLayout">
-            <property name="spacing">
-             <number>1</number>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <item>
-             <spacer>
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>20</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLineEdit" name="txtStart"/>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnBrowseKat">
-              <property name="text">
-               <string>...</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="radStartBlank">
-            <property name="text">
-             <string>Do not open a tiket</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <spacer>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>21</width>
-           <height>41</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
+      </widget>
+      <widget class="QSpinBox" name="priceV">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>30</y>
+         <width>121</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="maximum">
+        <number>999999999</number>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="tabLoteri">
       <property name="enabled">
@@ -359,16 +289,14 @@
  </widget>
  <tabstops>
   <tabstop>tabWidget</tabstop>
-  <tabstop>radStartLast</tabstop>
-  <tabstop>radStartSpecified</tabstop>
-  <tabstop>txtStart</tabstop>
-  <tabstop>radStartBlank</tabstop>
   <tabstop>lotoName</tabstop>
   <tabstop>buttonHelp</tabstop>
   <tabstop>buttonOk</tabstop>
   <tabstop>buttonCancel</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../build/images/resurce.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonCancel</sender>
@@ -383,22 +311,6 @@
     <hint type="destinationlabel">
      <x>172</x>
      <y>279</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radStartSpecified</sender>
-   <signal>clicked()</signal>
-   <receiver>txtStart</receiver>
-   <slot>setFocus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>131</x>
-     <y>115</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>148</x>
-     <y>138</y>
     </hint>
    </hints>
   </connection>

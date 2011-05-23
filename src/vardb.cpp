@@ -14,7 +14,7 @@ VarDb::VarDb(  ) {
     db = QSqlDatabase::addDatabase("QSQLITE");
     if (!db.isValid())
         QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("The database is not valid!") );
-    db.setDatabaseName( "nou.sql" );
+    db.setDatabaseName( "loto_ro.sql" );
     //pt verificare
     if(!db.open())
         QMessageBox::critical( 0, QCoreApplication::applicationName(), QCoreApplication::tr("The database is not open!") );

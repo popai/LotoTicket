@@ -26,7 +26,6 @@ Bilet::Bilet(QWidget *parent)
 
 void Bilet::clearSelection()
 {
-
     CampA->clearSelection();
     CodA->clearSelection();
 
@@ -35,6 +34,7 @@ void Bilet::clearSelection()
 
     CampC->clearSelection();
     CodC->clearSelection();
+    emit SelectionChanged();
 }
 
 dateV Bilet::setStop(int cod)
@@ -229,6 +229,7 @@ void Bilet::codSelectA()
     //tmp1 = QString::number(codA);
     //tmp1 = QString::number(setStop(codA).n);
     //.........
+    emit SelectionChanged();
     tmp.clear();
 }
 void Bilet::codSelectB()
@@ -255,6 +256,7 @@ void Bilet::codSelectB()
     //tmp1 = QString::number(codB);
     //tmp1 = QString::number(setStop(codB).n);
     //.........
+    emit SelectionChanged();
     tmp.clear();
 }
 
@@ -284,6 +286,8 @@ void Bilet::codSelectC()
     //tmp1 = QString::number(codC);
     //tmp1 = QString::number(setStop(codC).n);
     //.........
+    emit SelectionChanged();
+    tmp.clear();
 }
 
 
@@ -303,6 +307,7 @@ void Bilet::nrSelectA()
         for(int i = setStop(codA).n;  i <= CampA->selectedItems().count();i++)
             CampA->selectedItems().at(i)->setSelected(false);
     nrA = CampA->selectedItems();
+    emit SelectionChanged();
     //qSort(nrA.begin(), nrA.end());
     //end camp A ************
 }
@@ -315,6 +320,7 @@ void Bilet::nrSelectB()
             CampB->selectedItems().at(i)->setSelected(false);
 
     nrB = CampB->selectedItems();
+    emit SelectionChanged();
 }
 void Bilet::nrSelectC()
 {
@@ -324,6 +330,7 @@ void Bilet::nrSelectC()
         for(int i = setStop(codC).n;  i <= CampC->selectedItems().count();i++)
             CampC->selectedItems().at(i)->setSelected(false);
     nrC = CampC->selectedItems();
+    emit SelectionChanged();
 }
 
 QVector<short int*>Bilet::GenVarBilet()

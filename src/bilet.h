@@ -81,6 +81,9 @@ public slots:
     void clearSelection();
     void setCod();
 
+    signals:
+    void SelectionChanged();
+
 private:
 
     //int setStop(int cod);

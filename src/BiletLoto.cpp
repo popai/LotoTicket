@@ -214,7 +214,8 @@ void BiletMain::setupWidgets() {
         spacerH = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
         textBrows = new QTextBrowser(tab1);
         textBrows->setFixedWidth(200);
-        connect(clearTiket, SIGNAL(clicked()), textBrows, SLOT(clear()));
+        //connect(clearTiket, SIGNAL(clicked()), textBrows, SLOT(clear()));
+        connect(bl, SIGNAL(SelectionChanged()), textBrows, SLOT(clear()));
         layoutH = new QHBoxLayout;
         layoutH->addWidget(grupBox);
         layoutH->addItem(spacerH);
@@ -246,36 +247,42 @@ void BiletMain::setupWidgets() {
         spinBox->setAlignment(Qt::AlignCenter);
         spinBox->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox->setMaximum(49);
+        connect(spinBox, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox);
 
         spinBox_2 = new QSpinBox(layoutWidget2);
         spinBox_2->setAlignment(Qt::AlignCenter);
         spinBox_2->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_2->setMaximum(49);
+        connect(spinBox_2, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox_2);
 
         spinBox_3 = new QSpinBox(layoutWidget2);
         spinBox_3->setAlignment(Qt::AlignCenter);
         spinBox_3->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_3->setMaximum(49);
+        connect(spinBox_3, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox_3);
 
         spinBox_4 = new QSpinBox(layoutWidget2);
         spinBox_4->setAlignment(Qt::AlignCenter);
         spinBox_4->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_4->setMaximum(49);
+        connect(spinBox_4, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox_4);
 
         spinBox_5 = new QSpinBox(layoutWidget2);
         spinBox_5->setAlignment(Qt::AlignCenter);
         spinBox_5->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_5->setMaximum(49);
+        connect(spinBox_5, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox_5);
 
         spinBox_6 = new QSpinBox(layoutWidget2);
         spinBox_6->setAlignment(Qt::AlignCenter);
         spinBox_6->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_6->setMaximum(49);
+        connect(spinBox_6, SIGNAL(valueChanged(int)), this, SLOT(ChackWin()));
         horizontalLayout_2->addWidget(spinBox_6);
 
         line = new QFrame(grup2Box);
@@ -376,7 +383,7 @@ void BiletMain::setupWidgets() {
         connect(chackButton,SIGNAL(clicked()),this, SLOT(ChackWin()));
 
         text2Brows = new QTextBrowser(tab2);
-        connect(clearTiket, SIGNAL(clicked()), text2Brows, SLOT(clear()));
+        connect(bl, SIGNAL(SelectionChanged()), text2Brows, SLOT(clear()));
         layout2H = new QHBoxLayout;
         layout2H->addWidget(grup2Box);
         layout2H->addWidget(text2Brows);

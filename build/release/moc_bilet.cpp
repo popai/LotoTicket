@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'bilet.h'
 **
-** Created: Mon May 23 14:00:23 2011
+** Created: Tue May 24 12:26:25 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,30 +23,34 @@ static const uint qt_meta_data_Bilet[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+       7,    6,    6,    6, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-       7,    6,    6,    6, 0x0a,
-      19,    6,    6,    6, 0x0a,
-      31,    6,    6,    6, 0x0a,
-      43,    6,    6,    6, 0x0a,
-      56,    6,    6,    6, 0x0a,
-      69,    6,    6,    6, 0x0a,
-      82,    6,    6,    6, 0x0a,
-      99,    6,    6,    6, 0x0a,
+      26,    6,    6,    6, 0x0a,
+      38,    6,    6,    6, 0x0a,
+      50,    6,    6,    6, 0x0a,
+      62,    6,    6,    6, 0x0a,
+      75,    6,    6,    6, 0x0a,
+      88,    6,    6,    6, 0x0a,
+     101,    6,    6,    6, 0x0a,
+     118,    6,    6,    6, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_Bilet[] = {
-    "Bilet\0\0nrSelectA()\0nrSelectB()\0"
-    "nrSelectC()\0codSelectA()\0codSelectB()\0"
-    "codSelectC()\0clearSelection()\0setCod()\0"
+    "Bilet\0\0SelectionChanged()\0nrSelectA()\0"
+    "nrSelectB()\0nrSelectC()\0codSelectA()\0"
+    "codSelectB()\0codSelectC()\0clearSelection()\0"
+    "setCod()\0"
 };
 
 const QMetaObject Bilet::staticMetaObject = {
@@ -78,18 +82,25 @@ int Bilet::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: nrSelectA(); break;
-        case 1: nrSelectB(); break;
-        case 2: nrSelectC(); break;
-        case 3: codSelectA(); break;
-        case 4: codSelectB(); break;
-        case 5: codSelectC(); break;
-        case 6: clearSelection(); break;
-        case 7: setCod(); break;
+        case 0: SelectionChanged(); break;
+        case 1: nrSelectA(); break;
+        case 2: nrSelectB(); break;
+        case 3: nrSelectC(); break;
+        case 4: codSelectA(); break;
+        case 5: codSelectB(); break;
+        case 6: codSelectC(); break;
+        case 7: clearSelection(); break;
+        case 8: setCod(); break;
         default: ;
         }
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
+}
+
+// SIGNAL 0
+void Bilet::SelectionChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
 }
 QT_END_MOC_NAMESPACE

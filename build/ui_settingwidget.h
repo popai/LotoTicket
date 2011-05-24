@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Mon May 23 19:50:43 2011
+** Created: Tue May 24 10:56:08 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -42,6 +42,7 @@ public:
     QWidget *tabStart;
     QLabel *labelPrice;
     QSpinBox *priceV;
+    QLabel *Moneda;
     QWidget *tabLoteri;
     QWidget *layoutWidget;
     QHBoxLayout *hboxLayout;
@@ -116,6 +117,9 @@ public:
         priceV->setGeometry(QRect(160, 30, 121, 22));
         priceV->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         priceV->setMaximum(999999999);
+        Moneda = new QLabel(tabStart);
+        Moneda->setObjectName(QString::fromUtf8("Moneda"));
+        Moneda->setGeometry(QRect(290, 30, 61, 21));
         tabWidget->addTab(tabStart, QString());
         tabLoteri = new QWidget();
         tabLoteri->setObjectName(QString::fromUtf8("tabLoteri"));
@@ -234,6 +238,7 @@ public:
         label->setText(QApplication::translate("settingWidget", "Language <i>(requires restart to take effect)</i>", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tabGeneral), QApplication::translate("settingWidget", "Language", 0, QApplication::UnicodeUTF8));
         labelPrice->setText(QApplication::translate("settingWidget", "Price for one variant", 0, QApplication::UnicodeUTF8));
+        Moneda->setText(QApplication::translate("settingWidget", "EURO/$", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(tabStart), QApplication::translate("settingWidget", "Price Seting", 0, QApplication::UnicodeUTF8));
         LotoName->setText(QApplication::translate("settingWidget", "Loteri Name", 0, QApplication::UnicodeUTF8));
         MaxNr->setText(QApplication::translate("settingWidget", "Extract Numbers", 0, QApplication::UnicodeUTF8));

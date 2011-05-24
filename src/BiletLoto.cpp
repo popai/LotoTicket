@@ -311,13 +311,13 @@ void BiletMain::setupWidgets() {
 
         gridLayout->addWidget(label_5, 0, 0, 1, 1);
 
-        spinBox_7 = new QSpinBox(layoutWidget3);
+        spinBox_7 = new QDoubleSpinBox(layoutWidget3);
         spinBox_7->setEnabled(true);
         spinBox_7->setMinimumSize(QSize(101, 20));
         spinBox_7->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_7->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_7->setMaximum(999999999);
+        spinBox_7->setMaximum(999999999.999);
 
         gridLayout->addWidget(spinBox_7, 0, 1, 1, 1);
 
@@ -326,13 +326,13 @@ void BiletMain::setupWidgets() {
 
         gridLayout->addWidget(label_6, 1, 0, 1, 1);
 
-        spinBox_8 = new QSpinBox(layoutWidget3);
+        spinBox_8 = new QDoubleSpinBox(layoutWidget3);
         spinBox_8->setEnabled(true);
         spinBox_8->setMinimumSize(QSize(101, 20));
         spinBox_8->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_8->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_8->setMaximum(999999999);
+        spinBox_8->setMaximum(999999999.999);
 
         gridLayout->addWidget(spinBox_8, 1, 1, 1, 1);
 
@@ -342,7 +342,7 @@ void BiletMain::setupWidgets() {
 
         gridLayout->addWidget(label_7, 2, 0, 1, 1);
 
-        spinBox_9 = new QSpinBox(layoutWidget3);
+        spinBox_9 = new QDoubleSpinBox(layoutWidget3);
         spinBox_9->setObjectName(QString::fromUtf8("spinBox_9"));
         spinBox_9->setEnabled(true);
         spinBox_9->setMinimumSize(QSize(101, 20));
@@ -350,7 +350,7 @@ void BiletMain::setupWidgets() {
         spinBox_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_9->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_9->setKeyboardTracking(true);
-        spinBox_9->setMaximum(999999999);
+        spinBox_9->setMaximum(999999999.999);
 
         gridLayout->addWidget(spinBox_9, 2, 1, 1, 1);
 
@@ -360,14 +360,14 @@ void BiletMain::setupWidgets() {
 
         gridLayout->addWidget(label_8, 3, 0, 1, 1);
 
-        spinBox_10 = new QSpinBox(layoutWidget3);
+        spinBox_10 = new QDoubleSpinBox(layoutWidget3);
         spinBox_10->setObjectName(QString::fromUtf8("spinBox_10"));
         spinBox_10->setEnabled(true);
         spinBox_10->setMinimumSize(QSize(101, 20));
         spinBox_10->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_10->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_10->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_10->setMaximum(999999999);
+        spinBox_10->setMaximum(999999999.999);
         gridLayout->addWidget(spinBox_10, 3, 1, 1, 1);
 
         dateEdit_2 = new QDateEdit(grup2Box);

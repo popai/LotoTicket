@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainloto.ui'
 **
-** Created: Mon May 16 12:31:39 2011
+** Created: Tue May 24 14:51:48 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,6 +16,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
 #include <QtGui/QDateEdit>
+#include <QtGui/QDoubleSpinBox>
 #include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QGroupBox>
@@ -83,13 +84,13 @@ public:
     QWidget *layoutWidget3;
     QGridLayout *gridLayout;
     QLabel *label_5;
-    QSpinBox *spinBox_7;
     QLabel *label_6;
-    QSpinBox *spinBox_8;
     QLabel *label_7;
-    QSpinBox *spinBox_9;
     QLabel *label_8;
-    QSpinBox *spinBox_10;
+    QDoubleSpinBox *doubleSpinBox_7;
+    QDoubleSpinBox *doubleSpinBox_8;
+    QDoubleSpinBox *doubleSpinBox_9;
+    QDoubleSpinBox *doubleSpinBox_10;
     QTextBrowser *textBrowser_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
@@ -299,84 +300,76 @@ public:
 
         gridLayout->addWidget(label_5, 0, 0, 1, 1);
 
-        spinBox_7 = new QSpinBox(layoutWidget3);
-        spinBox_7->setObjectName(QString::fromUtf8("spinBox_7"));
-        spinBox_7->setEnabled(true);
-        spinBox_7->setMinimumSize(QSize(101, 20));
-        spinBox_7->setFont(font);
-        spinBox_7->setInputMethodHints(Qt::ImhDigitsOnly);
-        spinBox_7->setWrapping(false);
-        spinBox_7->setFrame(true);
-        spinBox_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        spinBox_7->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_7->setKeyboardTracking(true);
-        spinBox_7->setMaximum(999999999);
-        spinBox_7->setSingleStep(1);
-
-        gridLayout->addWidget(spinBox_7, 0, 1, 1, 1);
-
         label_6 = new QLabel(layoutWidget3);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         gridLayout->addWidget(label_6, 1, 0, 1, 1);
-
-        spinBox_8 = new QSpinBox(layoutWidget3);
-        spinBox_8->setObjectName(QString::fromUtf8("spinBox_8"));
-        spinBox_8->setEnabled(true);
-        spinBox_8->setMinimumSize(QSize(101, 20));
-        spinBox_8->setFont(font);
-        spinBox_8->setInputMethodHints(Qt::ImhDigitsOnly);
-        spinBox_8->setWrapping(false);
-        spinBox_8->setFrame(true);
-        spinBox_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        spinBox_8->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_8->setKeyboardTracking(true);
-        spinBox_8->setMaximum(999999999);
-        spinBox_8->setSingleStep(1);
-
-        gridLayout->addWidget(spinBox_8, 1, 1, 1, 1);
 
         label_7 = new QLabel(layoutWidget3);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         gridLayout->addWidget(label_7, 2, 0, 1, 1);
 
-        spinBox_9 = new QSpinBox(layoutWidget3);
-        spinBox_9->setObjectName(QString::fromUtf8("spinBox_9"));
-        spinBox_9->setEnabled(true);
-        spinBox_9->setMinimumSize(QSize(101, 20));
-        spinBox_9->setFont(font);
-        spinBox_9->setInputMethodHints(Qt::ImhDigitsOnly);
-        spinBox_9->setWrapping(false);
-        spinBox_9->setFrame(true);
-        spinBox_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        spinBox_9->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_9->setKeyboardTracking(true);
-        spinBox_9->setMaximum(999999999);
-        spinBox_9->setSingleStep(1);
-
-        gridLayout->addWidget(spinBox_9, 2, 1, 1, 1);
-
         label_8 = new QLabel(layoutWidget3);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         gridLayout->addWidget(label_8, 3, 0, 1, 1);
 
-        spinBox_10 = new QSpinBox(layoutWidget3);
-        spinBox_10->setObjectName(QString::fromUtf8("spinBox_10"));
-        spinBox_10->setEnabled(true);
-        spinBox_10->setMinimumSize(QSize(101, 20));
-        spinBox_10->setFont(font);
-        spinBox_10->setInputMethodHints(Qt::ImhDigitsOnly);
-        spinBox_10->setWrapping(false);
-        spinBox_10->setFrame(true);
-        spinBox_10->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        spinBox_10->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_10->setKeyboardTracking(true);
-        spinBox_10->setMaximum(999999999);
-        spinBox_10->setSingleStep(1);
+        doubleSpinBox_7 = new QDoubleSpinBox(layoutWidget3);
+        doubleSpinBox_7->setObjectName(QString::fromUtf8("doubleSpinBox_7"));
+        doubleSpinBox_7->setEnabled(true);
+        doubleSpinBox_7->setMinimumSize(QSize(101, 20));
+        doubleSpinBox_7->setFont(font);
+        doubleSpinBox_7->setInputMethodHints(Qt::ImhDigitsOnly);
+        doubleSpinBox_7->setWrapping(false);
+        doubleSpinBox_7->setFrame(true);
+        doubleSpinBox_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_7->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        doubleSpinBox_7->setKeyboardTracking(true);
 
-        gridLayout->addWidget(spinBox_10, 3, 1, 1, 1);
+        gridLayout->addWidget(doubleSpinBox_7, 0, 1, 1, 1);
+
+        doubleSpinBox_8 = new QDoubleSpinBox(layoutWidget3);
+        doubleSpinBox_8->setObjectName(QString::fromUtf8("doubleSpinBox_8"));
+        doubleSpinBox_8->setEnabled(true);
+        doubleSpinBox_8->setMinimumSize(QSize(101, 20));
+        doubleSpinBox_8->setFont(font);
+        doubleSpinBox_8->setInputMethodHints(Qt::ImhDigitsOnly);
+        doubleSpinBox_8->setWrapping(false);
+        doubleSpinBox_8->setFrame(true);
+        doubleSpinBox_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_8->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        doubleSpinBox_8->setKeyboardTracking(true);
+
+        gridLayout->addWidget(doubleSpinBox_8, 1, 1, 1, 1);
+
+        doubleSpinBox_9 = new QDoubleSpinBox(layoutWidget3);
+        doubleSpinBox_9->setObjectName(QString::fromUtf8("doubleSpinBox_9"));
+        doubleSpinBox_9->setEnabled(true);
+        doubleSpinBox_9->setMinimumSize(QSize(101, 20));
+        doubleSpinBox_9->setFont(font);
+        doubleSpinBox_9->setInputMethodHints(Qt::ImhDigitsOnly);
+        doubleSpinBox_9->setWrapping(false);
+        doubleSpinBox_9->setFrame(true);
+        doubleSpinBox_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_9->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        doubleSpinBox_9->setKeyboardTracking(true);
+
+        gridLayout->addWidget(doubleSpinBox_9, 2, 1, 1, 1);
+
+        doubleSpinBox_10 = new QDoubleSpinBox(layoutWidget3);
+        doubleSpinBox_10->setObjectName(QString::fromUtf8("doubleSpinBox_10"));
+        doubleSpinBox_10->setEnabled(true);
+        doubleSpinBox_10->setMinimumSize(QSize(101, 20));
+        doubleSpinBox_10->setFont(font);
+        doubleSpinBox_10->setInputMethodHints(Qt::ImhDigitsOnly);
+        doubleSpinBox_10->setWrapping(false);
+        doubleSpinBox_10->setFrame(true);
+        doubleSpinBox_10->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_10->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        doubleSpinBox_10->setKeyboardTracking(true);
+
+        gridLayout->addWidget(doubleSpinBox_10, 3, 1, 1, 1);
 
         textBrowser_2 = new QTextBrowser(tab2);
         textBrowser_2->setObjectName(QString::fromUtf8("textBrowser_2"));
@@ -413,7 +406,7 @@ public:
         QObject::connect(varButton, SIGNAL(clicked()), textBrowser, SLOT(reload()));
         QObject::connect(ClearButton, SIGNAL(clicked()), textBrowser, SLOT(clear()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(LotoM);

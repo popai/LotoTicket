@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingwidget.ui'
 **
-** Created: Tue May 24 10:56:08 2011
+** Created: Tue May 24 14:51:48 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -16,6 +16,7 @@
 #include <QtGui/QButtonGroup>
 #include <QtGui/QComboBox>
 #include <QtGui/QDialog>
+#include <QtGui/QDoubleSpinBox>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -41,7 +42,7 @@ public:
     QSpacerItem *spacerItem;
     QWidget *tabStart;
     QLabel *labelPrice;
-    QSpinBox *priceV;
+    QDoubleSpinBox *priceV;
     QLabel *Moneda;
     QWidget *tabLoteri;
     QWidget *layoutWidget;
@@ -112,11 +113,11 @@ public:
         labelPrice = new QLabel(tabStart);
         labelPrice->setObjectName(QString::fromUtf8("labelPrice"));
         labelPrice->setGeometry(QRect(10, 30, 141, 16));
-        priceV = new QSpinBox(tabStart);
+        priceV = new QDoubleSpinBox(tabStart);
         priceV->setObjectName(QString::fromUtf8("priceV"));
         priceV->setGeometry(QRect(160, 30, 121, 22));
         priceV->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        priceV->setMaximum(999999999);
+        priceV->setMaximum(1e+09);
         Moneda = new QLabel(tabStart);
         Moneda->setObjectName(QString::fromUtf8("Moneda"));
         Moneda->setGeometry(QRect(290, 30, 61, 21));

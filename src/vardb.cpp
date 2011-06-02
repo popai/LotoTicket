@@ -42,21 +42,23 @@ bool VarDb::newDB( QString name ) {
                                                   nr3 INTEGER DEFAULT 0, nr4 INTEGER DEFAULT 0, nr5 INTEGER DEFAULT 0, nr6 INTEGER DEFAULT 0, \
                                                   nr7 INTEGER DEFAULT 0, nr8 INTEGER DEFAULT 0, nr9 INTEGER DEFAULT 0, nr10 INTEGER DEFAULT 0, \
                                                   nr11 INTEGER DEFAULT 0, nr12 INTEGER DEFAULT 0, nr13 INTEGER DEFAULT 0, nr14 INTEGER DEFAULT 0, \
-                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
+                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, nr17 INTEGER DEFAULT 0, nr18 INTEGER DEFAULT 0, \
+                                                  nr19 INTEGER DEFAULT 0, nr20 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
         if(checkQuery(nrCampA)) db.exec(nrCampA);
 
         QString nrCampB ("CREATE TABLE nrCampB ( biletID TEXT NOT NULL  UNIQUE , nr1 INTEGER DEFAULT 0, nr2 INTEGER DEFAULT 0, \
                                                   nr3 INTEGER DEFAULT 0, nr4 INTEGER DEFAULT 0, nr5 INTEGER DEFAULT 0, nr6 INTEGER DEFAULT 0, \
                                                   nr7 INTEGER DEFAULT 0, nr8 INTEGER DEFAULT 0, nr9 INTEGER DEFAULT 0, nr10 INTEGER DEFAULT 0, \
                                                   nr11 INTEGER DEFAULT 0, nr12 INTEGER DEFAULT 0, nr13 INTEGER DEFAULT 0, nr14 INTEGER DEFAULT 0, \
-                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
-        if(checkQuery(nrCampB)) db.exec(nrCampB);
+                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, nr17 INTEGER DEFAULT 0, nr18 INTEGER DEFAULT 0, \
+                                                  nr19 INTEGER DEFAULT 0, nr20 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
 
         QString nrCampC ("CREATE TABLE nrCampC (  biletID TEXT NOT NULL  UNIQUE , nr1 INTEGER DEFAULT 0, nr2 INTEGER DEFAULT 0, \
                                                   nr3 INTEGER DEFAULT 0, nr4 INTEGER DEFAULT 0, nr5 INTEGER DEFAULT 0, nr6 INTEGER DEFAULT 0, \
                                                   nr7 INTEGER DEFAULT 0, nr8 INTEGER DEFAULT 0, nr9 INTEGER DEFAULT 0, nr10 INTEGER DEFAULT 0, \
                                                   nr11 INTEGER DEFAULT 0, nr12 INTEGER DEFAULT 0, nr13 INTEGER DEFAULT 0, nr14 INTEGER DEFAULT 0, \
-                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
+                                                  nr15 INTEGER DEFAULT 0, nr16 INTEGER DEFAULT 0, nr17 INTEGER DEFAULT 0, nr18 INTEGER DEFAULT 0, \
+                                                  nr19 INTEGER DEFAULT 0, nr20 INTEGER DEFAULT 0, cod INTEGER DEFAULT 0)");
         if(checkQuery(nrCampC)) db.exec(nrCampC);
 
 	return true;
@@ -238,30 +240,30 @@ BiletRecord VarDb::recordToBiletRecord( QSqlRecord a, QSqlRecord b, QSqlRecord c
 {
         BiletRecord nr;
         if(!a.isEmpty()){
-            nr.data = a.value(19).toString();
+            nr.data = a.value(23).toString();
             nr.biletID = a.value(0).toString();
-            nr.codA = a.value(17).toInt();
-            for(int i=1; i<17; i++){
+            nr.codA = a.value(21).toInt();
+            for(int i=1; i<21; i++){
                 if(a.value(i).toInt())
                     nr.nrA << a.value(i).toInt();
             }
             //qSort(nr.nrA.begin(), nr.nrA.end());
         }
         if(!b.isEmpty()){
-            nr.data = b.value(19).toString();
+            nr.data = b.value(23).toString();
             nr.biletID = b.value(0).toString();
-            nr.codB = b.value(17).toInt();
-            for(int i=1; i<17; i++){
+            nr.codB = b.value(21).toInt();
+            for(int i=1; i<21; i++){
                 if(b.value(i).toInt())
                     nr.nrB << b.value(i).toInt();
             }
             //qSort(nr.nrB.begin(), nr.nrB.end());
         }
         if(!c.isEmpty()){
+            nr.data = c.value(23).toString();
             nr.biletID = c.value(0).toString();
-            nr.data = c.value(19).toString();
-            nr.codC = c.value(17).toInt();
-            for(int i=1; i<17; i++){
+            nr.codC = c.value(21).toInt();
+            for(int i=1; i<21; i++){
                 if(c.value(i).toInt())
                     nr.nrC << c.value(i).toInt();
             }

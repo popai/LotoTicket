@@ -286,7 +286,7 @@ void BiletMain::setupWidgets() {
         horizontalLayout_2->addWidget(spinBox_6);
 
         line = new QFrame(grup2Box);
-        line->setGeometry(QRect(10, 60, 171, 16));
+        line->setGeometry(QRect(10, 70, 171, 16));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(grup2Box);
@@ -296,82 +296,79 @@ void BiletMain::setupWidgets() {
 
         layoutWidget3 = new QWidget(grup2Box);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(11, 81, 171, 120));
+        layoutWidget3->setGeometry(QRect(11, 101, 171, 100));
         gridLayout = new QGridLayout(layoutWidget3);
-        gridLayout->setSpacing(4);
+        gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-
         label_4 = new QLabel(grup2Box);
         label_4->setText(tr("Win Fonds"));
         label_4->setGeometry(QRect(10, 80, 121, 16));
-        gridLayout->addWidget(label_4, 0, 0, 1, 1);
-
-        spinBox_11 = new QDoubleSpinBox(layoutWidget3);
-        spinBox_11->setEnabled(true);
-        spinBox_11->setMinimumSize(QSize(101, 20));
-        spinBox_11->setInputMethodHints(Qt::ImhDigitsOnly);
-        spinBox_11->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        spinBox_11->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        spinBox_11->setMaximum(999999999.999);
-        connect(spinBox_11, SIGNAL(valueChanged(double)), this, SLOT(ChackWin()));
-        gridLayout->addWidget(spinBox_11, 0, 1, 1, 1);
-
         label_5 = new QLabel(layoutWidget3);
         label_5->setText(tr("Cat    I"));
-        gridLayout->addWidget(label_5, 1, 0, 1, 1);
+
+
+        gridLayout->addWidget(label_5, 0, 0, 1, 1);
 
         spinBox_7 = new QDoubleSpinBox(layoutWidget3);
-        spinBox_7->setEnabled(false);
+        spinBox_7->setEnabled(true);
         spinBox_7->setMinimumSize(QSize(101, 20));
         spinBox_7->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_7->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_7->setMaximum(999999999.999);
-        gridLayout->addWidget(spinBox_7, 1, 1, 1, 1);
+
+        gridLayout->addWidget(spinBox_7, 0, 1, 1, 1);
 
         label_6 = new QLabel(layoutWidget3);
         label_6->setText(tr("Cat   II"));
-        gridLayout->addWidget(label_6, 2, 0, 1, 1);
+
+        gridLayout->addWidget(label_6, 1, 0, 1, 1);
 
         spinBox_8 = new QDoubleSpinBox(layoutWidget3);
-        spinBox_8->setEnabled(false);
+        spinBox_8->setEnabled(true);
         spinBox_8->setMinimumSize(QSize(101, 20));
         spinBox_8->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_8->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_8->setMaximum(999999999.999);
-        gridLayout->addWidget(spinBox_8, 2, 1, 1, 1);
+
+        gridLayout->addWidget(spinBox_8, 1, 1, 1, 1);
 
         label_7 = new QLabel(layoutWidget3);
         label_7->setText(tr("Cat  III"));
-        gridLayout->addWidget(label_7, 3, 0, 1, 1);
+
+
+        gridLayout->addWidget(label_7, 2, 0, 1, 1);
 
         spinBox_9 = new QDoubleSpinBox(layoutWidget3);
         spinBox_9->setObjectName(QString::fromUtf8("spinBox_9"));
-        spinBox_9->setEnabled(false);
+        spinBox_9->setEnabled(true);
         spinBox_9->setMinimumSize(QSize(101, 20));
         spinBox_9->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_9->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_9->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_9->setKeyboardTracking(true);
         spinBox_9->setMaximum(999999999.999);
-        gridLayout->addWidget(spinBox_9, 3, 1, 1, 1);
+
+        gridLayout->addWidget(spinBox_9, 2, 1, 1, 1);
 
         label_8 = new QLabel(layoutWidget3);
         label_8->setText(tr("Cat   IV"));
-        gridLayout->addWidget(label_8, 4, 0, 1, 1);
+
+
+        gridLayout->addWidget(label_8, 3, 0, 1, 1);
 
         spinBox_10 = new QDoubleSpinBox(layoutWidget3);
         spinBox_10->setObjectName(QString::fromUtf8("spinBox_10"));
-        spinBox_10->setEnabled(false);
+        spinBox_10->setEnabled(true);
         spinBox_10->setMinimumSize(QSize(101, 20));
         spinBox_10->setInputMethodHints(Qt::ImhDigitsOnly);
         spinBox_10->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         spinBox_10->setButtonSymbols(QAbstractSpinBox::NoButtons);
         spinBox_10->setMaximum(999999999.999);
-        gridLayout->addWidget(spinBox_10, 4, 1, 1, 1);
+        gridLayout->addWidget(spinBox_10, 3, 1, 1, 1);
 
         dateEdit_2 = new QDateEdit(grup2Box);
         dateEdit_2->setCalendarPopup(true);
@@ -755,11 +752,6 @@ void BiletMain::ChackWin()
     nrextrase<<spinBox_4->value();
     nrextrase<<spinBox_5->value();
     nrextrase<<spinBox_6->value();
-    spinBox_7->setValue(spinBox_11->value()*0.93);
-    spinBox_8->setValue(spinBox_11->value()*0.02);
-    spinBox_9->setValue(spinBox_11->value()*0.02);
-    spinBox_10->setValue(spinBox_11->value()*0.03);
-
     qSort(nrextrase.begin(), nrextrase.end());
     tabWidget->setCurrentWidget(tab2);
     if(bl->varbilet.isEmpty())
@@ -812,6 +804,42 @@ void BiletMain::ChackWin()
     rezultate->clear();
     test<<tr("<font color=green> Win on Categori  IV: </font><b><font color=#ff4411>")<<cat4<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
+    rezultate->clear();
+    //test<<"&nbsp";
+
+    test<<"<br>";
+    test<<"<table style=\"text-align: left; width: 434px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\">";
+    test<<"<tbody> <tr>";
+    test<<"<td style=\"width: 76px; text-align: center; font-weight: bold; \
+             color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("CAT")<<"</td>";
+    test<<"<td style=\"text-align: center; width: 152px; font-weight: \
+             bold; color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("NUMBERS OF WIN")<<"</td>";
+    test<<"<td style=\"text-align: center; width: 178px; font-weight: bold; \
+             color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("WINING AMONT")<<"</td>";
+    test<<"</tr> <tr>";
+    test<<"<td style=\"width: 76px; text-align: center;\">1 (6/6)</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat1<<"</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat1*spinBox_7->value()<<"</td>";
+    test<<"</tr> <tr>";
+    test<<"<td style=\"width: 76px; text-align: center;\">2 (5/6)</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat2<<"</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat2*spinBox_8->value()<<"</td>";
+    test<<"</tr> <tr>";
+    test<<"<td style=\"width: 76px; text-align: center;\">3 (4/6)</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat3<<"</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat3*spinBox_9->value()<<"</td>";
+    test<<"</tr> <tr>";
+    test<<"<td style=\"width: 76px; text-align: center;\">4 (3/6)</td>";
+    test<<"<td style=\"text-align: center; width: 152px;\">"<<cat4<<"</td>";
+    test<<"<td style=\"text-align=center; width: 152px;\">"<<cat4*spinBox_10->value()<<"</td>";
+    test<<"</tr>";
+    test<<"</tbody></table><br>";
+
+
+
+
+    text2Brows->append(*rezultate);
+    //text2Brows->setSource(tr("TABEL.html"));
     delete rezultate;
 }
 

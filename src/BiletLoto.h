@@ -112,7 +112,7 @@ class BiletMain : public QMainWindow {
                 QVBoxLayout *layout2V;
                 QLabel *label_2, *label_3, *label_4, *label_5, *label_6, *label_7, *label_8;
                 QSpinBox *spinBox, *spinBox_1, *spinBox_2, *spinBox_3, *spinBox_4, *spinBox_5, *spinBox_6;
-                QDoubleSpinBox *spinBox_7, *spinBox_8, *spinBox_9, *spinBox_10, *spinBox_11;
+                QDoubleSpinBox *spinBox_7, *spinBox_8, *spinBox_9, *spinBox_10;
                 QWidget *layoutWidget2, *layoutWidget3;
                 QHBoxLayout *horizontalLayout_2;
                 QGridLayout *gridLayout;

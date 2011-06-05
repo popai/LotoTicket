@@ -44,52 +44,52 @@
         <translation>Data extrageri</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="225"/>
+        <location filename="BiletLoto.cpp" line="226"/>
         <source>Ticket</source>
         <translation>Bilet</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="233"/>
+        <location filename="BiletLoto.cpp" line="234"/>
         <source>Extracted Numbers</source>
         <translation>Numere Extrase</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="299"/>
+        <location filename="BiletLoto.cpp" line="306"/>
         <source>Win Fonds</source>
         <translation>Fonduri de Castiguri</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="302"/>
+        <location filename="BiletLoto.cpp" line="309"/>
         <source>Cat    I</source>
         <translation>Cat    I</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="318"/>
+        <location filename="BiletLoto.cpp" line="325"/>
         <source>Cat   II</source>
         <translation>Cat   II</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="333"/>
+        <location filename="BiletLoto.cpp" line="340"/>
         <source>Cat  III</source>
         <translation>Cat  III</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="351"/>
+        <location filename="BiletLoto.cpp" line="358"/>
         <source>Cat   IV</source>
         <translation>Cat   IV</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="371"/>
+        <location filename="BiletLoto.cpp" line="378"/>
         <source>Extraction Date</source>
         <translation>Data Extrageri</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="374"/>
+        <location filename="BiletLoto.cpp" line="381"/>
         <source>ChackWin</source>
         <translation>VerificăCîştig</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="385"/>
+        <location filename="BiletLoto.cpp" line="392"/>
         <source>WinCheck</source>
         <translation>VerificăCîştig</translation>
     </message>
@@ -98,225 +98,254 @@
         <translation type="obsolete">BiletLoto</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="393"/>
+        <location filename="BiletLoto.cpp" line="400"/>
         <source>LottoTicket</source>
         <translation>BiletLoto</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="402"/>
+        <location filename="BiletLoto.cpp" line="409"/>
         <source>&amp;New Loteri</source>
         <translation>Loterie&amp;Nouă</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="403"/>
+        <location filename="BiletLoto.cpp" line="410"/>
         <source>Ctrl+N</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="404"/>
+        <location filename="BiletLoto.cpp" line="411"/>
         <source>New Loteri</source>
         <translation>Loterie Nouă</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="407"/>
+        <location filename="BiletLoto.cpp" line="414"/>
         <source>&amp;Open</source>
         <translation>&amp;Deschide</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="408"/>
+        <location filename="BiletLoto.cpp" line="415"/>
         <source>Ctrl+O</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="409"/>
+        <location filename="BiletLoto.cpp" line="416"/>
         <source>Open ticket</source>
         <translation>Deschide bilet</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="412"/>
+        <location filename="BiletLoto.cpp" line="419"/>
         <source>&amp;Save</source>
         <translation>&amp;Salvează</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="413"/>
+        <location filename="BiletLoto.cpp" line="420"/>
         <source>Ctrl+S</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="414"/>
+        <location filename="BiletLoto.cpp" line="421"/>
         <source>Save ticket</source>
         <translation>Salvează bilet</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="417"/>
+        <location filename="BiletLoto.cpp" line="424"/>
         <source>&amp;Quit</source>
         <translation>Înc&amp;hide</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="418"/>
+        <location filename="BiletLoto.cpp" line="425"/>
         <source>Ctrl+Q</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="419"/>
+        <location filename="BiletLoto.cpp" line="426"/>
         <source>Close application</source>
         <translation>Închide programul</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="422"/>
+        <location filename="BiletLoto.cpp" line="429"/>
         <source>&amp;Settings</source>
         <translation>&amp;Setari</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="423"/>
+        <location filename="BiletLoto.cpp" line="430"/>
         <source>Edit settings</source>
         <translation>Editează setarile</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="426"/>
+        <location filename="BiletLoto.cpp" line="433"/>
         <source>&amp;Delete</source>
         <translation>&amp;Şterge</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="427"/>
+        <location filename="BiletLoto.cpp" line="434"/>
         <source>Ctrl+D</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="428"/>
-        <location filename="BiletLoto.cpp" line="608"/>
+        <location filename="BiletLoto.cpp" line="435"/>
+        <location filename="BiletLoto.cpp" line="615"/>
         <source>Delete</source>
         <translation>Şterge</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="431"/>
+        <location filename="BiletLoto.cpp" line="438"/>
         <source>&amp;Clear</source>
         <translation>&amp;Curăţă</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="432"/>
+        <location filename="BiletLoto.cpp" line="439"/>
         <source>Ctrl+C</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="433"/>
+        <location filename="BiletLoto.cpp" line="440"/>
         <source>Clear selected numbers on ticket</source>
         <translation>Deselectează numerele selectate</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="438"/>
+        <location filename="BiletLoto.cpp" line="445"/>
         <source>&amp;View Variants</source>
         <translation>Vezi &amp;Variantele</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="439"/>
+        <location filename="BiletLoto.cpp" line="446"/>
         <source>Ctrl+V</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="440"/>
+        <location filename="BiletLoto.cpp" line="447"/>
         <source>write the variants for selectet numbers</source>
         <translation>Scrie variantele obţinute cu numerele selectate</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="444"/>
+        <location filename="BiletLoto.cpp" line="451"/>
         <source>&amp;ChackWin</source>
         <translation>Verifică&amp;Cştig</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="445"/>
+        <location filename="BiletLoto.cpp" line="452"/>
         <source>Ctrl+W</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="446"/>
+        <location filename="BiletLoto.cpp" line="453"/>
         <source>Check the Wining</source>
         <translation>Verifică dacă există variante caştigătoare</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="449"/>
+        <location filename="BiletLoto.cpp" line="456"/>
         <source>&amp;About LottoTicket</source>
         <translation>Despre Bilet Lo&amp;to</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="450"/>
+        <location filename="BiletLoto.cpp" line="457"/>
         <source>Show program info</source>
         <translation>Informaţii despre program</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="458"/>
-        <location filename="BiletLoto.cpp" line="493"/>
+        <location filename="BiletLoto.cpp" line="465"/>
+        <location filename="BiletLoto.cpp" line="500"/>
         <source>&amp;Ticket</source>
         <translation>Bile&amp;t</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="467"/>
+        <location filename="BiletLoto.cpp" line="474"/>
         <source>&amp;Variants</source>
         <translation>&amp;Variante</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="475"/>
+        <location filename="BiletLoto.cpp" line="482"/>
         <source>&amp;Option</source>
         <translation>&amp;Opţiuni</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="485"/>
+        <location filename="BiletLoto.cpp" line="492"/>
         <source>&amp;Help</source>
         <translation>A&amp;jutor</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="502"/>
+        <location filename="BiletLoto.cpp" line="509"/>
         <source>&amp;WinChacke</source>
         <translation>VerificăCşti&amp;g</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="711"/>
+        <location filename="BiletLoto.cpp" line="718"/>
         <source>&lt;b&gt;Obtained variants are&lt;/b&gt;</source>
         <oldsource>&lt;b&gt;Variantele obtinute sunt&lt;/b&gt;</oldsource>
         <translation>&lt;b&gt;Variantele obţinute sunt&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="732"/>
+        <location filename="BiletLoto.cpp" line="739"/>
         <source>&lt;b&gt;&lt;font color=#0000ff&gt;Cost&lt;/font&gt;&lt;font color=#ff0000&gt; : </source>
         <translation>&lt;b&gt;&lt;font color=#0000ff&gt;Cost&lt;/font&gt;&lt;font color=#ff0000&gt; : </translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="732"/>
+        <location filename="BiletLoto.cpp" line="739"/>
         <source> Euro&lt;/font&gt;&lt;b&gt;</source>
         <translation> RON&lt;/font&gt;&lt;b&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="760"/>
+        <location filename="BiletLoto.cpp" line="768"/>
         <source>&lt;b&gt;&lt;font color=#0000ff&gt;Extract number on activ ticket ar&lt;/font&gt;&lt;/b&gt;</source>
         <translation>&lt;b&gt;&lt;font color=#0000ff&gt;Numere castibatoare pe biletul curent&lt;/font&gt;&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="789"/>
+        <location filename="BiletLoto.cpp" line="798"/>
         <source>&lt;font color=green&gt; Win on Categori   I: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</source>
         <translation>&lt;font color=green&gt; Variante căştigătoare la categotia   I: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="789"/>
-        <location filename="BiletLoto.cpp" line="792"/>
-        <location filename="BiletLoto.cpp" line="795"/>
         <location filename="BiletLoto.cpp" line="798"/>
+        <location filename="BiletLoto.cpp" line="801"/>
+        <location filename="BiletLoto.cpp" line="804"/>
+        <location filename="BiletLoto.cpp" line="807"/>
         <source>&lt;/font&gt;&lt;/b&gt;&lt;font color=green&gt; variants &lt;/font&gt;</source>
         <translation>&lt;/font&gt;&lt;/b&gt;&lt;font color=green&gt; variante &lt;/font&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="792"/>
+        <location filename="BiletLoto.cpp" line="801"/>
         <source>&lt;font color=green&gt; Win on Categori  II: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</source>
         <translation>&lt;font color=green&gt; Variante căştigătoare la categotia   II: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="795"/>
+        <location filename="BiletLoto.cpp" line="804"/>
         <source>&lt;font color=green&gt; Win on Categori III: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</source>
         <translation>&lt;font color=green&gt; Variante căştigătoare la categotia  III: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="798"/>
+        <location filename="BiletLoto.cpp" line="807"/>
         <source>&lt;font color=green&gt; Win on Categori  IV: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</source>
         <translation>&lt;font color=green&gt; Variante căştigătoare la categotia  IV: &lt;/font&gt;&lt;b&gt;&lt;font color=#ff4411&gt;</translation>
+    </message>
+    <message>
+        <location filename="BiletLoto.cpp" line="815"/>
+        <source>CATEG.</source>
+        <translation>CATEG.</translation>
+    </message>
+    <message>
+        <location filename="BiletLoto.cpp" line="839"/>
+        <source>TOTAL WINING: </source>
+        <translation>TOTAL CĂŞTIG: </translation>
+    </message>
+    <message>
+        <location filename="BiletLoto.cpp" line="841"/>
+        <source> EURO</source>
+        <translation> RON</translation>
+    </message>
+    <message>
+        <source>CAT</source>
+        <translation type="obsolete">CAT</translation>
+    </message>
+    <message>
+        <location filename="BiletLoto.cpp" line="817"/>
+        <source>NUMBERS OF WIN</source>
+        <translation>NUMĂR CĂŞTIGURI</translation>
+    </message>
+    <message>
+        <location filename="BiletLoto.cpp" line="819"/>
+        <source>WINING AMONT</source>
+        <translation>CĂŞTIG</translation>
     </message>
 </context>
 <context>
@@ -407,52 +436,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="298"/>
+        <location filename="mainloto.ui" line="425"/>
         <source>Win Fonds</source>
         <translation type="unfinished">Fonduri de Castiguri</translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="438"/>
+        <location filename="mainloto.ui" line="468"/>
         <source>Cat         I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="487"/>
+        <location filename="mainloto.ui" line="511"/>
         <source>Cat        II</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="536"/>
+        <location filename="mainloto.ui" line="554"/>
         <source>Cat       III</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="585"/>
+        <location filename="mainloto.ui" line="597"/>
         <source>Cat        IV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="658"/>
+        <location filename="mainloto.ui" line="664"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="686"/>
+        <location filename="mainloto.ui" line="692"/>
         <source>Open</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="691"/>
+        <location filename="mainloto.ui" line="697"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="696"/>
+        <location filename="mainloto.ui" line="702"/>
         <source>Save</source>
         <translation type="unfinished">Salvează</translation>
     </message>
     <message>
-        <location filename="mainloto.ui" line="701"/>
+        <location filename="mainloto.ui" line="707"/>
         <source>Qwit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -460,12 +489,12 @@
 <context>
     <name>QCoreApplication</name>
     <message>
-        <location filename="BiletLoto.cpp" line="655"/>
+        <location filename="BiletLoto.cpp" line="662"/>
         <source>Ticket exist. Try diferent name</source>
         <translation>Bilet existent. Încewarca alt nume</translation>
     </message>
     <message>
-        <location filename="BiletLoto.cpp" line="668"/>
+        <location filename="BiletLoto.cpp" line="675"/>
         <source>Ticket not save, try viewVar for more info</source>
         <translation>Biletul nu sa salvat,îincearcă sa vezi variante pentru detalii</translation>
     </message>

@@ -235,7 +235,7 @@ void BiletMain::setupWidgets() {
         label_2->setGeometry(QRect(10, 10, 101, 20));
 
         layoutWidget2 = new QWidget(grup2Box);
-        layoutWidget2->setGeometry(QRect(3, 25, 185, 20));
+        layoutWidget2->setGeometry(QRect(3, 40, 185, 20));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -290,7 +290,7 @@ void BiletMain::setupWidgets() {
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         line_2 = new QFrame(grup2Box);
-        line_2->setGeometry(QRect(10, 200, 171, 16));
+        line_2->setGeometry(QRect(10, 230, 171, 16));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
 
@@ -379,7 +379,7 @@ void BiletMain::setupWidgets() {
         label_3->setGeometry(QRect(10, 250, 81, 21));
         chackButton = new QPushButton(grup2Box);
         chackButton->setText(tr("ChackWin"));
-        chackButton->setGeometry(QRect(10, 220, 75, 23));
+        chackButton->setGeometry(QRect(35, 205, 75, 23));
         connect(chackButton,SIGNAL(clicked()),this, SLOT(ChackWin()));
 
         text2Brows = new QTextBrowser(tab2);
@@ -764,8 +764,8 @@ void BiletMain::ChackWin()
     int cat1 = 0, cat2 = 0, cat3 = 0, cat4 = 0;
     rezultate = new QString;
     QTextStream test(rezultate);
+
     text2Brows->append(tr("<b><font color=#0000ff>Extract number on activ ticket ar</font></b>"));
-    //test<<"\n";
     for(int i=0; i<bl->varbilet.count(); i++){
         for(int j=0; j<6; j++){
             if(nrextrase.contains(bl->varbilet.at(i)[j])){
@@ -793,6 +793,8 @@ void BiletMain::ChackWin()
         }
         categorie = 0;
     }
+
+    test<<"<br>";
     test<<tr("<font color=green> Win on Categori   I: </font><b><font color=#ff4411>")<<cat1<<tr("</font></b><font color=green> variants </font>");
     text2Brows->append(*rezultate);
     rezultate->clear();
@@ -806,37 +808,39 @@ void BiletMain::ChackWin()
     text2Brows->append(*rezultate);
     rezultate->clear();
     //test<<"&nbsp";
-
     test<<"<br>";
     test<<"<table style=\"text-align: left; width: 434px;\" border=\"1\" cellpadding=\"2\" cellspacing=\"2\">";
     test<<"<tbody> <tr>";
     test<<"<td style=\"width: 76px; text-align: center; font-weight: bold; \
-             color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("CAT")<<"</td>";
+             color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("CATEG.")<<"</td>";
     test<<"<td style=\"text-align: center; width: 152px; font-weight: \
              bold; color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("NUMBERS OF WIN")<<"</td>";
     test<<"<td style=\"text-align: center; width: 178px; font-weight: bold; \
              color: yellow; background-color: rgb(0, 153, 0);\">"<<tr("WINING AMONT")<<"</td>";
     test<<"</tr> <tr>";
-    test<<"<td style=\"width: 76px; text-align: center;\">1 (6/6)</td>";
+    test<<"<td style=\"width: 74px; text-align: center;\">1 (6/6)</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat1<<"</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat1*spinBox_7->value()<<"</td>";
     test<<"</tr> <tr>";
-    test<<"<td style=\"width: 76px; text-align: center;\">2 (5/6)</td>";
+    test<<"<td style=\"width: 74px; text-align: center;\">2 (5/6)</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat2<<"</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat2*spinBox_8->value()<<"</td>";
     test<<"</tr> <tr>";
-    test<<"<td style=\"width: 76px; text-align: center;\">3 (4/6)</td>";
+    test<<"<td style=\"width: 74px; text-align: center;\">3 (4/6)</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat3<<"</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat3*spinBox_9->value()<<"</td>";
     test<<"</tr> <tr>";
-    test<<"<td style=\"width: 76px; text-align: center;\">4 (3/6)</td>";
+    test<<"<td style=\"width: 74px; text-align: center;\">4 (3/6)</td>";
     test<<"<td style=\"text-align: center; width: 152px;\">"<<cat4<<"</td>";
     test<<"<td style=\"text-align=center; width: 152px;\">"<<cat4*spinBox_10->value()<<"</td>";
-    test<<"</tr>";
+    test<<"</tr> <tr>";
+    test<<"<td colspan=\"3\" rowspan=\"1\"";
+    test<<"style=\"width: 74px; text-align: center; background-color: rgb(255, 255, 102);\">";
+    test<<"<span style=\"font-weight: bold; color: red;\">"<<tr("TOTAL WINING: ")<<"</span>";
+    double total = cat1*spinBox_7->value() + cat2*spinBox_8->value() + cat3*spinBox_9->value() + cat4*spinBox_10->value();
+    test<<"<span style=\"font-weight: bold;\">"<<total<<tr(" EURO")<<"</span></td></tr>";
+
     test<<"</tbody></table><br>";
-
-
-
 
     text2Brows->append(*rezultate);
     //text2Brows->setSource(tr("TABEL.html"));

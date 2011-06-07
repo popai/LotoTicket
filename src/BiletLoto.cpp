@@ -456,6 +456,10 @@ void BiletMain::createActions() {
         aboutAct = new QAction(QIcon("images/info.png"), tr("&About LottoTicket"), this);
 	aboutAct->setStatusTip(tr("Show program info"));
         connect(aboutAct, SIGNAL(triggered()), this, SLOT(aboutClicked()));
+
+        codlistAct = new QAction(QIcon("images/table.png"), tr("Code &Table"), this);
+        codlistAct->setStatusTip(tr("Show table of codes for small schemes"));
+        connect(codlistAct, SIGNAL(triggered()), this, SLOT(Cod_List()));
 }
 
 /**
@@ -490,7 +494,8 @@ void BiletMain::createMenu() {
         //viewMenu->addAction( thumbDock->toggleViewAction() );
 
 	helpMenu = menuBar()->addMenu(tr("&Help"));
-	helpMenu->addAction( aboutAct );
+        helpMenu->addAction( aboutAct );
+        helpMenu->addAction( codlistAct );
 }
 
 /**
@@ -512,6 +517,7 @@ void BiletMain::createToolbar() {
         editToolbar->addAction( clearAct );
         editToolbar->addAction( viewAct );
 	editToolbar->addAction( findAct );
+        editToolbar->addAction( codlistAct );
 }
 
 
@@ -551,6 +557,12 @@ void BiletMain::aboutClicked() {
 	Ui::aboutWidget().setupUi(diag);
 	diag->exec();
 	delete diag;
+}
+
+void BiletMain::Cod_List()
+{
+    codlist = new CodList;
+    codlist->show();
 }
 
 void BiletMain::editSettingsClicked() {

@@ -9,6 +9,7 @@ INPUT(
 ./release\savebilet.o
 ./release\openbilet.o
 ./release\delete.o
+./release\codlist.o
 ./release\moc_mainloto.o
 ./release\moc_bilet.o
 ./release\moc_BiletLoto.o
@@ -16,5 +17,6 @@ INPUT(
 ./release\moc_savebilet.o
 ./release\moc_openbilet.o
 ./release\moc_delete.o
+./release\moc_codlist.o
 ./release\qrc_resurce.o
 );

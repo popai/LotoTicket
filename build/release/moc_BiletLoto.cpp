@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'BiletLoto.h'
 **
-** Created: Sat Jun 4 12:28:31 2011
+** Created: Tue Jun 7 17:58:54 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.0)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_BiletMain[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,20 +35,21 @@ static const uint qt_meta_data_BiletMain[] = {
       27,   10,   10,   10, 0x0a,
       38,   10,   10,   10, 0x0a,
       50,   10,   10,   10, 0x0a,
-      65,   10,   10,   10, 0x0a,
-      87,   10,   10,   10, 0x0a,
-     105,   10,   10,   10, 0x0a,
-     125,   10,   10,   10, 0x0a,
-     143,   10,   10,   10, 0x0a,
-     161,   10,   10,   10, 0x0a,
-     178,   10,   10,   10, 0x0a,
+      61,   10,   10,   10, 0x0a,
+      76,   10,   10,   10, 0x0a,
+      98,   10,   10,   10, 0x0a,
+     116,   10,   10,   10, 0x0a,
+     136,   10,   10,   10, 0x0a,
+     154,   10,   10,   10, 0x0a,
+     172,   10,   10,   10, 0x0a,
+     189,   10,   10,   10, 0x0a,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_BiletMain[] = {
     "BiletMain\0\0writeVariante()\0ChackWin()\0"
-    "QuickPick()\0aboutClicked()\0"
+    "QuickPick()\0Cod_List()\0aboutClicked()\0"
     "editSettingsClicked()\0editFindClicked()\0"
     "editDeleteClicked()\0fileExitClicked()\0"
     "fileOpenClicked()\0fileNewClicked()\0"
@@ -87,17 +88,18 @@ int BiletMain::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 0: writeVariante(); break;
         case 1: ChackWin(); break;
         case 2: QuickPick(); break;
-        case 3: aboutClicked(); break;
-        case 4: editSettingsClicked(); break;
-        case 5: editFindClicked(); break;
-        case 6: editDeleteClicked(); break;
-        case 7: fileExitClicked(); break;
-        case 8: fileOpenClicked(); break;
-        case 9: fileNewClicked(); break;
-        case 10: fileSaveClicked(); break;
+        case 3: Cod_List(); break;
+        case 4: aboutClicked(); break;
+        case 5: editSettingsClicked(); break;
+        case 6: editFindClicked(); break;
+        case 7: editDeleteClicked(); break;
+        case 8: fileExitClicked(); break;
+        case 9: fileOpenClicked(); break;
+        case 10: fileNewClicked(); break;
+        case 11: fileSaveClicked(); break;
         default: ;
         }
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

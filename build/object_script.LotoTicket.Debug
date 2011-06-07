@@ -9,6 +9,7 @@ INPUT(
 ./debug\savebilet.o
 ./debug\openbilet.o
 ./debug\delete.o
+./debug\codlist.o
 ./debug\moc_mainloto.o
 ./debug\moc_bilet.o
 ./debug\moc_BiletLoto.o
@@ -16,5 +17,6 @@ INPUT(
 ./debug\moc_savebilet.o
 ./debug\moc_openbilet.o
 ./debug\moc_delete.o
+./debug\moc_codlist.o
 ./debug\qrc_resurce.o
 );

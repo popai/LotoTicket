@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     vardb.cpp \
     savebilet.cpp \
     openbilet.cpp \
-    delete.cpp
+    delete.cpp \
+    codlist.cpp
 
 HEADERS  += mainloto.h \
     bilet.h \
@@ -33,7 +34,8 @@ HEADERS  += mainloto.h \
     savebilet.h \
     openbilet.h \
     variante.h \
-    delete.h
+    delete.h \
+    codlist.h
 
 FORMS    += mainloto.ui \
     bilet.ui \
@@ -41,6 +43,7 @@ FORMS    += mainloto.ui \
     aboutwidget.ui \
     savebilet.ui \
     openbilet.ui \
+    codlist.ui \
     delete.ui
 
 TRANSLATIONS += \
@@ -50,4 +53,3 @@ RC_FILE = app.rc
 
 RESOURCES += \
     ../build/images/resurce.qrc
-

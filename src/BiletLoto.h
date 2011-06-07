@@ -28,6 +28,7 @@
 #include "savebilet.h"
 #include "openbilet.h"
 #include "delete.h"
+#include "codlist.h"
 
 
 class QListWidget;
@@ -133,16 +134,17 @@ class BiletMain : public QMainWindow {
                 QAction *clearAct;
 
 		QAction *aboutAct;
+                QAction *codlistAct;
 
                 //QAction *eraseLocationAct;
                 //QAction *setPathAct;
 
-		void createCdlist();
+                //void createCdlist();
 		void createActions();
 		void createMenu();
 		void createToolbar();
 
-		void clearDirList();
+                //void clearDirList();
 
 		void setupWidgets();
 
@@ -151,6 +153,7 @@ class BiletMain : public QMainWindow {
                 virtual void writeVariante();
                 virtual void ChackWin();
                 virtual void QuickPick();
+                virtual void Cod_List();
 
 		//menu events
 		virtual void aboutClicked();
@@ -179,6 +182,7 @@ class BiletMain : public QMainWindow {
                 SaveBilet *svb;
                 OpenBilet *opb;
                 Delete *del;
+                CodList *codlist;
                 QString *rezultate;
 
 		/**

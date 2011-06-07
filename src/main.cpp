@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("Popai Software");
-    QCoreApplication::setOrganizationDomain("popai.soerce");
+    QCoreApplication::setOrganizationDomain("popai.source");
     QCoreApplication::setApplicationName("LottoTicket");
     //QApplication a(argc, argv);
     //MainLoto w;

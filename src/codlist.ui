@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CodeList</class>
+ <widget class="QWizardPage" name="CodeList">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Code List</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../build/images/resurce.qrc">
+    <normaloff>:/icons/table.png</normaloff>:/icons/table.png</iconset>
+  </property>
+  <widget class="QTextBrowser" name="textBrowser">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>281</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../build/images/resurce.qrc"/>
+ </resources>
+ <connections/>
+</ui>
